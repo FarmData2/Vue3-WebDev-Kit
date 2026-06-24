@@ -17,5 +17,6 @@
       }
     }
   },
-  "postCreateCommand": "npm install"
+  "postCreateCommand": "npm install",
+  "postAttachCommand": "echo \"The Vue3 WebDev Kit is ready for use.\""
 }
