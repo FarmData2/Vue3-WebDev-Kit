@@ -4,7 +4,7 @@
   "files": ["**/*.{js,vue,md,html,css,bash}"],
   "ignorePaths": [
     "node_modules",
-    "FlashWord/dist",
+    "flashword/dist",
     "*.lock",
     "package-lock.json"
   ],
@@ -26,6 +26,7 @@
     "yzhang",
     "ntvs",
     "njsproj",
-    "setsid"
+    "setsid",
+    "flashword"
   ]
 }
