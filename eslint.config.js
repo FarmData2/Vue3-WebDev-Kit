@@ -31,6 +31,14 @@ export default [
     // Global language options (index 0): keep unrestricted
     return config
   }),
+  // Enforce v-bind: and v-on: longform instead of : and @ shortcuts
+  {
+    files: ['**/*.vue', '**/*.js', '**/*.html'],
+    rules: {
+      'vue/v-bind-style': ['error', 'longform'],
+      'vue/v-on-style': ['error', 'longform'],
+    },
+  },
   // Markdown files (checks JavaScript code blocks)
   ...markdown.configs.recommended,
   // CSS files
