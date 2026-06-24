@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>FlashWord</title>
+    <meta charset="utf-8" />
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js" defer></script>
+    <script src="app.js" defer></script>
+
+    <style>
+      label {
+        display: block;
+      }
+
+      input,
+      button {
+        display: block;
+        margin: 10px 0px;
+      }
+
+      .correct {
+        color: green;
+      }
+
+      .incorrect {
+        color: red;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>FlashWord</h1>
+
+    <div id="app">
+      What is the English translation of the word <strong>{{ wordA }}</strong>?
+    </div>
+  </body>
+</html>
