@@ -6,5 +6,6 @@ export default defineConfig({
   root: 'FlashWord',
   build: {
     outDir: 'dist',
+    emptyOutDir: true,
   },
 })
