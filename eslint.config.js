@@ -6,7 +6,7 @@ import css from '@eslint/css'
 
 export default [
   {
-    ignores: ['node_modules', 'dist', 'tutorials/flashword/dist'],
+    ignores: ['node_modules', 'dist', 'flashword/dist'],
   },
   // JavaScript files
   {

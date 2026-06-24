@@ -8,7 +8,7 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
-tutorials/flashword/dist
+flashword/dist
 dist-ssr
 *.local
 
