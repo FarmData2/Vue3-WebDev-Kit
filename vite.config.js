@@ -3,7 +3,7 @@ import vue from '@vitejs/plugin-vue'
 
 export default defineConfig({
   plugins: [vue()],
-  root: 'FlashWord',
+  root: 'tutorials/flashword',
   build: {
     outDir: 'dist',
     emptyOutDir: true,

@@ -1,13 +1,23 @@
 {
   "name": "Vue3-WebDev-Kit",
   "image": "mcr.microsoft.com/devcontainers/javascript-node:22",
+  "workspaceFolder": "/workspaces/Vue3-WebDev-Kit/",
+  "portsAttributes": {
+    "8000": {
+      "label": "tutorials",
+      "protocol": "http",
+      "onAutoForward": "silent"
+    }
+  },
+  "otherPortsAttributes": {
+    "onAutoForward": "ignore"
+  },
   "customizations": {
     "vscode": {
       "extensions": [
         "streetsidesoftware.code-spell-checker",
         "esbenp.prettier-vscode",
         "dbaeumer.vscode-eslint",
-        "george-alisson.html-preview-vscode",
         "yzhang.markdown-all-in-one"
       ],
       "settings": {
@@ -17,6 +27,7 @@
       }
     }
   },
-  "postCreateCommand": "npm install",
-  "postAttachCommand": "echo \"The Vue3 WebDev Kit is ready for use.\""
+  "postCreateCommand": "bash ./.devcontainer/postCreate.bash",
+  "postStartCommand": "bash ./.devcontainer/postStart.bash",
+  "postAttachCommand": "bash ./.devcontainer/postAttach.bash"
 }
