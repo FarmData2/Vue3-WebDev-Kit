@@ -2,7 +2,7 @@ import globals from 'globals'
 import pluginJs from '@eslint/js'
 import pluginVue from 'eslint-plugin-vue'
 import markdown from '@eslint/markdown'
-import html from '@html-eslint/eslint-plugin'
+import css from '@eslint/css'
 
 export default [
   {
@@ -16,24 +16,30 @@ export default [
     },
     ...pluginJs.configs.recommended,
   },
-  // Vue files - explicitly scoped to .vue files
-  ...pluginVue.configs['flat/essential'].map((config) => ({
-    ...config,
-    files: config.files ?? ['**/*.vue'],
-  })),
+  // Vue files (.vue), JavaScript files (.js), and HTML files (.html) with Vue code.
+  // - Parser config (index 1) is extended to handle .html in addition to .vue.
+  // - Rules config (index 2) is scoped to .vue, .js, and .html files.
+  ...pluginVue.configs['flat/essential'].map((config) => {
+    if (config.files) {
+      // Parser / processor config: extend to HTML so vue-eslint-parser handles it
+      return { ...config, files: [...config.files, '**/*.html'] }
+    }
+    if (config.rules) {
+      // Rules config: scope to .vue, .js, and .html
+      return { ...config, files: ['**/*.vue', '**/*.js', '**/*.html'] }
+    }
+    // Global language options (index 0): keep unrestricted
+    return config
+  }),
   // Markdown files (checks JavaScript code blocks)
   ...markdown.configs.recommended,
-  // HTML files - explicitly scoped to .html files
-  // Formatting rules are disabled since Prettier handles HTML formatting
+  // CSS files
   {
-    ...html.configs['flat/recommended'],
-    files: ['**/*.html'],
+    files: ['**/*.css'],
+    language: 'css/css',
+    plugins: { css },
     rules: {
-      ...html.configs['flat/recommended'].rules,
-      '@html-eslint/indent': 'off',
-      '@html-eslint/attrs-newline': 'off',
-      '@html-eslint/no-extra-spacing-tags': 'off',
-      '@html-eslint/require-closing-tags': 'off',
+      ...css.configs.recommended.rules,
     },
   },
 ]
