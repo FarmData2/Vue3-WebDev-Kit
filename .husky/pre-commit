@@ -1,1 +1,10 @@
+#!/usr/bin/env sh
+
+branch_name="$(git rev-parse --abbrev-ref HEAD)"
+
+if [ "$branch_name" = "main" ]; then
+	echo "Do not commit changes directly to main. Instead make commits to a feature branch and create a Pull Request to the upstream."
+	exit 1
+fi
+
 npx lint-staged
