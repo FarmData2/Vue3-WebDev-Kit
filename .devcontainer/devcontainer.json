@@ -1,0 +1,21 @@
+{
+  "name": "Vue3-WebDev-Kit",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:22",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "streetsidesoftware.code-spell-checker",
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint",
+        "george-alisson.html-preview-vscode",
+        "yzhang.markdown-all-in-one"
+      ],
+      "settings": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "eslint.validate": ["javascript", "vue", "html", "markdown"]
+      }
+    }
+  },
+  "postCreateCommand": "npm install"
+}
