@@ -10,6 +10,7 @@
     "prepare": "husky",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
+    "linkcheck": "git ls-files '*.md' | xargs -r markdown-link-check",
     "format": "prettier --write .",
     "spell": "cspell '**'"
   },
@@ -27,13 +28,19 @@
     "globals": "^16.0.0",
     "husky": "^9.1.7",
     "lint-staged": "^15.5.2",
+    "markdown-link-check": "^3.14.2",
     "prettier": "^3.5.3",
     "vite": "^6.3.5"
   },
   "lint-staged": {
-    "*.{js,vue,md,html,css}": [
+    "*.{js,vue,html,css}": [
       "prettier --write",
       "eslint --fix"
+    ],
+    "*.md": [
+      "prettier --write",
+      "eslint --fix",
+      "npm run linkcheck"
     ],
     "*": "cspell --no-must-find-files"
   }
