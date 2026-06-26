@@ -28,7 +28,13 @@ Use the steps below to complete each assignment.
    - Running the commands below in the terminal are one way to do this.
      ```bash
      git stage .
-     git git commit -m "<descriptive commit message>"
+     git commit -m "<descriptive commit message>"
+     ```
+   - If you had a co-author or used AI in creating the content of the commit you will need to [add appropriate attribution commit trailers](./docs/AttributionTrailers.md), for example:
+     ```bash
+     git stage .
+     git commit -m "-m "<descriptive commit message>" \
+         --trailer "Assisted-by: GPT-3.3-Codex"
      ```
 9. Ensure that the commit was successful.
    - When making a commit, a number of checks are performed on the changes being committed. These checks ensure that the changes are properly formatted, use good style, and do not contain broken links or spelling errors.
