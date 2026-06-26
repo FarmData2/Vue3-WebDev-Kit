@@ -40,7 +40,7 @@
     "*.md": [
       "prettier --write",
       "eslint --fix",
-      "npm run linkcheck"
+      "markdown-link-check"
     ],
     "*": "cspell --no-must-find-files"
   }
