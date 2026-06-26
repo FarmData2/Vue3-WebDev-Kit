@@ -27,6 +27,7 @@
     "ntvs",
     "njsproj",
     "setsid",
-    "flashword"
+    "flashword",
+    "linkcheck"
   ]
 }
