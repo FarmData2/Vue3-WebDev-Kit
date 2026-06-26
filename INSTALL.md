@@ -10,7 +10,7 @@ Installation of the Vue3-WebDev-Kit involves creating a fork of the upstream rep
 ## Creating a Fork
 
 1. [Create a GitHub account](https://github.com/signup?source=login) if you do not already have one, or want to use a different one for this work.
-2. [Log into your GitHub account](https://github.com/login).
+2. [Log into your GitHub account](https://github.com/login), if you are not already logged in.
 3. Visit the upstream repository at the URL provided to you by your instructor.
 4. [Create a fork of the upstream repository](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo?tool=webui#forking-a-repository) into your own GitHub space.
 5. Visit your [GitHub space](https://github.com/) and confirm that you have successfully created a fork.
