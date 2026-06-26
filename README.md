@@ -16,7 +16,8 @@ While completing the Vue3-WebDev-Kit your work will be similar to working in an 
 To get started with the Vue3-WebDev-Kit:
 
 1. Read the `INSTALL.md` file and follow the instructions there to setup the development environment (i.e. the GitHub Codespace) that you will use to complete your work.
-2. Read the `CONTRIBUTING.md` file and follow the instructions there to begin working on the first assignment.
+2. Open and bookmark the `CONTRIBUTING.md` file.
+3. Read and follow the instructions in `CONTRIBUTING.md` to begin working on the first assignment.
 
 ---
 
