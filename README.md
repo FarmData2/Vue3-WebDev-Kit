@@ -19,7 +19,7 @@ To get started with the Vue3-WebDev-Kit:
 2. Open and bookmark the following files:
    - `CONTRIBUTING.md`
    - `docs/QuickReference.md`
-3. Read and follow the instructions in `CONTRIBUTING.md` to begin working on the first assignment.
+3. Read and follow the instructions in `CONTRIBUTING.md` to begin working on the first assignment. Note: Expanding the "Details" sections below the steps will provide more information including Git commands that will complete the step.
 
 ---
 
