@@ -1,5 +1,12 @@
 # Vue3-WebDev-Kit Quick Reference
 
+## Workflow Steps
+
+The following are the main activities in the workflow for this kit.
+
+- []()
+-
+
 ## Keyboard Shortcuts
 
 ### Visual Studio Code IDE
@@ -43,5 +50,4 @@
 
 ## Miscellaneous
 
-- [Workflow Steps](../CONTRIBUTING.md)
 - [Coauthors Generator](https://coauthors.me/generator)
