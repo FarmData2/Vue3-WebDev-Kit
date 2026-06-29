@@ -2,10 +2,16 @@
 
 ## Workflow Steps
 
-The following are the main activities in the workflow for this kit.
+The following are the main activities that you will need to do when working on this kit. Each links takes you to the appropriate section of the `CONTRIBUTING.md`] file.
 
-- []()
--
+- [Starting a Tutorial](../CONTRIBUTING.md#starting-a-tutorial)
+- [Working on the Tutorial Tasks](../CONTRIBUTING.md#working-on-the-tutorial-tasks)
+- [Completing a Tutorial](../CONTRIBUTING.md#completing-a-tutorial)
+- [Pausing your Work](../CONTRIBUTING.md#pausing-your-work)
+- [Restarting your Work](../CONTRIBUTING.md#restarting-your-work)
+- [Starting an Extension](../CONTRIBUTING.md#starting-an-extension)
+- [Working on the Extension Tasks](../CONTRIBUTING.md#working-on-the-extension-tasks)
+- [Completing an Extension](../CONTRIBUTING.md#completing-an-extension)
 
 ## Keyboard Shortcuts
 
@@ -38,14 +44,14 @@ The following are the main activities in the workflow for this kit.
 | --------------------------------------------------------------------- | --------------------------------------------------------------- |
 | `git status`                                                          | Display the current branch, modified, and staged files.         |
 | `git switch main`                                                     | Switch to the `main` branch.                                    |
-| `git pull --ff-only upstream main`                                    | Synchronize with the upstream `main` branch.                    |
+| `git pull --ff-only upstream main`<br>`git push origin main`          | Synchronize with the upstream `main` branch.                    |
 | `git branch <branch_name>`                                            | Create a new branch named `<branch_name>`.                      |
 | `git switch <branch_name>`                                            | Switch to the branch named `<branch_name>`.                     |
 | `git stage <file_1>`                                                  | Stage the file identified by `<file_1>` for commit.             |
 | `git stage .`                                                         | Stage all changed files for commit.                             |
 | `git commit -m "<commit message>"`                                    | Commit the staged changes using the provided message.           |
-| `git commit -m "..." \`<br>`  --trailer "..."`                        | Commit with [attribution trailers](./AttributionTrailers.md).   |
-| `git commit --allow-empty \`<br>`  -m "..." \`<br>`  --trailer "..."` | Add a missing [attribution trailers](./AttributionTrailers.md). |
+| `git commit -m "..." \`<br>`  --trailer "..."`                        | Commit with an [attribution trailer](./AttributionTrailers.md). |
+| `git commit --allow-empty \`<br>`  -m "..." \`<br>`  --trailer "..."` | Add a missing [attribution trailer](./AttributionTrailers.md).  |
 | `git push origin <branch_name>`                                       | Push the branch named `<branch_name>` to your GitHub space.     |
 
 ## Miscellaneous
