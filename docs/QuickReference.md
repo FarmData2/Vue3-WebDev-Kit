@@ -5,12 +5,12 @@
 The following are the main activities that you will need to do when working on this kit. Each links takes you to the appropriate section of the `CONTRIBUTING.md`] file.
 
 - [Starting a Tutorial](../CONTRIBUTING.md#starting-a-tutorial)
-- [Working on the Tutorial Tasks](../CONTRIBUTING.md#working-on-the-tutorial-tasks)
+- [Working on Tutorial Tasks](../CONTRIBUTING.md#working-on-tutorial-tasks)
 - [Completing a Tutorial](../CONTRIBUTING.md#completing-a-tutorial)
 - [Pausing your Work](../CONTRIBUTING.md#pausing-your-work)
-- [Restarting your Work](../CONTRIBUTING.md#restarting-your-work)
+- [Resuming your Work](../CONTRIBUTING.md#resuming-your-work)
 - [Starting an Extension](../CONTRIBUTING.md#starting-an-extension)
-- [Working on the Extension Tasks](../CONTRIBUTING.md#working-on-the-extension-tasks)
+- [Working on Extension Tasks](../CONTRIBUTING.md#working-on-extension-tasks)
 - [Completing an Extension](../CONTRIBUTING.md#completing-an-extension)
 
 ## Keyboard Shortcuts
