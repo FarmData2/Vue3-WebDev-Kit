@@ -118,7 +118,33 @@ Use the following steps when working through a tutorial.
 
 <p/>
 
-3. <a id="stage-and-commit"></a>
+3. <a id="view-work-in-browser"></a>
+   <details>
+   <summary>View your work in the browser.</summary>
+
+   When you have created an HTML page or a Vue app you can use the following steps to open it the browser.
+
+   1. Click "PORTS" tab in in the bottom center of the VS Code window, just below the editor you have been using to modify the code.
+
+      ![The "PORTS" tab is just below the editor window.](./docs/images/ports-tab.png)
+
+   2. Point at the link in the second column titled "Forwarded Address".
+
+   3. Click on the small _globe icon_ that appears.
+
+      ![The globe icon used to open the page in the browser.](./docs/images/open-port-in-browser.png)
+
+   4. Click the new tab named "Directory listing for /" that opened in your browser.
+
+   5. Navigate to the page that you want to view in the directory structure (e.g. for tutorial 01 click `web-projects` and then `first-website`).
+
+   6. Once your page is open in a browser tab, reloading the page will display the effect of any changes you make.
+
+   </details>
+
+<p/>
+
+4. <a id="stage-and-commit"></a>
    <details>
    <summary>Stage and commit the changes to your feature branch regularly.</summary>
 
@@ -127,23 +153,27 @@ Use the following steps when working through a tutorial.
    Running the commands below in the terminal are one way to stage and commit your changes.
 
    ```bash
+   git status
    git stage .
    git commit -m "descriptive commit message"
+   git status
    ```
 
    If you had a co-author or used AI in creating the content of the commit you will need to [add appropriate attribution commit trailers](./docs/AttributionTrailers.md), for example:
 
    ```bash
+   git status
    git stage .
    git commit -m "-m "descriptive commit message" \
        --trailer "Assisted-by: GPT-3.3-Codex"
+   git status
    ```
 
    </details>
 
 <p/>
 
-4. <a id="ensure-commit-was-successful"></a>
+5. <a id="ensure-commit-was-successful"></a>
    <details>
    <summary>Ensure that the commit was successful.</summary>
 
@@ -157,7 +187,7 @@ Use the following steps when working through a tutorial.
 
 <p/>
 
-5. <a id="push-feature-branch"></a>
+6. <a id="push-feature-branch"></a>
    <details>
    <summary>Push your feature branch to your fork (i.e. your origin).</summary>
 
@@ -173,7 +203,7 @@ Use the following steps when working through a tutorial.
 
 <p/>
 
-6. &#9655; Repeat steps 3-5 until you have completed the tutorial.
+7. &#9655; Repeat steps 2-6 until you have completed the tutorial.
 
 <p/>
 
@@ -267,15 +297,19 @@ Working on the extension tasks is very similar to working on the tutorial tasks.
 
 <p/>
 
-2. [Stage and commit your changes](#stage-and-commit) at least once for each task.
+2. [View your work in the browser](#view-work-in-browser).
 
 <p/>
 
-3. [Ensure that the commit was successful](#ensure-commit-was-successful).
+3. [Stage and commit your changes](#stage-and-commit) at least once for each task.
 
 <p/>
 
-4. [Push your feature branch](#push-feature-branch) to GitHub.
+4. [Ensure that the commit was successful](#ensure-commit-was-successful).
+
+<p/>
+
+5. [Push your feature branch](#push-feature-branch) to GitHub.
 
 ### Completing an Extension
 
