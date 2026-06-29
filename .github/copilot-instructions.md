@@ -10,3 +10,5 @@
 | ------------ | ------------ | --------------------- |
 | Tutorial     | HTML and CSS | tutorial-01-html-css  |
 | Extension    | HTML and CSS | extension-01-html-css |
+| Tutorial     | Vue 1        | tutorial-02-vue1      |
+| Extension    | Vue 1        | extension-02-vue1     |
