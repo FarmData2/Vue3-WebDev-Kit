@@ -12,7 +12,7 @@
 - [ ] - Vue 2
 - [ ] - Vue 3
 - [ ] - Cypress Testing
-- [ ] - Vue Lifecycle Hoolk and API Calls
+- [ ] - Vue Lifecycle Hooks and API Calls
 - [ ] - Vue Components
 
 ### Time Estimate
