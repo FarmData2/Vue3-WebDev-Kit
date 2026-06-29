@@ -1,9 +1,11 @@
-### Topic
+### Type of Work
 
 > &#9432; _Place an X in the appropriate [ ] to indicate whether this pull request is for a tutorial or an extension._
 
 - [ ] - Tutorial
 - [ ] - Extension
+
+### Topic
 
 > &#9432; _Check the box beside the topic to which this pull request applies._
 

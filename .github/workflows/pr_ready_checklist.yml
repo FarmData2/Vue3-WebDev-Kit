@@ -22,48 +22,9 @@ jobs:
           script: |
             const body = context.payload.pull_request.body || '';
 
-            const topicHeadingRegex = /^###\s+Topic\s*$/im;
-            const headingMatch = topicHeadingRegex.exec(body);
-
-            let hasTopicChecklist = false;
-
-            if (headingMatch) {
-              const startIndex = headingMatch.index + headingMatch[0].length;
-              const rest = body.slice(startIndex);
-              const nextHeadingRegex = /^###\s+/m;
-              const nextHeadingMatch = nextHeadingRegex.exec(rest);
-              const topicSection = nextHeadingMatch ? rest.slice(0, nextHeadingMatch.index) : rest;
-              const checkboxRegex = /^\s*[-*]\s*\[(x|X| )\]\s+/m;
-
-              hasTopicChecklist = checkboxRegex.test(topicSection);
-            }
-
-            const { owner, repo } = context.repo;
-            const username = context.payload.pull_request.user.login;
-
-            const permResult = await github.rest.repos.getCollaboratorPermissionLevel({
-              owner,
-              repo,
-              username,
-            });
-
-            const permission = permResult.data.permission || 'none';
-            const isMaintainer = ['write', 'maintain', 'admin'].includes(permission);
-            const shouldBypass = !hasTopicChecklist && isMaintainer;
-
-            core.setOutput('should-bypass', String(shouldBypass));
-
-      - name: Validate PR checklist selections
-        id: validate
-        if: steps.bypass.outputs.should-bypass != 'true'
-        uses: actions/github-script@v9
-        with:
-          script: |
-            const body = context.payload.pull_request.body || '';
-            const marker = '<!-- ready-for-review-checklist-validation -->';
-
-            function getTopicSection(text) {
-              const headingRegex = /^###\s+Topic\s*$/im;
+            function getSection(text, headingTitle) {
+              const escapedTitle = headingTitle.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+              const headingRegex = new RegExp(`^###\\s+${escapedTitle}\\s*$`, 'im');
               const headingMatch = headingRegex.exec(text);
               if (!headingMatch) {
                 return '';
@@ -80,61 +41,102 @@ jobs:
               return rest.slice(0, nextHeadingMatch.index);
             }
 
-            function parseChecklistBlocks(sectionText) {
+            const typeSection = getSection(body, 'Type of Work');
+            const topicSection = getSection(body, 'Topic');
+            const checkboxRegex = /^\s*[-*]\s*\[(x|X| )\]\s+/m;
+
+            const hasTypeChecklist = checkboxRegex.test(typeSection);
+            const hasTopicChecklist = checkboxRegex.test(topicSection);
+
+            const { owner, repo } = context.repo;
+            const username = context.payload.pull_request.user.login;
+
+            const permResult = await github.rest.repos.getCollaboratorPermissionLevel({
+              owner,
+              repo,
+              username,
+            });
+
+            const permission = permResult.data.permission || 'none';
+            const isMaintainer = ['write', 'maintain', 'admin'].includes(permission);
+            const shouldBypass = isMaintainer && (!hasTypeChecklist || !hasTopicChecklist);
+
+            core.setOutput('should-bypass', String(shouldBypass));
+
+      - name: Validate PR checklist selections
+        id: validate
+        if: steps.bypass.outputs.should-bypass != 'true'
+        uses: actions/github-script@v9
+        with:
+          script: |
+            const body = context.payload.pull_request.body || '';
+            const marker = '<!-- ready-for-review-checklist-validation -->';
+
+            function getSection(text, headingTitle) {
+              const escapedTitle = headingTitle.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+              const headingRegex = new RegExp(`^###\\s+${escapedTitle}\\s*$`, 'im');
+              const headingMatch = headingRegex.exec(text);
+              if (!headingMatch) {
+                return '';
+              }
+
+              const startIndex = headingMatch.index + headingMatch[0].length;
+              const rest = text.slice(startIndex);
+              const nextHeadingRegex = /^###\s+/m;
+              const nextHeadingMatch = nextHeadingRegex.exec(rest);
+              if (!nextHeadingMatch) {
+                return rest;
+              }
+
+              return rest.slice(0, nextHeadingMatch.index);
+            }
+
+            function parseChecklist(sectionText) {
               const lines = sectionText.split(/\r?\n/);
-              const blocks = [];
-              let currentBlock = [];
+              const items = [];
 
               const checkboxRegex = /^\s*[-*]\s*\[(x|X| )\]\s*(?:-\s*)?(.*)$/;
 
               for (const line of lines) {
                 const match = line.match(checkboxRegex);
                 if (match) {
-                  currentBlock.push({
+                  items.push({
                     checked: match[1].toLowerCase() === 'x',
                     label: (match[2] || '').trim(),
                   });
-                  continue;
-                }
-
-                if (currentBlock.length > 0) {
-                  blocks.push(currentBlock);
-                  currentBlock = [];
                 }
               }
 
-              if (currentBlock.length > 0) {
-                blocks.push(currentBlock);
-              }
-
-              return blocks;
+              return items;
             }
 
-            const topicSection = getTopicSection(body);
-            const blocks = parseChecklistBlocks(topicSection);
+            const typeSection = getSection(body, 'Type of Work');
+            const topicSection = getSection(body, 'Topic');
+            const typeItems = parseChecklist(typeSection);
+            const topicItems = parseChecklist(topicSection);
 
             const failures = [];
             let selectedTypeLabels = [];
             let selectedTopicLabels = [];
 
-            if (blocks.length < 2) {
-              failures.push('The Topic section checklist could not be parsed into the two required checkbox groups.');
+            if (typeItems.length === 0) {
+              failures.push('The Type of Work checklist could not be found or parsed.');
             } else {
-              const typeBlock = blocks[0];
-              const assignmentBlock = blocks[1];
-
-              selectedTypeLabels = typeBlock.filter((item) => item.checked).map((item) => item.label);
-              selectedTopicLabels = assignmentBlock.filter((item) => item.checked).map((item) => item.label);
-
+              selectedTypeLabels = typeItems.filter((item) => item.checked).map((item) => item.label);
               if (selectedTypeLabels.length !== 1) {
                 failures.push(
-                  `Exactly one checkbox must be selected in the first Topic group (currently selected: ${selectedTypeLabels.length}).`
+                  `Exactly one checkbox must be selected in Type of Work (currently selected: ${selectedTypeLabels.length}).`
                 );
               }
+            }
 
+            if (topicItems.length === 0) {
+              failures.push('The Topic checklist could not be found or parsed.');
+            } else {
+              selectedTopicLabels = topicItems.filter((item) => item.checked).map((item) => item.label);
               if (selectedTopicLabels.length !== 1) {
                 failures.push(
-                  `Exactly one checkbox must be selected in the second Topic group (currently selected: ${selectedTopicLabels.length}).`
+                  `Exactly one checkbox must be selected in Topic (currently selected: ${selectedTopicLabels.length}).`
                 );
               }
             }
@@ -148,10 +150,10 @@ jobs:
               }
 
               details.push(
-                `- First Topic group selected: ${selectedTypeLabels.length > 0 ? selectedTypeLabels.join(', ') : 'none'}`
+                `- Type of Work selected: ${selectedTypeLabels.length > 0 ? selectedTypeLabels.join(', ') : 'none'}`
               );
               details.push(
-                `- Second Topic group selected: ${selectedTopicLabels.length > 0 ? selectedTopicLabels.join(', ') : 'none'}`
+                `- Topic selected: ${selectedTopicLabels.length > 0 ? selectedTopicLabels.join(', ') : 'none'}`
               );
             }
 
