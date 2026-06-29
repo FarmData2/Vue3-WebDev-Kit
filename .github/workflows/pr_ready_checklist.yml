@@ -1,0 +1,221 @@
+name: PR Ready Checklist Validation
+description: Validates required PR template checkboxes when a PR is marked ready for review.
+
+on:
+  pull_request_target:
+    types: [ready_for_review]
+
+permissions:
+  pull-requests: write
+  issues: write
+  contents: read
+
+jobs:
+  validate_ready_checklist:
+    name: Validate ready-for-review checklist
+    runs-on: ubuntu-latest
+    steps:
+      - name: Determine whether checklist enforcement should be bypassed
+        id: bypass
+        uses: actions/github-script@v9
+        with:
+          script: |
+            const body = context.payload.pull_request.body || '';
+
+            const topicHeadingRegex = /^###\s+Topic\s*$/im;
+            const headingMatch = topicHeadingRegex.exec(body);
+
+            let hasTopicChecklist = false;
+
+            if (headingMatch) {
+              const startIndex = headingMatch.index + headingMatch[0].length;
+              const rest = body.slice(startIndex);
+              const nextHeadingRegex = /^###\s+/m;
+              const nextHeadingMatch = nextHeadingRegex.exec(rest);
+              const topicSection = nextHeadingMatch ? rest.slice(0, nextHeadingMatch.index) : rest;
+              const checkboxRegex = /^\s*[-*]\s*\[(x|X| )\]\s+/m;
+
+              hasTopicChecklist = checkboxRegex.test(topicSection);
+            }
+
+            const { owner, repo } = context.repo;
+            const username = context.payload.pull_request.user.login;
+
+            const permResult = await github.rest.repos.getCollaboratorPermissionLevel({
+              owner,
+              repo,
+              username,
+            });
+
+            const permission = permResult.data.permission || 'none';
+            const isMaintainer = ['write', 'maintain', 'admin'].includes(permission);
+            const shouldBypass = !hasTopicChecklist && isMaintainer;
+
+            core.setOutput('should-bypass', String(shouldBypass));
+
+      - name: Validate PR checklist selections
+        id: validate
+        if: steps.bypass.outputs.should-bypass != 'true'
+        uses: actions/github-script@v9
+        with:
+          script: |
+            const body = context.payload.pull_request.body || '';
+            const marker = '<!-- ready-for-review-checklist-validation -->';
+
+            function getTopicSection(text) {
+              const headingRegex = /^###\s+Topic\s*$/im;
+              const headingMatch = headingRegex.exec(text);
+              if (!headingMatch) {
+                return '';
+              }
+
+              const startIndex = headingMatch.index + headingMatch[0].length;
+              const rest = text.slice(startIndex);
+              const nextHeadingRegex = /^###\s+/m;
+              const nextHeadingMatch = nextHeadingRegex.exec(rest);
+              if (!nextHeadingMatch) {
+                return rest;
+              }
+
+              return rest.slice(0, nextHeadingMatch.index);
+            }
+
+            function parseChecklistBlocks(sectionText) {
+              const lines = sectionText.split(/\r?\n/);
+              const blocks = [];
+              let currentBlock = [];
+
+              const checkboxRegex = /^\s*[-*]\s*\[(x|X| )\]\s*(?:-\s*)?(.*)$/;
+
+              for (const line of lines) {
+                const match = line.match(checkboxRegex);
+                if (match) {
+                  currentBlock.push({
+                    checked: match[1].toLowerCase() === 'x',
+                    label: (match[2] || '').trim(),
+                  });
+                  continue;
+                }
+
+                if (currentBlock.length > 0) {
+                  blocks.push(currentBlock);
+                  currentBlock = [];
+                }
+              }
+
+              if (currentBlock.length > 0) {
+                blocks.push(currentBlock);
+              }
+
+              return blocks;
+            }
+
+            const topicSection = getTopicSection(body);
+            const blocks = parseChecklistBlocks(topicSection);
+
+            const failures = [];
+            let selectedTypeLabels = [];
+            let selectedTopicLabels = [];
+
+            if (blocks.length < 2) {
+              failures.push('The Topic section checklist could not be parsed into the two required checkbox groups.');
+            } else {
+              const typeBlock = blocks[0];
+              const assignmentBlock = blocks[1];
+
+              selectedTypeLabels = typeBlock.filter((item) => item.checked).map((item) => item.label);
+              selectedTopicLabels = assignmentBlock.filter((item) => item.checked).map((item) => item.label);
+
+              if (selectedTypeLabels.length !== 1) {
+                failures.push(
+                  `Exactly one checkbox must be selected in the first Topic group (currently selected: ${selectedTypeLabels.length}).`
+                );
+              }
+
+              if (selectedTopicLabels.length !== 1) {
+                failures.push(
+                  `Exactly one checkbox must be selected in the second Topic group (currently selected: ${selectedTopicLabels.length}).`
+                );
+              }
+            }
+
+            const isValid = failures.length === 0;
+
+            const details = [];
+            if (failures.length > 0) {
+              for (const failure of failures) {
+                details.push(`- ${failure}`);
+              }
+
+              details.push(
+                `- First Topic group selected: ${selectedTypeLabels.length > 0 ? selectedTypeLabels.join(', ') : 'none'}`
+              );
+              details.push(
+                `- Second Topic group selected: ${selectedTopicLabels.length > 0 ? selectedTopicLabels.join(', ') : 'none'}`
+              );
+            }
+
+            let commentBody = '';
+            if (!isValid) {
+              commentBody = [
+                marker,
+                'Your pull request checklist selections are not valid for review submission.',
+                '',
+                'Problem details:',
+                ...details,
+                '',
+                'This pull request has been converted back to draft.',
+                '',
+                'Please fix the checklist selections and mark the pull request as ready for review again once resolved.',
+              ].join('\n');
+            }
+
+            const { owner, repo } = context.repo;
+            const issue_number = context.issue.number;
+            let commentId = '';
+
+            if (!isValid) {
+              const comments = await github.paginate(github.rest.issues.listComments, {
+                owner,
+                repo,
+                issue_number,
+                per_page: 100,
+              });
+
+              const existing = comments.find((comment) =>
+                comment.body && comment.body.includes(marker)
+              );
+
+              if (existing) {
+                commentId = String(existing.id);
+              }
+            }
+
+            core.setOutput('is-valid', String(isValid));
+            core.setOutput('comment-body', commentBody);
+            core.setOutput('comment-id', commentId);
+
+      - name: Convert PR to draft
+        if: steps.bypass.outputs.should-bypass != 'true' && steps.validate.outputs.is-valid != 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh pr ready --undo ${{ github.event.pull_request.html_url }}
+
+      - name: Delete previous checklist guidance comment
+        if: steps.bypass.outputs.should-bypass != 'true' && steps.validate.outputs.is-valid != 'true' && steps.validate.outputs.comment-id != ''
+        uses: actions/github-script@v9
+        with:
+          script: |
+            await github.rest.issues.deleteComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              comment_id: Number('${{ steps.validate.outputs.comment-id }}'),
+            });
+
+      - name: Create checklist guidance comment
+        if: steps.bypass.outputs.should-bypass != 'true' && steps.validate.outputs.is-valid != 'true'
+        uses: peter-evans/create-or-update-comment@v5
+        with:
+          issue-number: ${{ github.event.pull_request.number }}
+          body: ${{ steps.validate.outputs.comment-body }}
