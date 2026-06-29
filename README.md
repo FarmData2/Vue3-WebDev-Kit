@@ -9,7 +9,7 @@ While completing the Vue3-WebDev-Kit your work will be similar to working in an 
 - interact with an Issue Tracker to complete the assignments that make up the Kit.
 - gain exposure to tooling that is common in open source projects (e.g. code formatters and linters, Git hooks, GitHub CI/CD actions).
 - create pull requests to submit your completed work.
-- interact with GitHub CoPilot agents that simulate some elements of an open source community (e.g. labeling, reviewing, and merging pull requests).
+- interact with GitHub Copilot agents that simulate some elements of an open source community (e.g. labeling, reviewing, and merging pull requests).
 
 ## Getting Started
 
