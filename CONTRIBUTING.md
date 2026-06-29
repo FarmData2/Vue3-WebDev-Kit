@@ -96,7 +96,7 @@ Use the following steps to start working on a new tutorial.
 
    </details>
 
-### Working on the Tutorial Tasks
+### Working on Tutorial Tasks
 
 Use the following steps when working through a tutorial.
 
@@ -216,7 +216,7 @@ When you want to pause your work you should:
 
    </details>
 
-### Restarting your Work
+### Resuming your Work
 
 When you want to restart your work you should:
 
@@ -259,7 +259,7 @@ Starting an extension is very similar to starting a tutorial.
 
 4. [Make a pull request](#make-a-pull-request) for your feature branch.
 
-### Working on the Extension Tasks
+### Working on Extension Tasks
 
 Working on the extension tasks is very similar to working on the tutorial tasks.
 
