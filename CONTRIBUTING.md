@@ -83,7 +83,7 @@ Use the following steps to start working on a new tutorial.
    Running the commands below in the terminal in your codespace creates an empty commit so that you can create your pull request.
 
    ```bash
-   git commit --allow-empty -m "Starting tutorial-01"
+   git commit --allow-empty -m "Tutorial 01 - HTML/CSS"
    git push origin tutorial-01-html-css
    ```
 
