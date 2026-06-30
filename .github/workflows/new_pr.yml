@@ -134,8 +134,15 @@ jobs:
               }
             }
 
+            let validationSection = '';
+            if (failures.length > 0) {
+              validationSection = '### Checklist Validation Issues\n\n' + 
+                                  failures.map(f => `- ${f}`).join('\n') + 
+                                  '\n\nPlease address these issues before requesting a pull request review.\n';
+            }
+
             core.setOutput('is-valid', String(failures.length === 0));
-            core.setOutput('failures', failures.join('\n'));
+            core.setOutput('validation-section', validationSection);
 
       # Add a comment with basic information to all new pull requests.
       - name: Add new PR comment
@@ -148,7 +155,7 @@ jobs:
 
             Note that all new pull requests to the Vue3-WebDev-Kit are [opened as draft pull requests](https://github.com/FarmData2/FarmData2/tree/development/docs/contributing/workflow/10.md). 
 
-            ${{ steps.validate.outputs.is-valid != 'true' && format('### Checklist Validation Issues\n\n{0}\n\nPlease address these issues before requesting a pull request review.\n', steps.validate.outputs.failures) || '' }}
+            ${{ steps.validate.outputs.validation-section }}
 
             ### Submitting Your Work
 
