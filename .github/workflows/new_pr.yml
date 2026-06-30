@@ -3,6 +3,7 @@ description: 'Handles new pull requests.'
 
 # Ensures that all new pull requests are marked as draft.
 # Removes commit message from above Assignment if PR was created on branch with one commit.
+# Validates that exactly one checkbox is selected in Type of Work and Topic.
 # Adds a comment to all new pull requests with basic info.
 
 on:
@@ -66,6 +67,17 @@ jobs:
             });
             let body = pr.data.body || '';
             let bodyChanged = false;
+
+            // Fetch collaborator permissions for the PR author
+            const { owner, repo } = context.repo;
+            const username = context.payload.pull_request.user.login;
+            const permResult = await github.rest.repos.getCollaboratorPermissionLevel({
+              owner,
+              repo,
+              username,
+            });
+            const permission = permResult.data.permission || 'none';
+            const isMaintainer = ['write', 'maintain', 'admin'].includes(permission);
 
             // Normalize checked boxes: [x ], [ x], [ x ] -> [x] (case insensitive)
             const malformedCheckedRegex = /\[\s*[xX]\s+\]|\[\s+[xX]\s*\]/g;
@@ -134,8 +146,12 @@ jobs:
               }
             }
 
+            // Determine if we should bypass the validation section for maintainers
+            const isMissingChecklist = typeItems.length === 0 || topicItems.length === 0;
+            const shouldBypass = isMaintainer && isMissingChecklist;
+
             let validationSection = '';
-            if (failures.length > 0) {
+            if (failures.length > 0 && !shouldBypass) {
               validationSection = '### Checklist Validation Issues\n\n' + 
                                   failures.map(f => `- ${f}`).join('\n') + 
                                   '\n\nPlease address these issues before requesting a pull request review.\n';
@@ -153,13 +169,13 @@ jobs:
           body: |
             Thank you for your pull request. 
 
-            Note that all new pull requests to the Vue3-WebDev-Kit are [opened as draft pull requests](https://github.com/FarmData2/FarmData2/tree/development/docs/contributing/workflow/10.md). 
+            Note that all new pull requests to the Vue3-WebDev-Kit are opened as draft pull requests. 
 
             ${{ steps.validate.outputs.validation-section }}
 
             ### Submitting Your Work
 
-            When you believe your work on the assignment is complete [mark your pull request as ready for review](https://github.com/FarmData2/FarmData2/tree/development/docs/contributing/workflow/12.md) to turn it in. 
+            When you believe your work on the assignment is complete mark your pull request as ready for review to turn it in. 
 
             ### Getting Help
 
