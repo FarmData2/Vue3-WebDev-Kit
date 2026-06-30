@@ -1,7 +1,5 @@
 ---
-applyTo:
-  - 'web-projects/first-website/index.html'
-  - 'web-projects/first-website/styles/style.css'
+applyTo: 'web-projects/flashword/**/*'
 description: Review Criteria for Tutorial 02 - Vue 1
 ---
 
