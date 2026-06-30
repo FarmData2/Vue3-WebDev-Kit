@@ -1,11 +1,11 @@
-## Code Reviews
+## Co-Pilot Pull Request Reviews
 
 - When reviewing a pull request read the body of the pull request and identify the "Type of Work" and the "Topic".
-- Find the type of work and topic in the table below to determine the Criteria File to use.
-- Read the Criteria File in the `criteria` folder.
-- Use the criteria in the Criteria File to review the pull request and provide feedback.
-- Place the results of the review in a table in the final review comment on the pull request. Do not place comments on individual lines of code.
-- Always mark your review as "Comment" rather than "Approve" or "Request Changes".
+- Find the type of work and topic in the table below to determine the Criteria File to be used for the review.
+- Read only the Criteria File that is to be used for the review from the `criteria` directory.
+- Use the criteria in the Criteria File to review the pull request. This is the only criteria to use for the review. Do not use any other criteria.
+- Create a pull request review and place the results of the review in a table in the overall review comment. Do not place comments on individual lines of code.
+- Always mark your pull request review as a "Comment" rather than "Approve" or "Request Changes".
 
 | Type of Work | Topic        | Criteria File            |
 | ------------ | ------------ | ------------------------ |
