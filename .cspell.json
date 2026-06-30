@@ -1,7 +1,10 @@
 {
   "version": "0.2",
   "language": "en",
-  "files": ["**/*.{js,vue,md,html,css,bash}"],
+  "files": [
+    "**/*.{js,vue,md,html,css,bash}",
+    ".github/**/*.md"
+  ],
   "ignorePaths": [
     "node_modules",
     "flashword/dist",
@@ -9,25 +12,25 @@
     "package-lock.json"
   ],
   "words": [
-    "vitejs",
-    "vite",
-    "vuejs",
-    "eslint",
-    "cspell",
-    "husky",
-    "lintstaged",
-    "prettier",
-    "devcontainer",
-    "dbaeumer",
-    "esbenp",
-    "streetsidesoftware",
-    "webdev",
     "alisson",
-    "yzhang",
-    "ntvs",
-    "njsproj",
-    "setsid",
+    "cspell",
+    "dbaeumer",
+    "devcontainer",
+    "esbenp",
+    "eslint",
     "flashword",
-    "linkcheck"
+    "husky",
+    "linkcheck",
+    "lintstaged",
+    "njsproj",
+    "ntvs",
+    "prettier",
+    "setsid",
+    "streetsidesoftware",
+    "vite",
+    "vitejs",
+    "vuejs",
+    "webdev",
+    "yzhang"
   ]
 }
