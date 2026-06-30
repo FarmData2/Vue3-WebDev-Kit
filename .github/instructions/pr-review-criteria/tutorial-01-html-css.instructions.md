@@ -1,8 +1,6 @@
 ---
-applyTo:
-  - "web-projects/first-website/index.html"
-  - "web-projects/first-website/styles/style.css"
-description: "Review criteria for Tutorial 01 - HTML and CSS
+applyTo: 'web-projects/first-website/index.html, web-projects/first-website/styles/style.css'
+description: 'Review criteria for Tutorial 01 - HTML and CSS'
 ---
 
 - Read the pull request body.

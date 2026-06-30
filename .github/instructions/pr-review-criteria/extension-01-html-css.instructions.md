@@ -1,7 +1,5 @@
 ---
-applyTo:
-  - 'web-projects/first-website/index.html'
-  - 'web-projects/first-website/styles/style.css'
+applyTo: 'web-projects/first-website/index.html, web-projects/first-website/styles/style.css'
 description: Review Criteria for Extension 01 - HTML and CSS
 ---
 
