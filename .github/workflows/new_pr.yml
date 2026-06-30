@@ -52,6 +52,91 @@ jobs:
               core.info('Removed text before Assignment heading.');
             }
 
+      # Normalize checkboxes and validate checklist selections.
+      - name: Normalize and validate checklist
+        id: validate
+        if: github.event.action == 'opened'
+        uses: actions/github-script@v9
+        with:
+          script: |
+            const pr = await github.rest.pulls.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: context.payload.pull_request.number,
+            });
+            let body = pr.data.body || '';
+            let bodyChanged = false;
+
+            // Normalize checked boxes: [x ], [ x], [ x ] -> [x] (case insensitive)
+            const malformedCheckedRegex = /\[\s*[xX]\s+\]|\[\s+[xX]\s*\]/g;
+            if (malformedCheckedRegex.test(body)) {
+              body = body.replace(malformedCheckedRegex, '[x]');
+              bodyChanged = true;
+            }
+
+            if (bodyChanged) {
+              await github.rest.pulls.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                pull_number: context.payload.pull_request.number,
+                body: body,
+              });
+              core.info('Normalized checkboxes in PR body.');
+            }
+
+            function getSection(text, headingTitle) {
+              const escapedTitle = headingTitle.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+              const headingRegex = new RegExp(`^###\\s+${escapedTitle}\\s*$`, 'im');
+              const headingMatch = headingRegex.exec(text);
+              if (!headingMatch) return '';
+
+              const startIndex = headingMatch.index + headingMatch[0].length;
+              const rest = text.slice(startIndex);
+              const nextHeadingRegex = /^###\s+/m;
+              const nextHeadingMatch = nextHeadingRegex.exec(rest);
+              return nextHeadingMatch ? rest.slice(0, nextHeadingMatch.index) : rest;
+            }
+
+            function parseChecklist(sectionText) {
+              const items = [];
+              const checkboxRegex = /^\s*[-*]\s*\[(x|X| )\]\s*(?:-\s*)?(.*)$/gm;
+              let match;
+              while ((match = checkboxRegex.exec(sectionText)) !== null) {
+                items.push({
+                  checked: match[1].toLowerCase() === 'x',
+                  label: (match[2] || '').trim(),
+                });
+              }
+              return items;
+            }
+
+            const typeSection = getSection(body, 'Type of Work');
+            const topicSection = getSection(body, 'Topic');
+            const typeItems = parseChecklist(typeSection);
+            const topicItems = parseChecklist(topicSection);
+
+            const failures = [];
+            if (typeItems.length === 0) {
+              failures.push('The Type of Work checklist could not be found or parsed.');
+            } else {
+              const selectedType = typeItems.filter(i => i.checked);
+              if (selectedType.length !== 1) {
+                failures.push(`Exactly one checkbox must be selected in Type of Work (currently selected: ${selectedType.length}).`);
+              }
+            }
+
+            if (topicItems.length === 0) {
+              failures.push('The Topic checklist could not be found or parsed.');
+            } else {
+              const selectedTopic = topicItems.filter(i => i.checked);
+              if (selectedTopic.length !== 1) {
+                failures.push(`Exactly one checkbox must be selected in Topic (currently selected: ${selectedTopic.length}).`);
+              }
+            }
+
+            core.setOutput('is-valid', String(failures.length === 0));
+            core.setOutput('failures', failures.join('\n'));
+
       # Add a comment with basic information to all new pull requests.
       - name: Add new PR comment
         if: github.event.action == 'opened'
@@ -63,7 +148,13 @@ jobs:
 
             Note that all new pull requests to the Vue3-WebDev-Kit are [opened as draft pull requests](https://github.com/FarmData2/FarmData2/tree/development/docs/contributing/workflow/10.md). 
 
+            ${{ steps.validate.outputs.is-valid != 'true' && format('### Checklist Validation Issues\n\n{0}\n\nPlease address these issues before requesting a pull request review.\n', steps.validate.outputs.failures) || '' }}
+
+            ### Submitting Your Work
+
             When you believe your work on the assignment is complete [mark your pull request as ready for review](https://github.com/FarmData2/FarmData2/tree/development/docs/contributing/workflow/12.md) to turn it in. 
+
+            ### Getting Help
 
             If you have questions as you work you can get in touch via:
             - comments on this pull request.
