@@ -210,14 +210,46 @@ Use the following steps when working through a tutorial.
 ### Completing a Tutorial
 
 1. <a id="check-pull-request-changes"></a>
-      <details>
-      <summary>Verify that your pull request contains the desired changes.</summary>
+   <details>
+   <summary>Verify that your pull request contains the desired changes.</summary>
 
    Visit this page for instructions on how to [view the changes in your pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-comparing-branches-in-pull-requests).
-      </details>
+
+   </details>
+
    <p/>
 
-2. <a id="mark-pull-request-ready"></a>
+2. <a id="request-pr-review"></a>
+   <details>
+   <summary>Request a pull request review from Copilot.</summary>
+
+   Use the following steps to request a pull request review from Copilot. \*\*NOTE: Do not use the "Request" link in the "Reviewers" section at the top right of your pull request. [It will not work correctly](https://github.com/orgs/community/discussions/178108).
+
+   1. Go to your pull request on GitHub.
+   2. Scroll to the bottom to find the "Add a comment" box.
+   3. Enter "@copilot review this pull request."
+   4. Pick the model to be used from the popup in the bottom left of the "Add a comment" box.
+   5. Copilot will to respond in a comment on your pull request.
+
+   </details>
+
+<p/>
+
+3. <a id="respond-to-pr-review"></a>
+   <details>
+   <summary>Respond to Copilot's review.</summary>
+
+   You might respond by:
+   - marking your pull request as ready for review if the review indicates that everything is correct.
+   - making changes to address the review, adding them to your pull request and requesting another review.
+   - posting a comment responding to the review if you think it got something wrong.
+   - posting a comment indicating that you are content with your code as stands.
+   - some combination of the above.
+   </details>
+
+<p/>
+
+4. <a id="mark-pull-request-ready"></a>
    <details>
    <summary>Mark your pull request as "Ready for Review."</summary>
 
@@ -250,21 +282,21 @@ When you want to pause your work you should:
 
 When you want to restart your work you should:
 
-1. [Log into your GitHub account](#log-into-github-account), if you are not already logged in.
+1. &#9655; [Log into your GitHub account](#log-into-github-account), if you are not already logged in.
 
 <p/>
 
-2. [Open your codespace](#open-your-codespace).
+2. &#9655; [Open your codespace](#open-your-codespace).
 
 ### Starting an Extension
 
 Starting an extension is very similar to starting a tutorial.
 
-1. [Log into your GitHub account](#log-into-github-account).
+1. &#9655; [Log into your GitHub account](#log-into-github-account).
 
 <p/>
 
-2. [Open your codespace](#open-your-codespace).
+2. &#9655; [Open your codespace](#open-your-codespace).
 
 <p/>
 
@@ -287,56 +319,42 @@ Starting an extension is very similar to starting a tutorial.
 
 <p/>
 
-4. [Make a pull request](#make-a-pull-request) for your feature branch.
+4. &#9655; [Make a pull request](#make-a-pull-request) for your feature branch.
 
 ### Working on Extension Tasks
 
 Working on the extension tasks is very similar to working on the tutorial tasks.
 
-1. Complete the tasks in the extension in the order they are given.
+1. &#9655; Complete the tasks in the extension in the order they are given.
 
 <p/>
 
-2. [View your work in the browser](#view-work-in-browser).
+2. &#9655; [View your work in the browser](#view-work-in-browser).
 
 <p/>
 
-3. [Stage and commit your changes](#stage-and-commit) at least once for each task.
+3. &#9655; [Stage and commit your changes](#stage-and-commit) at least once for each task.
 
 <p/>
 
-4. [Ensure that the commit was successful](#ensure-commit-was-successful).
+4. &#9655; [Ensure that the commit was successful](#ensure-commit-was-successful).
 
 <p/>
 
-5. [Push your feature branch](#push-feature-branch) to GitHub.
+5. &#9655; [Push your feature branch](#push-feature-branch) to GitHub.
 
 ### Completing an Extension
 
-1. [Verify the changes in your pull request](#check-pull-request-changes).
+1. &#9655; [Verify the changes in your pull request](#check-pull-request-changes).
 
 <p/>
 
-2. <details>
-   <summary>Request a Copilot Review of your Pull Request</summary>
-
-   Visit this page to learn how to [request a pull request review by Copilot](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/request-a-code-review/use-code-review#using-copilot-code-review).
-
-   </details>
+2. &#9655; [Request a Copilot Review of your Pull Request](#request-pr-review)
 
 <p/>
 
-3. <details> 
-   <summary>Address the comments in Copilot's pull request review.</summary>
-
-   Visit this page for information on [finding Copilot's review of your pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/viewing-a-pull-request-review).
-
-   You should address each comment made by Copilot in its review. You might address a comment by:
-   - Making or adapting the change that Copilot suggests and committing it to your feature branch.
-   - Responding to Copilot's comment indicating why you do not think the change is appropriate.
-   - Ensure that all of Copilot's comments have been marked as resolved.
-   </details>
+3. &#9655; [Address the comments in Copilot's pull request review](#respond-to-pr-review).
 
 <p/>
 
-4. [Mark your pull request as ready for review](#mark-pull-request-ready).
+4. &#9655; [Mark your pull request as ready for review](#mark-pull-request-ready).
