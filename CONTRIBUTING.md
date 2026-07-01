@@ -229,7 +229,8 @@ Use the following steps when working through a tutorial.
    2. Scroll to the bottom to find the "Add a comment" box.
    3. Enter "@copilot review this pull request."
    4. Pick the model to be used from the popup in the bottom left of the "Add a comment" box.
-   5. Copilot will to respond in a comment on your pull request.
+   5. Click the "Start new session" button.
+   6. Copilot will to respond in a comment on your pull request.
 
    </details>
 
