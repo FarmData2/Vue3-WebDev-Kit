@@ -3,7 +3,8 @@
   "language": "en",
   "files": [
     "**/*.{js,vue,md,html,css,bash}",
-    ".github/**/*.md"
+    ".github/**/*.md",
+    ".devcontainer/**/*.bash"
   ],
   "ignorePaths": [
     "node_modules",

@@ -15,6 +15,11 @@
       "label": "tutorials",
       "protocol": "http",
       "onAutoForward": "silent"
+    },
+    "6901": {
+      "label": "noVNC",
+      "protocol": "http",
+      "onAutoForward": "silent"
     }
   },
   "otherPortsAttributes": {
