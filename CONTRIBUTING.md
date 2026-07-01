@@ -132,7 +132,7 @@ Use the following steps when working through a tutorial.
 
    3. Click on the small _globe icon_ that appears.
 
-      ![The globe icon used to open the page in the browser.](./docs/images/open-port-in-browser.png)
+      ![The globe icon used to open the page in the browser.](./docs/images/open-http-in-browser.png)
 
    4. Click the new tab named "Directory listing for /" that opened in your browser.
 
