@@ -229,7 +229,8 @@ Use the following steps when working through a tutorial.
    2. Scroll to the bottom to find the "Add a comment" box.
    3. Enter "@copilot review this pull request."
    4. Pick the model to be used from the popup in the bottom left of the "Add a comment" box.
-   5. Copilot will to respond in a comment on your pull request.
+   5. Click the "Start new session" button.
+   6. Copilot will to respond in a comment on your pull request.
 
    </details>
 
@@ -263,11 +264,11 @@ Use the following steps when working through a tutorial.
 
 When you want to pause your work you should:
 
-1. [Stage and commit](#stage-and-commit) any changes to your feature branch.
+1. &#9655; [Stage and commit](#stage-and-commit) any changes to your feature branch.
 
 <p/>
 
-2. [Push your feature branch](#push-feature-branch) to your fork (i.e. your origin).
+2. &#9655; [Push your feature branch](#push-feature-branch) to your fork (i.e. your origin).
 
 <p/>
 
