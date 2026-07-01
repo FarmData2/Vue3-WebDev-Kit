@@ -1,10 +1,15 @@
-echo -n "Checking for the web server ..."
+echo -n "Checking for servers ..."
 for i in {1..15}; do
 # check for webserver using curl
-  if curl -fs http://localhost:8000 >/dev/null; then
+  VNC_RUNNING=$(curl -Is http://localhost:6901 2> /dev/null | grep "HTTP/1.1 200 OK")
+  WEB_SERVER_RUNNING=$(curl -Is http://localhost:8000 2> /dev/null | grep "HTTP/1.0 200 OK")
+
+  # If both the web server and VNC server are running, print a message and exit
+  if [ -n "$VNC_RUNNING" ] && [ -n "$WEB_SERVER_RUNNING" ]; then
     echo ""
     echo ""
     echo "Web server found at http://localhost:8000."
+    echo "noVNC server found at http://localhost:6901."
     echo ""
     echo "*****************************************"
     echo "The Vue3 WebDev Kit is now ready for use."
@@ -19,13 +24,9 @@ done
 
 echo ""
 echo ""
-echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-echo "The Web server did not start."
+echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+echo "One of the necessary servers did not start."
+echo "Try stopping and restarting your codespace."
+echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 echo ""
-echo "Use the commands below to start the web server manually."
-echo ""
-echo "  ./.devcontainer/postStart.bash"
-echo "  ./.devcontainer/postAttach.bash"
-echo ""
-echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 exit -1

@@ -3,6 +3,23 @@
 branch_name="$(git rev-parse --abbrev-ref HEAD)"
 
 if [ "$branch_name" = "main" ]; then
+	# Check if the user has admin or maintainer permissions on the upstream repository
+	UPSTREAM_URL=$(git remote get-url upstream 2>/dev/null)
+	if [ $? -eq 0 ]; then
+		# Parse owner/repo handling both HTTPS and SSH formats
+		REPO=$(echo "$UPSTREAM_URL" | sed -E -e 's/.*github.com[:\/]//' -e 's/\.git$//')
+		
+		# Check permissions using GitHub CLI
+		if gh auth status > /dev/null 2>&1; then
+			PERMISSION=$(gh repo view "$REPO" --json viewerPermission --jq .viewerPermission 2>/dev/null)
+			if [ "$PERMISSION" = "ADMIN" ] || [ "$PERMISSION" = "MAINTAIN" ]; then
+				# User has permission to commit to main
+				npx lint-staged
+				exit 0
+			fi
+		fi
+	fi
+
 	echo "Do not commit changes directly to main. Instead make commits to a feature branch and create a Pull Request to the upstream."
 	exit 1
 fi

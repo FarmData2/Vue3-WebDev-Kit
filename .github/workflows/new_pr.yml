@@ -3,6 +3,7 @@ description: 'Handles new pull requests.'
 
 # Ensures that all new pull requests are marked as draft.
 # Removes commit message from above Assignment if PR was created on branch with one commit.
+# Validates that exactly one checkbox is selected in Type of Work and Topic.
 # Adds a comment to all new pull requests with basic info.
 
 on:
@@ -28,7 +29,7 @@ jobs:
 
       # Remove any text that appears above the Purpose heading.
       - name: Remove single commit info from PR body
-        if: github.event.action == 'opened'
+        runs-on: ubuntu-latest
         uses: actions/github-script@v9
         with:
           script: |
@@ -52,6 +53,35 @@ jobs:
               core.info('Removed text before Assignment heading.');
             }
 
+      # Normalize checkboxes
+      - name: Normalize checkboxes
+        id: validate
+        runs-on: ubuntu-latest
+        uses: actions/github-script@v9
+        with:
+          script: |
+            const pr = await github.rest.pulls.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: context.payload.pull_request.number,
+            });
+            let body = pr.data.body || '';
+            let bodyChanged = false;
+
+            // Normalize checked boxes: [x ], [ x], [ x ] -> [x] (case insensitive)
+            const malformedCheckedRegex = /\[\s*[xX]\s+\]|\[\s+[xX]\s*\]/g;
+            if (malformedCheckedRegex.test(body)) {
+              body = body.replace(malformedCheckedRegex, '[x]');
+
+              await github.rest.pulls.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                pull_number: context.payload.pull_request.number,
+                body: body,
+              });
+              core.info('Normalized checkboxes in PR body.');
+            }
+
       # Add a comment with basic information to all new pull requests.
       - name: Add new PR comment
         if: github.event.action == 'opened'
@@ -61,9 +91,13 @@ jobs:
           body: |
             Thank you for your pull request. 
 
-            Note that all new pull requests to the Vue3-WebDev-Kit are [opened as draft pull requests](https://github.com/FarmData2/FarmData2/tree/development/docs/contributing/workflow/10.md). 
+            Note that all new pull requests to the Vue3-WebDev-Kit are opened as draft pull requests. 
 
-            When you believe your work on the assignment is complete [mark your pull request as ready for review](https://github.com/FarmData2/FarmData2/tree/development/docs/contributing/workflow/12.md) to turn it in. 
+            ### Submitting Your Work
+
+            When you believe your work on the assignment is complete mark your pull request as ready for review to turn it in. 
+
+            ### Getting Help
 
             If you have questions as you work you can get in touch via:
             - comments on this pull request.

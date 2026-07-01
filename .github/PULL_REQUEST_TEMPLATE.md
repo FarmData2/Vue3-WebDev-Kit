@@ -1,13 +1,13 @@
 ### Type of Work
 
-> &#9432; _Place an X in the appropriate [ ] to indicate whether this pull request is for a tutorial or an extension._
+> &#9432; _Check the box beside the Type of Work to indicate whether this pull request is for a tutorial or an extension. If editing, place an X in the [ ] (e.g. [X] to check it._
 
 - [ ] - Tutorial
 - [ ] - Extension
 
 ### Topic
 
-> &#9432; _Check the box beside the topic to which this pull request applies._
+> &#9432; _Check the box beside the topic to which course topic this pull request applies. If editing, place an X in the [ ] (e.g. [X] to check it._
 
 - [ ] - HTML and CSS
 - [ ] - Vue 1
