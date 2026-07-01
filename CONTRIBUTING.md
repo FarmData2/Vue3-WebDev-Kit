@@ -264,11 +264,11 @@ Use the following steps when working through a tutorial.
 
 When you want to pause your work you should:
 
-1. [Stage and commit](#stage-and-commit) any changes to your feature branch.
+1. &#9655; [Stage and commit](#stage-and-commit) any changes to your feature branch.
 
 <p/>
 
-2. [Push your feature branch](#push-feature-branch) to your fork (i.e. your origin).
+2. &#9655; [Push your feature branch](#push-feature-branch) to your fork (i.e. your origin).
 
 <p/>
 
