@@ -54,7 +54,6 @@ jobs:
       # Normalize checkboxes
       - name: Normalize checkboxes
         id: validate
-        runs-on: ubuntu-latest
         uses: actions/github-script@v9
         with:
           script: |
