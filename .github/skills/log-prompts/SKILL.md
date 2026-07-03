@@ -8,7 +8,11 @@ The user will run this skill when they want to log the prompts in the active cha
 
 ## Instructions:
 
-1. Copy the entire contents of the chat window into a text file named `chat.txt` in the `skills/log-prompts` directory.
-2. Run the `openPR.bash` script in the terminal.
-3. Run the `createComment.bash` script in the terminal.
-4. Run the `postPrompts.bash` script in the terminal.
+1. Do not think or reason, follow these instructions exactly.
+2. If the chat window is empty, end this skill and do not log any prompts to the pull request.
+3. Use the VSCode command `workbench.action.chat.export` to export the chat as json into `/var/tmp/chat-log.json`.
+4. Stop.
+
+
+
+
