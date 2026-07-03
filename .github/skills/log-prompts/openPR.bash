@@ -73,7 +73,7 @@ fi
 TOPIC="${TOPIC_OPTIONS[$((TOPIC_CHOICE - 1))]}"
 
 # Check if the active branch has any commits
-COMMIT_COUNT=$(git rev-list --count HEAD 2>/dev/null || echo "0")
+COMMIT_COUNT=$(git rev-list --count main..$CURRENT_BRANCH 2>/dev/null || echo "0")
 
 if [ "$COMMIT_COUNT" -eq 0 ]; then
   # No commits on this branch, create an empty commit
