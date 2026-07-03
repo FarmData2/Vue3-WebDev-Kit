@@ -22,7 +22,7 @@ fi
 # No PR exists, prompt the user
 echo ""
 echo "No open pull request found for branch: $CURRENT_BRANCH"
-read -p "Do you want to create a pull request? (y/n) " -n 1 -r
+read -p "Do you want to create a pull request? (y/n) " -r
 echo ""
 
 if [[ ! $REPLY =~ ^[Yy]$ ]]; then
