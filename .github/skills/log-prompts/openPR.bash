@@ -1,5 +1,7 @@
 #!/bin/bash
 
+REPO_ROOT=$(git rev-parse --show-toplevel)
+
 # Get the current branch name
 CURRENT_BRANCH=$(git branch --show-current)
 
@@ -29,7 +31,7 @@ if [[ ! $REPLY =~ ^[Yy]$ ]]; then
 fi
 
 # Read PULL_REQUEST_TEMPLATE.md and extract options dynamically
-TEMPLATE_FILE="../../PULL_REQUEST_TEMPLATE.md"
+TEMPLATE_FILE="$REPO_ROOT/.github/PULL_REQUEST_TEMPLATE.md"
 
 if [ ! -f "$TEMPLATE_FILE" ]; then
   echo "Error: $TEMPLATE_FILE not found"
@@ -84,4 +86,8 @@ fi
 # Create the PR with a title that includes the Type of Work and Topic
 PR_TITLE="$TYPE_OF_WORK - $TOPIC"
 
-gh pr create --base main --head "$CURRENT_BRANCH" --title "$PR_TITLE" --body "" --draft
+# Read the PULL_REQUEST_TEMPLATE and check the selected Type of Work and Topic
+PR_BODY=$(cat "$TEMPLATE_FILE" | sed "s/- \[ \] - $TYPE_OF_WORK/- [X] - $TYPE_OF_WORK/" | sed "s/- \[ \] - $TOPIC/- [X] - $TOPIC/")
+
+git push upstream "$CURRENT_BRANCH"
+gh pr create --base main --head "$CURRENT_BRANCH" --title "$PR_TITLE" --body "$PR_BODY"
