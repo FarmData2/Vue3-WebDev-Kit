@@ -8,7 +8,7 @@ pnpm-debug.log*
 lerna-debug.log*
 
 **/chat.json
-**/processed_chat.txt
+**/processed-chat.txt
 
 node_modules
 flashword/dist

@@ -10,6 +10,9 @@
       "vncPort": "5901"
     }
   },
+  "remoteEnv": {
+    "PATH": "${containerEnv:PATH}:/workspaces/Vue3-WebDev-Kit/bin"
+  },
   "portsAttributes": {
     "8000": {
       "label": "http",
@@ -19,10 +22,6 @@
     "6901": {
       "label": "noVNC",
       "protocol": "http",
-      "onAutoForward": "silent"
-    },
-    "3000": {
-      "label": "VSCodeCommandServer",
       "onAutoForward": "silent"
     }
   },
