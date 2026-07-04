@@ -7,7 +7,8 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-.github/skills/log-prompts/chat*.txt
+**/chat.json
+**/processed_chat.txt
 
 node_modules
 flashword/dist

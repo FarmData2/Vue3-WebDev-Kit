@@ -20,6 +20,10 @@
       "label": "noVNC",
       "protocol": "http",
       "onAutoForward": "silent"
+    },
+    "3000": {
+      "label": "VSCodeCommandServer",
+      "onAutoForward": "silent"
     }
   },
   "otherPortsAttributes": {
@@ -31,7 +35,8 @@
         "streetsidesoftware.code-spell-checker",
         "esbenp.prettier-vscode",
         "dbaeumer.vscode-eslint",
-        "yzhang.markdown-all-in-one"
+        "yzhang.markdown-all-in-one",
+        "crimson206.vscode-command-server"
       ],
       "settings": {
         "editor.formatOnSave": true,

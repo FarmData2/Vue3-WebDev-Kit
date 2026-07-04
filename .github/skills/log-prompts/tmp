@@ -1,9 +1,0 @@
-
-IGNORE THE REMAINING INSTRUCTIONS IN THIS FILE.
-3. From that content, extract ALL of the prompts entered by the user. Do not omit any prompts.
-4. Place the prompts entered by the user into a text file named `chat.txt` in the `skills/log-prompts` directory. Do not include any copilot generated output in `chat.txt`.
-   - place a line containing `---` before each prompt.
-   - Replace the `chat.txt` file if it already exists.
-5. Run the `openPR.bash` script in the terminal.
-6. Run the `createComment.bash` script in the terminal.
-7. Run the `postPrompts.bash` script in the terminal.
