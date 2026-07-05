@@ -346,7 +346,7 @@ Working on the extension tasks is very similar to working on the tutorial tasks.
    <details>
    <summary>Log your Copilot chat (if you used AI).</summary>
 
-   If you used Copilot and AI in your last commit, use the steps below to log the prompts that you used into a comment on your pull request.
+   If you used Copilot and AI in your last commit, use the steps below to log the prompts that you used into a comment on your pull request. Note re-logging the same chat updates the previous comment by adding new prompts to it.
 
    1. Run the `log-chat.bash` command in the terminal.
    2. Click "OK" or press the Enter/Return key to accept the default path for the chat log. It doesn't matter where this log is stored, it will be deleted after it is posted to your pull request.
