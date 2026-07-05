@@ -217,7 +217,7 @@ Use the following steps when working through a tutorial.
 
    </details>
 
-   <p/>
+<p/>
 
 2. <a id="request-pr-review"></a>
    <details>
@@ -231,7 +231,7 @@ Use the following steps when working through a tutorial.
    4. Pick the model to be used from the popup in the bottom left of the "Add a comment" box.
    5. Click the "Start new session" button.
    6. Copilot will to respond in a comment on your pull request.
-
+   &nbsp;
    </details>
 
 <p/>
