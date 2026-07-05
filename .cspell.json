@@ -4,6 +4,7 @@
   "files": [
     "**/*.{js,vue,md,html,css,bash}",
     ".github/**/*.md",
+    ".github/skills/**/*.bash",
     ".devcontainer/**/*.bash"
   ],
   "ignorePaths": [
@@ -28,6 +29,7 @@
     "prettier",
     "setsid",
     "streetsidesoftware",
+    "toplevel",
     "vite",
     "vitejs",
     "vuejs",

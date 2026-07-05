@@ -10,6 +10,9 @@
       "vncPort": "5901"
     }
   },
+  "remoteEnv": {
+    "PATH": "${containerEnv:PATH}:/workspaces/Vue3-WebDev-Kit/bin"
+  },
   "portsAttributes": {
     "8000": {
       "label": "http",
@@ -31,7 +34,8 @@
         "streetsidesoftware.code-spell-checker",
         "esbenp.prettier-vscode",
         "dbaeumer.vscode-eslint",
-        "yzhang.markdown-all-in-one"
+        "yzhang.markdown-all-in-one",
+        "crimson206.vscode-command-server"
       ],
       "settings": {
         "editor.formatOnSave": true,

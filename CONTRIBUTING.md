@@ -110,7 +110,7 @@ Use the following steps when working through a tutorial.
 <p/>
 
 2. <details>
-   <summary>Watch the tutorial step-by-step and build the artifact.</summary>
+   <summary>Follow the tutorial step-by-step and build the artifact.</summary>
 
    For video tutorials, pause and rewind the video as frequently as necessary for you to follow along and add the code that is shown to your project.
 
@@ -138,7 +138,7 @@ Use the following steps when working through a tutorial.
 
    5. Navigate to the page that you want to view in the directory structure (e.g. for tutorial 01 click `web-projects` and then `first-website`).
 
-   6. Once your page is open in a browser tab, reloading the page will display the effect of any changes you make.
+   6. Use the reload button in the browser to update your page when you have made changes.
 
    </details>
 
@@ -217,7 +217,7 @@ Use the following steps when working through a tutorial.
 
    </details>
 
-   <p/>
+<p/>
 
 2. <a id="request-pr-review"></a>
    <details>
@@ -231,7 +231,7 @@ Use the following steps when working through a tutorial.
    4. Pick the model to be used from the popup in the bottom left of the "Add a comment" box.
    5. Click the "Start new session" button.
    6. Copilot will to respond in a comment on your pull request.
-
+   &nbsp;
    </details>
 
 <p/>
@@ -342,7 +342,21 @@ Working on the extension tasks is very similar to working on the tutorial tasks.
 
 <p/>
 
-5. &#9655; [Push your feature branch](#push-feature-branch) to GitHub.
+5. <a id="log-copilot-chat"></a>
+   <details>
+   <summary>Log your Copilot chat (if you used AI).</summary>
+
+   If you used Copilot and AI in your last commit, use the steps below to log the prompts that you used into a comment on your pull request. Note re-logging the same chat updates the previous comment by adding new prompts to it.
+
+   1. Run the `log-chat.bash` command in the terminal.
+   2. Click "OK" or press the Enter/Return key to accept the default path for the chat log. It doesn't matter where this log is stored, it will be deleted after it is posted to your pull request.
+      ![The chat log path dialog with the "OK" button.](./docs/images/chat-log-path.png)
+   3. Review the output in the terminal and visit you PR on GitHub to ensure that your chat log has been posted to a comment.
+   </details>
+
+<p/>
+
+6. &#9655; [Push your feature branch](#push-feature-branch) to GitHub.
 
 ### Completing an Extension
 

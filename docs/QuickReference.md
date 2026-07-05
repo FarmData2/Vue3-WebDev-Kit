@@ -2,15 +2,18 @@
 
 ## Workflow Steps
 
-The following are the main activities that you will need to do when working on this kit. Each links takes you to the appropriate section of the `CONTRIBUTING.md`] file.
+The following are the main activities that you will need to do when working on this kit. Each links takes you to the appropriate section of the [`CONTRIBUTING.md`] file or other sources as appropriate.
 
 - [Starting a Tutorial](../CONTRIBUTING.md#starting-a-tutorial)
 - [Working on Tutorial Tasks](../CONTRIBUTING.md#working-on-tutorial-tasks)
+  - [Coauthor Attribution Generator](https://coauthors.me/generator)
 - [Completing a Tutorial](../CONTRIBUTING.md#completing-a-tutorial)
 - [Pausing your Work](../CONTRIBUTING.md#pausing-your-work)
 - [Resuming your Work](../CONTRIBUTING.md#resuming-your-work)
 - [Starting an Extension](../CONTRIBUTING.md#starting-an-extension)
 - [Working on Extension Tasks](../CONTRIBUTING.md#working-on-extension-tasks)
+  - [Including AI Attributions](./AttributionTrailers.md)
+  - [Logging Copilot Chats](../CONTRIBUTING.md#log-copilot-chat)
 - [Completing an Extension](../CONTRIBUTING.md#completing-an-extension)
 
 ## Keyboard Shortcuts
@@ -33,10 +36,12 @@ The following are the main activities that you will need to do when working on t
 
 ### Browser
 
-| Windows/Linux           | MacOS                     | Action                     |
-| ----------------------- | ------------------------- | -------------------------- |
-| `F12`                   | `F12`                     | Toggle the Developer Tools |
-| `Ctrl + Shift + Delete` | &#8984;`+ Shift + Delete` | Clear browsing history.    |
+| Windows/Linux           | MacOS                     | Action                      |
+| ----------------------- | ------------------------- | --------------------------- |
+| `Ctrl + R`              | &#8984;`+ R`              | Standard refresh            |
+| `Ctrl + Shift + R`      | &#8984;`+ Shift + R`      | Hard refresh (bypass cache) |
+| `F12`                   | `F12`                     | Toggle the Developer Tools  |
+| `Ctrl + Shift + Delete` | &#8984;`+ Shift + Delete` | Clear browsing history      |
 
 ## Git Commands
 
@@ -55,5 +60,3 @@ The following are the main activities that you will need to do when working on t
 | `git push origin <branch_name>`                                       | Push the branch named `<branch_name>` to your GitHub space.     |
 
 ## Miscellaneous
-
-- [Coauthors Generator](https://coauthors.me/generator)
