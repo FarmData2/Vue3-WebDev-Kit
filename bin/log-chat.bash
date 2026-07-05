@@ -1,7 +1,7 @@
 #!/bin/bash
 
 REPO_ROOT=$(git rev-parse --show-toplevel)
-cd "$REPO_ROOT/bin/log-prompts" || exit 1
+cd "$REPO_ROOT/bin/log-chat" || exit 1
 
 ./openPR.bash && \
 ./cleanUp.bash && \
