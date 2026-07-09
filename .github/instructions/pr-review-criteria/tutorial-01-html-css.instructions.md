@@ -1,11 +1,11 @@
 ---
 applyTo: 'web-projects/first-website/index.html, web-projects/first-website/styles/style.css'
-description: 'Review criteria for Tutorial 01 - HTML and CSS'
+description: 'Review criteria for Tutorial 01 - HTML/CSS/JS'
 ---
 
 - Read the pull request body.
-- If the "Type of Work" is Tutorial and the "Topic" is "HTML and CSS" then apply the criterion below for this review. Otherwise do not apply this criteria in your review.
-- Review web-projects/first-website/index.html checking for the following requirements:
+- If the "Type of Work" is Tutorial and the "Topic" is "HTML/CSS/JS" then apply the criterion below for this review. Otherwise do not apply this criteria in your review.
+- Review web-projects/first-website/index.html checking for the following content:
   - a descriptive title in the head.
   - an h1 element with the same or very similar title.
   - the styles/style.css file is linked in the head.

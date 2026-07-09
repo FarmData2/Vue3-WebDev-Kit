@@ -9,7 +9,7 @@
 
 > &#9432; _Check the box beside the topic to which course topic this pull request applies. If editing, place an X in the [ ] (e.g. [X] to check it._
 
-- [ ] - HTML and CSS
+- [ ] - HTML/CSS/JS
 - [ ] - Vue 1
 - [ ] - Vue 2
 - [ ] - Vue 3
