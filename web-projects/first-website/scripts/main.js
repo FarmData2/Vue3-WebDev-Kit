@@ -8,3 +8,23 @@ myImage.addEventListener('click', () => {
     myImage.setAttribute('src', 'images/fd2-logo.png')
   }
 })
+
+let myButton = document.querySelector('button')
+let myHeading = document.querySelector('h1')
+
+function setUserName() {
+  const myName = prompt('Please enter your name.')
+  localStorage.setItem('name', myName)
+  myHeading.textContent = `FarmData2 is cool, ${myName}`
+}
+
+if (!localStorage.getItem('name')) {
+  setUserName()
+} else {
+  const storedName = localStorage.getItem('name')
+  myHeading.textContent = `FarmData2 is cool, ${storedName}`
+}
+
+myButton.addEventListener('click', () => {
+  setUserName()
+})
