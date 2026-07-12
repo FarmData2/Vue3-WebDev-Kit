@@ -25,13 +25,17 @@
       .incorrect {
         color: red;
       }
+
+      [v-cloak] {
+        display: none;
+      }
     </style>
   </head>
 
   <body>
     <h1>FlashWord</h1>
 
-    <div id="app">
+    <div id="app" v-cloak>
       What is the English translation of the word <strong>{{ wordA }}</strong>?
 
       <input type="text" v-model="answer" />
