@@ -33,6 +33,10 @@
 
     <div id="app">
       What is the English translation of the word <strong>{{ wordA }}</strong>?
+
+      <input type="text" v-model="answer" />
+
+      <p v-if="answer != ''">You answered: {{ answer }}</p>
     </div>
   </body>
 </html>

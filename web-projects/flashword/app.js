@@ -3,6 +3,8 @@ const Flashword = {
     return {
       wordA: 'hola',
       wordB: 'hello',
+      answer: '',
+      correct: null,
     }
   },
 }
