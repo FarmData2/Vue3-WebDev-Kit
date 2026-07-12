@@ -37,6 +37,11 @@
       <input type="text" v-model="answer" />
 
       <p v-if="answer != ''">You answered: {{ answer }}</p>
+
+      <button v-on:click="correct = wordB == answer">Check answer</button>
+
+      <p v-if="correct">You got it!</p>
+      <p v-else-if="correct !== null">Sorry, please try again.</p>
     </div>
   </body>
 </html>
