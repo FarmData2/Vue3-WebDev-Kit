@@ -38,13 +38,11 @@
 
       <p v-if="answer != ''">You answered: {{ answer }}</p>
 
-      <button v-on:click="correct = wordB == answer; showFeedback=true">
-        Check answer
-      </button>
+      <button v-on:click="checkAnswer()">Check answer</button>
 
       <div v-if="showFeedback">
-        <p v-if="correct">You got it!</p>
-        <p v-else>Sorry, please try again.</p>
+        <p v-if="correct" class="correct">You got it!</p>
+        <p v-else class="incorrect">Sorry, please try again.</p>
       </div>
     </div>
   </body>
