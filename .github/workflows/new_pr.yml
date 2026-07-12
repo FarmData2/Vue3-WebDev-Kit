@@ -3,7 +3,6 @@ description: 'Handles new pull requests.'
 
 # Ensures that all new pull requests are marked as draft.
 # Removes commit message from above Assignment if PR was created on branch with one commit.
-# Validates that exactly one checkbox is selected in Type of Work and Topic.
 # Adds a comment to all new pull requests with basic info.
 
 on:
@@ -29,7 +28,6 @@ jobs:
 
       # Remove any text that appears above the Purpose heading.
       - name: Remove single commit info from PR body
-        runs-on: ubuntu-latest
         uses: actions/github-script@v9
         with:
           script: |
@@ -56,7 +54,6 @@ jobs:
       # Normalize checkboxes
       - name: Normalize checkboxes
         id: validate
-        runs-on: ubuntu-latest
         uses: actions/github-script@v9
         with:
           script: |
