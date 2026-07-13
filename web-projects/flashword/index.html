@@ -29,6 +29,10 @@
       [v-cloak] {
         display: none;
       }
+
+      .error {
+        background-color: lightpink;
+      }
     </style>
   </head>
 
@@ -38,7 +42,14 @@
     <div id="app" v-cloak>
       What is the English translation of the word <strong>{{ wordA }}</strong>?
 
-      <input type="text" v-model="answer" v-on:keyup.enter="checkAnswer()" />
+      <input
+        type="text"
+        v-model="answer"
+        v-on:keyup.enter="checkAnswer()"
+        v-bind:class="{error : hasError}"
+      />
+
+      <p v-if="hasError">You must enter an answer.</p>
 
       <p v-if="answer != ''">You answered: {{ answer }}</p>
 
