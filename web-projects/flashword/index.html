@@ -66,6 +66,35 @@
         <p v-else class="incorrect">Sorry, please try again.</p>
         <button v-on:click="reset()">Reset</button>
       </template>
+
+      <h2>Difficulty level radios:</h2>
+      <input type="radio" id="easy" value="easy" name="level" v-model="level" />
+      <label for="easy">Easy</label>
+
+      <input
+        type="radio"
+        id="moderate"
+        value="moderate"
+        name="level"
+        v-model="level"
+      />
+      <label for="moderate">Moderate</label>
+
+      <input
+        type="radio"
+        id="difficult"
+        value="difficult"
+        name="level"
+        v-model="level"
+      />
+      <label for="difficult">Difficult</label>
+
+      <h2>Difficulty level select dropdown:</h2>
+      <select v-model="level">
+        <option value="easy">Easy</option>
+        <option value="moderate">Moderate</option>
+        <option value="difficult">Difficult</option>
+      </select>
     </div>
   </body>
 </html>
