@@ -49,6 +49,38 @@
         <p v-else class="incorrect">Sorry, please try again.</p>
         <button v-on:click="reset()">Reset</button>
       </template>
+
+      <h2>Array example</h2>
+      <p v-for="spanishWord, index in spanishWords">
+        <template v-if="spanishWord.length > 3">
+          {{ index }} {{ spanishWord }}
+        </template>
+      </p>
+
+      <h2>Object example</h2>
+      <ul>
+        <li v-for="thisWord, key, index in word">
+          {{ index }} {{ key }}: {{ thisWord }}
+        </li>
+      </ul>
+
+      <h2>Array of objects example</h2>
+      <ul>
+        <li v-for="wordObject, index in words">
+          {{ index }} The English translation of {{ wordObject.wordA }} is {{
+          wordObject.wordB }}
+        </li>
+      </ul>
+
+      <h2>Number example</h2>
+      <ul>
+        <li v-for="number in 10">{{ number }}</li>
+      </ul>
+
+      <h2>String example</h2>
+      <ul>
+        <li v-for="character in 'hello world'">{{ character }}</li>
+      </ul>
     </div>
   </body>
 </html>
