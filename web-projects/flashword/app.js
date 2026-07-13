@@ -23,7 +23,9 @@ const Flashword = {
     }
   },
   methods: {
-    checkAnswer() {
+    checkAnswer(event) {
+      console.log(event)
+
       this.correct = this.wordB == this.answer
       this.showFeedback = true
     },
