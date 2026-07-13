@@ -38,11 +38,11 @@
     <div id="app" v-cloak>
       What is the English translation of the word <strong>{{ wordA }}</strong>?
 
-      <input type="text" v-model="answer" />
+      <input type="text" v-model="answer" v-on:keyup.enter="checkAnswer()" />
 
       <p v-if="answer != ''">You answered: {{ answer }}</p>
 
-      <button v-on:click="checkAnswer($event)">Check answer</button>
+      <button v-on:click="checkAnswer()">Check answer</button>
 
       <template v-if="showFeedback">
         <p v-if="correct" class="correct">You got it!</p>
