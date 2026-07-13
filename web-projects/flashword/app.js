@@ -12,6 +12,7 @@ const Flashword = {
       inputBackgroundColor: 'white',
       showHint: false,
       level: 'easy',
+      sentence: '',
 
       // Array example
       spanishWords: ['hola', 'adios', 'uno', 'dos'],
