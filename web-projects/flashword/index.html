@@ -46,6 +46,11 @@
         v-bind:class="{error : hasError}"
       />
 
+      <input type="checkbox" id="showHint" v-model="showHint" />
+      <label for="showHint">Show hint?</label>
+
+      <div v-if="showHint">A hint would appear here.</div>
+
       <p v-if="hasError">You must enter an answer.</p>
 
       <p v-if="answer != ''">You answered: {{ answer }}</p>

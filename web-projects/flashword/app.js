@@ -10,6 +10,7 @@ const Flashword = {
       imageAlt: null,
       hasError: false,
       inputBackgroundColor: 'white',
+      showHint: false,
 
       // Array example
       spanishWords: ['hola', 'adios', 'uno', 'dos'],
