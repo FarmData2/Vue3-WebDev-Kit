@@ -45,6 +45,7 @@
       <button v-on:click="checkAnswer()">Check answer</button>
 
       <template v-if="showFeedback">
+        <img v-bind:src="image" />
         <p v-if="correct" class="correct">You got it!</p>
         <p v-else class="incorrect">Sorry, please try again.</p>
         <button v-on:click="reset()">Reset</button>

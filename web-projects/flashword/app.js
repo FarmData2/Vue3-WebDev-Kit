@@ -6,6 +6,7 @@ const Flashword = {
       answer: '',
       correct: null,
       showFeedback: false,
+      image: null,
 
       // Array example
       spanishWords: ['hola', 'adios', 'uno', 'dos'],
@@ -25,6 +26,15 @@ const Flashword = {
   methods: {
     checkAnswer() {
       this.correct = this.wordB == this.answer
+
+      if (this.correct) {
+        this.image =
+          'https://s3.amazonaws.com/codewithsusan/circle-correct@2x.png'
+      } else {
+        this.image =
+          'https://s3.amazonaws.com/codewithsusan/circle-incorrect@2x.png'
+      }
+
       this.showFeedback = true
     },
     reset() {
