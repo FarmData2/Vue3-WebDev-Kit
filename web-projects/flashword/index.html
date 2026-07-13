@@ -29,10 +29,6 @@
       [v-cloak] {
         display: none;
       }
-
-      .error {
-        background-color: lightpink;
-      }
     </style>
   </head>
 
@@ -46,6 +42,7 @@
         type="text"
         v-model="answer"
         v-on:keyup.enter="checkAnswer()"
+        v-bind:style="{'background-color' : inputBackgroundColor}"
         v-bind:class="{error : hasError}"
       />
 
