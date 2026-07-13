@@ -45,7 +45,10 @@
       <button v-on:click="checkAnswer()">Check answer</button>
 
       <template v-if="showFeedback">
-        <img v-bind:src="image" />
+        <img
+          v-bind:alt="imageAlt"
+          v-bind:src='"https://s3.amazonaws.com/codewithsusan/circle-" + image + "@2x.png"'
+        />
         <p v-if="correct" class="correct">You got it!</p>
         <p v-else class="incorrect">Sorry, please try again.</p>
         <button v-on:click="reset()">Reset</button>
