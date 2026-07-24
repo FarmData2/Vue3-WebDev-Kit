@@ -35,6 +35,9 @@ const Flashword = {
     fullName() {
       return this.firstName + ' ' + this.lastName
     },
+    shortSpanishWords() {
+      return this.spanishWords.filter((word) => word.length <= 3)
+    },
   },
   methods: {
     getFullName() {
