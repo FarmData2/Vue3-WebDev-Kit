@@ -6,111 +6,12 @@
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js" defer></script>
     <script src="app.js" defer></script>
-
-    <style>
-      label {
-        display: block;
-      }
-
-      input,
-      button {
-        display: block;
-        margin: 10px 0px;
-      }
-
-      .correct {
-        color: green;
-      }
-
-      .incorrect {
-        color: red;
-      }
-
-      [v-cloak] {
-        display: none;
-      }
-    </style>
+    <link href="styles.css" rel="stylesheet" />
   </head>
 
   <body>
-    <h1>FlashWord</h1>
-
     <div id="app" v-cloak>
-      What is the English translation of the word <strong>{{ wordA }}</strong>?
-
-      <input
-        type="text"
-        v-model="answer"
-        v-on:keyup.enter="checkAnswer()"
-        v-bind:style="{'background-color' : inputBackgroundColor}"
-        v-bind:class="{error : hasError}"
-      />
-
-      <input type="checkbox" id="showHint" v-model="showHint" />
-      <label for="showHint">Show hint?</label>
-
-      <div v-if="showHint">A hint would appear here.</div>
-
-      <p v-if="hasError">You must enter an answer.</p>
-
-      <p v-if="answer != ''">You answered: {{ answer }}</p>
-
-      <button v-on:click="checkAnswer()">Check answer</button>
-
-      <template v-if="showFeedback">
-        <img
-          v-bind:alt="imageAlt"
-          v-bind:src='"https://s3.amazonaws.com/codewithsusan/circle-" + image + "@2x.png"'
-        />
-        <p v-if="correct" class="correct">You got it!</p>
-        <p v-else class="incorrect">Sorry, please try again.</p>
-        <button v-on:click="reset()">Reset</button>
-      </template>
-
-      <h2>Difficulty level radios:</h2>
-      <input type="radio" id="easy" value="easy" name="level" v-model="level" />
-      <label for="easy">Easy</label>
-
-      <input
-        type="radio"
-        id="moderate"
-        value="moderate"
-        name="level"
-        v-model="level"
-      />
-      <label for="moderate">Moderate</label>
-
-      <input
-        type="radio"
-        id="difficult"
-        value="difficult"
-        name="level"
-        v-model="level"
-      />
-      <label for="difficult">Difficult</label>
-
-      <h2>Difficulty level select dropdown:</h2>
-      <select v-model="level">
-        <option value="easy">Easy</option>
-        <option value="moderate">Moderate</option>
-        <option value="difficult">Difficult</option>
-      </select>
-
-      <h2>Use the word in a sentence</h2>
-      <textarea v-model="sentence"></textarea>
-
-      <p>{{ sentence }}</p>
-
-      <p>First name: <input type="text" v-model="firstName" /></p>
-      <p>Last name: <input type="text" v-model="lastName" /></p>
-
-      <p>Hello {{ fullName }}</p>
-      <p>Hello {{ getFullName() }}</p>
-      <p>Hello {{ firstNameAndLastName }}</p>
-
-      <ul>
-        <li v-for="word in shortSpanishWords">{{ word }}</li>
-      </ul>
+      <h1>FlashWord</h1>
     </div>
   </body>
 </html>
