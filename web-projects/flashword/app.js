@@ -15,6 +15,7 @@ const Flashword = {
       sentence: '',
       lastName: '',
       firstName: '',
+      firstNameAndLastName: '',
 
       // Array example
       spanishWords: ['hola', 'adios', 'uno', 'dos'],
@@ -37,6 +38,14 @@ const Flashword = {
     },
     shortSpanishWords() {
       return this.spanishWords.filter((word) => word.length <= 3)
+    },
+  },
+  watch: {
+    firstName() {
+      this.firstNameAndLastName = this.firstName + ' ' + this.lastName
+    },
+    lastName() {
+      this.firstNameAndLastName = this.firstName + ' ' + this.lastName
     },
   },
   methods: {
