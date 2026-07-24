@@ -37,6 +37,9 @@ const Flashword = {
     },
   },
   methods: {
+    getFullName() {
+      return this.firstName + ' ' + this.lastName
+    },
     checkAnswer() {
       if (this.answer == '') {
         this.hasError = true
