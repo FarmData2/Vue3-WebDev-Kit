@@ -13,6 +13,8 @@ const Flashword = {
       showHint: false,
       level: 'easy',
       sentence: '',
+      lastName: '',
+      firstName: '',
 
       // Array example
       spanishWords: ['hola', 'adios', 'uno', 'dos'],
@@ -28,6 +30,11 @@ const Flashword = {
         { wordA: 'dos', wordB: 'two' },
       ],
     }
+  },
+  computed: {
+    fullName() {
+      return this.firstName + ' ' + this.lastName
+    },
   },
   methods: {
     checkAnswer() {

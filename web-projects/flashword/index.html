@@ -99,7 +99,11 @@
       <h2>Use the word in a sentence</h2>
       <textarea v-model="sentence"></textarea>
 
-      {{ sentence }}
+      {{ sentence }} First name: <input type="text" v-model="firstName" /> Last
+      name:
+      <input type="text" v-model="lastName" />
+
+      <p>Hello {{ fullName }}</p>
     </div>
   </body>
 </html>
