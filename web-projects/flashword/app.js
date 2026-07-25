@@ -25,6 +25,7 @@ const Flashword = {
         },
       ],
       correctCount: 0,
+      completed: false,
     }
   },
   computed: {
@@ -35,7 +36,11 @@ const Flashword = {
       return this.words.length
     },
   },
-  watch: {},
+  watch: {
+    correctCount() {
+      this.completed = this.correctCount == this.wordCount
+    },
+  },
   methods: {
     checkAnswer(word) {
       word.correct = word.word_b == word.answer
