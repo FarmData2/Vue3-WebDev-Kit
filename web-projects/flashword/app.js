@@ -24,17 +24,25 @@ const Flashword = {
           correct: false,
         },
       ],
+      correctCount: 0,
     }
   },
   computed: {
     shuffledWords() {
       return this.words.sort(() => 0.5 - Math.random())
     },
+    wordCount() {
+      return this.words.length
+    },
   },
   watch: {},
   methods: {
     checkAnswer(word) {
       word.correct = word.word_b == word.answer
+
+      if (word.correct) {
+        this.correctCount++
+      }
     },
   },
 }
