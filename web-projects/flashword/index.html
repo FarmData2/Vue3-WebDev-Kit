@@ -14,7 +14,20 @@
       <h1>FlashWord</h1>
 
       <div id="cards">
-        <div class="card" v-for="word in shuffledWords">{{ word.word_a }}</div>
+        <div
+          class="card"
+          v-for="word in shuffledWords"
+          v-bind:class="{correct: word.correct}"
+        >
+          <p class="word">{{ word.word_a }}</p>
+          <input
+            type="text"
+            v-if="!word.correct"
+            v-model="word.answer"
+            v-on:keyup.enter="checkAnswer(word)"
+          />
+          <p v-else class="correctAnswer">{{ word.answer }}</p>
+        </div>
       </div>
     </div>
   </body>

@@ -32,7 +32,11 @@ const Flashword = {
     },
   },
   watch: {},
-  methods: {},
+  methods: {
+    checkAnswer(word) {
+      word.correct = word.word_b == word.answer
+    },
+  },
 }
 
 // eslint-disable-next-line no-unused-vars, no-undef
