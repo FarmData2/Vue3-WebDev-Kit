@@ -12,6 +12,10 @@
   <body>
     <div id="app" v-cloak>
       <h1>FlashWord</h1>
+
+      <div id="cards">
+        <div class="card" v-for="word in shuffledWords">{{ word.word_a }}</div>
+      </div>
     </div>
   </body>
 </html>

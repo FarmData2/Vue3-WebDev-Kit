@@ -26,7 +26,11 @@ const Flashword = {
       ],
     }
   },
-  computed: {},
+  computed: {
+    shuffledWords() {
+      return this.words.sort(() => 0.5 - Math.random())
+    },
+  },
   watch: {},
   methods: {},
 }
