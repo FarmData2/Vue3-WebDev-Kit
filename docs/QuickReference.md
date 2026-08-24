@@ -4,17 +4,20 @@
 
 The following are the main activities that you will need to do when working on this kit. Each links takes you to the appropriate section of the [`CONTRIBUTING.md`] file or other sources as appropriate.
 
-- [Starting a Tutorial](../CONTRIBUTING.md#starting-a-tutorial)
-- [Working on Tutorial Tasks](../CONTRIBUTING.md#working-on-tutorial-tasks)
-  - [Coauthor Attribution Generator](https://coauthors.me/generator)
-- [Completing a Tutorial](../CONTRIBUTING.md#completing-a-tutorial)
+- Tutorials
+  - [Starting a Tutorial](../CONTRIBUTING.md#starting-a-tutorial)
+  - [Working on Tutorial Tasks](../CONTRIBUTING.md#working-on-tutorial-tasks)
+    - [Coauthor Attribution Generator](https://coauthors.me/generator)
+  - [Completing a Tutorial](../CONTRIBUTING.md#completing-a-tutorial)
+- Extensions
+  - [Starting an Extension](../CONTRIBUTING.md#starting-an-extension)
+  - [Working on Extension Tasks](../CONTRIBUTING.md#working-on-extension-tasks)
+    - [Including AI Attributions](./AttributionTrailers.md)
+    - [Logging Copilot Chats](../CONTRIBUTING.md#log-copilot-chat)
+  - [Completing an Extension](../CONTRIBUTING.md#completing-an-extension)
+- Stopping and Restarting
 - [Pausing your Work](../CONTRIBUTING.md#pausing-your-work)
 - [Resuming your Work](../CONTRIBUTING.md#resuming-your-work)
-- [Starting an Extension](../CONTRIBUTING.md#starting-an-extension)
-- [Working on Extension Tasks](../CONTRIBUTING.md#working-on-extension-tasks)
-  - [Including AI Attributions](./AttributionTrailers.md)
-  - [Logging Copilot Chats](../CONTRIBUTING.md#log-copilot-chat)
-- [Completing an Extension](../CONTRIBUTING.md#completing-an-extension)
 
 ## Keyboard Shortcuts
 
