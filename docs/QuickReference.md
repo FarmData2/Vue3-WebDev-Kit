@@ -16,8 +16,8 @@ The following are the main activities that you will need to do when working on t
     - [Logging Copilot Chats](../CONTRIBUTING.md#log-copilot-chat)
   - [Completing an Extension](../CONTRIBUTING.md#completing-an-extension)
 - Stopping and Restarting
-- [Pausing your Work](../CONTRIBUTING.md#pausing-your-work)
-- [Resuming your Work](../CONTRIBUTING.md#resuming-your-work)
+  - [Pausing your Work](../CONTRIBUTING.md#pausing-your-work)
+  - [Resuming your Work](../CONTRIBUTING.md#resuming-your-work)
 
 ## Keyboard Shortcuts
 
