@@ -23,6 +23,11 @@
       "label": "noVNC",
       "protocol": "http",
       "onAutoForward": "silent"
+    },
+    "5173-5180": {
+      "label": "Vite",
+      "protocol": "http",
+      "onAutoForward": "silent"
     }
   },
   "otherPortsAttributes": {
@@ -35,7 +40,8 @@
         "esbenp.prettier-vscode",
         "dbaeumer.vscode-eslint",
         "yzhang.markdown-all-in-one",
-        "crimson206.vscode-command-server"
+        "crimson206.vscode-command-server",
+        "vue.volar"
       ],
       "settings": {
         "editor.formatOnSave": true,
