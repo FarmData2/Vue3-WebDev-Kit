@@ -1,5 +1,6 @@
 ## Copilot Pull Request Reviews
 
+- Always read the files in the most recent commit in the pull request when performing a review.
 - When reviewing a pull request read the body of the pull request and identify the "Type of Work" and the "Topic".
 - If no "Type of Work" or "Topic" is checked in the task list or more than one "Type of Work" or more than one "Topic" is checked, leave a comment on the pull request asking the author to check exactly one "Type of Work" and exactly one "Topic" and do not perform a review.
 - Use the custom instructions file in the `.github/instructions/pr-review-criteria` directory that matches the "Type of Work" and "Topic" as the instructions for the review.
