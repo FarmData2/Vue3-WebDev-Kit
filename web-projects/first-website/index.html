@@ -25,9 +25,7 @@
       <a href="https://github.com/FarmData2/FarmData2">FarmData2</a> aims to
       extend farmOS by adding data input forms, reporting, and analytics that
       support the
-      <span class="blue-background"
-        >day-to-day operation of diversified vegetable farms</span
-      >, while also facilitating the keeping of records necessary for organic
+      <span class="blue-background">day-to-day operation of diversified vegetable farms</span>, while also facilitating the keeping of records necessary for organic
       certification and for the study of sustainable farming practices.
     </p>
 
@@ -73,24 +71,13 @@
 
   <p />
 
-  <fieldset>
-    <legend>Choose the foods you like:</legend>
-
-    <div>
-      <input type="checkbox" id="pizza" name="pizza" />
-      <label for="pizza">Pizza</label>
-    </div>
-
-    <div>
-      <input type="checkbox" id="pasta" name="pasta" />
-      <label for="pasta">Pasta</label>
-    </div>
-
-    <div>
-      <input type="checkbox" id="thai" name="thai" />
-      <label for="thai">Thai</label>
-    </div>
-  </fieldset>
+  <label for="food">Choose a food:</label>
+  <select id="food" name="food">
+    <option value="pizza">Pizza</option>
+    <option value="pasta">Pasta</option>
+    <option value="thai">Thai</option>
+    <option value="indian">Indian</option>
+  </select>
 
   <p />
 
