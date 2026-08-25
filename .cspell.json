@@ -9,7 +9,7 @@
   ],
   "ignorePaths": [
     "node_modules",
-    "flashword/dist",
+    "**/dist",
     "*.lock",
     "package-lock.json"
   ],

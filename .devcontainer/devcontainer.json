@@ -14,6 +14,9 @@
     "PATH": "${containerEnv:PATH}:/workspaces/Vue3-WebDev-Kit/bin"
   },
   "portsAttributes": {
+    "3000": {
+      "onAutoForward": "ignore"
+    },
     "8000": {
       "label": "http",
       "protocol": "http",
@@ -23,6 +26,14 @@
       "label": "noVNC",
       "protocol": "http",
       "onAutoForward": "silent"
+    },
+    "5173-5180": {
+      "label": "Vite",
+      "protocol": "http",
+      "onAutoForward": "silent"
+    },
+    "*": {
+      "onAutoForward": "ignore"
     }
   },
   "otherPortsAttributes": {
@@ -35,12 +46,15 @@
         "esbenp.prettier-vscode",
         "dbaeumer.vscode-eslint",
         "yzhang.markdown-all-in-one",
-        "crimson206.vscode-command-server"
+        "crimson206.vscode-command-server",
+        "vue.volar"
       ],
       "settings": {
         "editor.formatOnSave": true,
         "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "eslint.validate": ["javascript", "vue", "html", "markdown"]
+        "eslint.validate": ["javascript", "vue", "html", "markdown"],
+        "remote.autoForwardPorts": false,
+        "remote.autoForwardPortsSource": "output"
       }
     }
   },
