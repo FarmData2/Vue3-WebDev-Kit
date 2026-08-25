@@ -19,7 +19,10 @@ Installation of the Vue3-WebDev-Kit involves creating a fork of the upstream rep
 
 1. Open your fork of the upstream repository in your [GitHub space](https://github.com/).
 2. [Create a codespace](https://docs.github.com/en/codespaces/developing-in-a-codespace/creating-a-codespace-for-a-repository?tool=webui#creating-a-codespace-for-a-repository) from your fork.
-3. Wait for the codespace to be created.
+3. As the GitHub Codespace opens you will be asked several times to trust the repository you are opening. Trusting the codespace allows scripts from the repository to run on startup. Granting permission for these scripts to run is necessary to make the codespace fully functional.
+   - These scripts install dependencies, do some configuration, and check that the necessary services are running.
+   - If you would like to inspect the scripts prior to trusting them, they can be found in the [`.devcontainer` directory](https://github.com/FarmData2/Vue3-WebDev-Kit/tree/main/.devcontainer). Start with the `devcontainer.json` file and then inspect the scripts that it runs as its `postCreateCommand`, `postStartCommand` and `postAttachCommand`.
+4. Wait for the codespace to be created.
    - Creating a new codespace takes a few minutes.
    - The codespace has been fully created and is ready for use when you see the following output in the `TERMINAL` at the bottom of the browser window.
      ```text
@@ -27,4 +30,4 @@ Installation of the Vue3-WebDev-Kit involves creating a fork of the upstream rep
      The Vue3 WebDev Kit is now ready for use.
      *****************************************
      ```
-4. Return to the `README.md` file and continue on to the steps involving the `CONTRIBUTING.md` file.
+5. Return to the `README.md` file and continue on to the steps involving the `CONTRIBUTING.md` file.
