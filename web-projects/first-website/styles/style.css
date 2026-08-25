@@ -50,10 +50,10 @@ th {
   padding: 5px;
 }
 
-.even-row {
+.blue-background {
   background-color: rgb(0, 251, 255);
 }
 
-.odd-row {
+.yellow-background {
   background-color: rgb(238, 255, 0);
 }
