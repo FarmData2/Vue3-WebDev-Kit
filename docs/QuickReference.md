@@ -4,12 +4,12 @@
 
 The following are the main activities that you will need to do when working on this kit. Each links takes you to the appropriate section of the [`CONTRIBUTING.md`] file or other sources as appropriate.
 
-- Tutorials
+- Tutorials Workflow
   - [Starting a Tutorial](../CONTRIBUTING.md#starting-a-tutorial)
   - [Working on Tutorial Tasks](../CONTRIBUTING.md#working-on-tutorial-tasks)
     - [Coauthor Attribution Generator](https://coauthors.me/generator)
   - [Completing a Tutorial](../CONTRIBUTING.md#completing-a-tutorial)
-- Extensions
+- Extensions Workflow
   - [Starting an Extension](../CONTRIBUTING.md#starting-an-extension)
   - [Working on Extension Tasks](../CONTRIBUTING.md#working-on-extension-tasks)
     - [Including AI Attributions](./AttributionTrailers.md)
@@ -23,7 +23,7 @@ The following are the main activities that you will need to do when working on t
 
 ### Visual Studio Code IDE
 
-| Windows/Linux          | MacOS                | Action                     |
+| Windows/Linux          | Mac                  | Action                     |
 | ---------------------- | -------------------- | -------------------------- |
 | `Ctrl + c`             | &#8984;`+ c`         | Copy                       |
 | `Ctrl + v`             | &#8984;`+ v`         | Paste                      |
@@ -39,7 +39,7 @@ The following are the main activities that you will need to do when working on t
 
 ### Browser
 
-| Windows/Linux           | MacOS                     | Action                      |
+| Windows/Linux           | Mac                       | Action                      |
 | ----------------------- | ------------------------- | --------------------------- |
 | `Ctrl + R`              | &#8984;`+ R`              | Standard refresh            |
 | `Ctrl + Shift + R`      | &#8984;`+ Shift + R`      | Hard refresh (bypass cache) |
