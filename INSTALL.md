@@ -24,7 +24,7 @@ Installation of the Vue3-WebDev-Kit involves creating a fork of the upstream rep
    - If you would like to inspect the scripts prior to trusting them, they can be found in the [`.devcontainer` directory](https://github.com/FarmData2/Vue3-WebDev-Kit/tree/main/.devcontainer). Start with the `devcontainer.json` file and then inspect the scripts that it runs as its `postCreateCommand`, `postStartCommand` and `postAttachCommand`.
 4. You can safely dismiss any popups notifying you that the "VSCode Command Server started on port 3000".
    - The VSCode Command Server is used to facilitate the posting of AI Chat logs to pull request comments.
-   - You can hide these popups for the future by clicking no the settings icon in the popup (<img align="top" width="21" height="21" alt="Image" src="images/vscode-settings-icon.png" />) and choosing the "Turn off Info and Warning Notifications from "'VSCode Command Server'."
+   - You can hide these popups for the future by clicking no the settings icon in the popup (<img align="top" width="21" height="21" alt="Image" src="./docs/images/vscode-settings-icon.png" />) and choosing the "Turn off Info and Warning Notifications from "'VSCode Command Server'."
 5. Wait for the codespace to be created.
    - Creating a new codespace takes a few minutes.
    - The codespace has been fully created and is ready for use when you see the following output in the `TERMINAL` at the bottom of the browser window.
