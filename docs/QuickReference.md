@@ -71,3 +71,8 @@ The following are the main activities that you will need to do when working on t
 | `git commit -m "..." \`<br>`  --trailer "..."`                        | Commit with an [attribution trailer](./AttributionTrailers.md). |
 | `git commit --allow-empty \`<br>`  -m "..." \`<br>`  --trailer "..."` | Add a missing [attribution trailer](./AttributionTrailers.md).  |
 | `git push origin <branch_name>`                                       | Push the branch named `<branch_name>` to your GitHub space.     |
+
+## Miscellaneous
+
+- [Copilot Configuration](CopilotConfig.md)
+  - [Inline Completions](CopilotConfig.md#copilot-inline-completions)
