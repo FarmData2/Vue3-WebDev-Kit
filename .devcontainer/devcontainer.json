@@ -55,7 +55,8 @@
         "editor.formatOnSave": true,
         "editor.defaultFormatter": "esbenp.prettier-vscode",
         "eslint.validate": ["javascript", "vue", "html", "markdown"],
-        "remote.autoForwardPortsSource": "output",
+        "remote.autoForwardPorts": true,
+        "remote.autoForwardPortsSource": "process",
         "telemetry.editStats.enabled": false,
         "telemetry.feedback.enabled": false,
         "chat.checkpoints.showFileChanges": true,
@@ -65,7 +66,10 @@
           "*": false
         },
         "chat.disableAIFeatures": true,
-        "github.copilot.editor.enableAutoCompletions": false
+        "github.copilot.editor.enableAutoCompletions": false,
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "extensions.ignoreRecommendations": true,
+        "extensions.autoUpdate": false
       }
     }
   },
