@@ -8,6 +8,6 @@
 - Use only the criteria in the custom instructions when performing the review. Do not use any other criteria.
 - Generate the results of the review using one table for each level 2 heading in the custom instructions.
 - Prefix each table with the level 2 heading text from the custom instructions.
-- Include columns for "Requirement", "Status", and "Evidence" in each table.
+- Make the columns the same width in all of the tables so that they align properly.
 - Use the characters ✅ for "Status" if the requirement is met and ❌ if the requirement is not met.
 - Write the table of results into a comment on the pull request.
