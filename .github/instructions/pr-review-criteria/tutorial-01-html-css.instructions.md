@@ -24,6 +24,8 @@ description: 'Review criteria for Tutorial 01 - HTML/CSS/JS'
 
 ## Basic HTML Structure
 
+The `index.html` file contains the following elements:
+
 - a descriptive title in the head.
 - an h1 element with the same or very similar title.
 - the styles/style.css file is linked in the head.
@@ -35,14 +37,14 @@ description: 'Review criteria for Tutorial 01 - HTML/CSS/JS'
 
 ## CSS Styling
 
-- A rule with a type selector for `<h1>` elements.
-- A rule with a type selector for `<p>` elements.
-- A rule with a type selector for `<li>` elements.
-- A rule with a type selector for `<body>` elements.
-- A rule with a type selector for `<html>` elements.
+The `styles/style.css` file contains type selectors for `<h1>`, `<p>`, `<li>`, `<body>`, and `<html>` elements.
 
 ## JavaScript Functionality
 
--
+The `main.js` file contains:
+
+- assigns a click event listener to the image that toggles the displayed image between two images.
+- assigns a click event listener to the button calls the `setUsername` function.
+- contains code that runs on page load that checks if a username is stored in local storage and displays it in the `<h1>` element if it exists.
 
 - If you applied this criteria, skip all other path specific instructions.
