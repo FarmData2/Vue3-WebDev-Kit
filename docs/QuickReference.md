@@ -23,19 +23,29 @@ The following are the main activities that you will need to do when working on t
 
 ### Visual Studio Code IDE
 
-| Windows/Linux          | Mac                  | Action                     |
-| ---------------------- | -------------------- | -------------------------- |
-| `Ctrl + c`             | &#8984;`+ c`         | Copy                       |
-| `Ctrl + v`             | &#8984;`+ v`         | Paste                      |
-| `Ctrl + s`             | &#8984;`+ s`         | Save                       |
-| `Ctrl + Z`             | &#8984;`+ z`         | Undo                       |
-| `Ctrl + Y`             | &#8984;`+ Shift + Z` | Redo                       |
-| `Ctrl + f`             | &#8984;`+ f`         | Find                       |
-| `` Shift + Ctrl + ` `` | &#8984;`+ Shift + C` | Open a new terminal        |
-| `Shift + Alt + F`      | `Shift + Option + F` | Auto format text/code      |
-| `Alt + z`              | `Alt + z`            | Toggle word wrap in editor |
-| `Ctrl + /`             | &#8984;`+ /`         | Toggle comment             |
-| `Ctrl + b`             | &#8984;`+ b`         | Toggle EXPLORER side bar   |
+| Windows/Linux          | Mac                   | Action                     |
+| ---------------------- | --------------------- | -------------------------- |
+| `Ctrl + c`             | &#8984;`+ c`          | Copy                       |
+| `Ctrl + v`             | &#8984;`+ v`          | Paste                      |
+| `Ctrl + s`             | &#8984;`+ s`          | Save                       |
+| `Ctrl + Z`             | &#8984;`+ z`          | Undo                       |
+| `Ctrl + Y`             | &#8984;`+ Shift + Z`  | Redo                       |
+| `Ctrl + f`             | &#8984;`+ f`          | Find                       |
+| `` Shift + Ctrl + ` `` | &#8984;`+ Shift + C`  | Open a new terminal        |
+| `Shift + Alt + F`      | `Shift +`&#8997;`+ F` | Auto format text/code      |
+| `Alt + z`              | &#8997;`+ z`          | Toggle word wrap in editor |
+| `Ctrl + /`             | &#8984;`+ /`          | Toggle comment             |
+| `Ctrl + b`             | &#8984;`+ b`          | Toggle EXPLORER side bar   |
+
+### Copilot
+
+| Windows/Linux | Mac          | Action                        |
+| ------------- | ------------ | ----------------------------- |
+| `Alt + .`     | &#8997;`+ .` | Trigger inline suggestion     |
+| `Tab`         | `Tab`        | Accept inline suggestion      |
+| `Alt + ]`     | &#8997;`+ ]` | Next inline suggestion        |
+| `Alt + [`     | &#8997;`+ [` | Previous inline suggestion    |
+| `Alt + /`     | &#8997;`+ \` | Open Copilot Suggestions pane |
 
 ### Browser
 
@@ -61,5 +71,3 @@ The following are the main activities that you will need to do when working on t
 | `git commit -m "..." \`<br>`  --trailer "..."`                        | Commit with an [attribution trailer](./AttributionTrailers.md). |
 | `git commit --allow-empty \`<br>`  -m "..." \`<br>`  --trailer "..."` | Add a missing [attribution trailer](./AttributionTrailers.md).  |
 | `git push origin <branch_name>`                                       | Push the branch named `<branch_name>` to your GitHub space.     |
-
-## Miscellaneous
