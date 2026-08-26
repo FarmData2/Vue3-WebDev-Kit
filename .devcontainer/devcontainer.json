@@ -32,8 +32,10 @@
       "protocol": "http",
       "onAutoForward": "silent"
     },
-    "*": {
-      "onAutoForward": "ignore"
+    "8100": {
+      "label": "JsonAPI",
+      "protocol": "http",
+      "onAutoForward": "silent"
     }
   },
   "otherPortsAttributes": {
@@ -53,7 +55,6 @@
         "editor.formatOnSave": true,
         "editor.defaultFormatter": "esbenp.prettier-vscode",
         "eslint.validate": ["javascript", "vue", "html", "markdown"],
-        "remote.autoForwardPorts": false,
         "remote.autoForwardPortsSource": "output",
         "telemetry.editStats.enabled": false,
         "telemetry.feedback.enabled": false,
