@@ -37,7 +37,7 @@ The `index.html` file contains the following elements:
 
 ## CSS Styling
 
-The `styles/style.css` file contains type selectors for `<h1>`, `<p>`, `<li>`, `<body>`, and `<html>` elements.
+The `styles/style.css` file contains type selectors for `<h1>`, `<p>`, `<li>`, `<body>`, `<img>` and `<html>` elements.
 
 ## JavaScript Functionality
 
