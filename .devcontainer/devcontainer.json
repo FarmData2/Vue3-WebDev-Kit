@@ -71,7 +71,8 @@
           "vue": true,
           "css": true,
           "json": true,
-          "jsonc": true
+          "jsonc": true,
+          "markdown": true
         },
         "github.copilot.nextEditSuggestions.enabled": true,
         "chat.disableAIFeatures": true,
