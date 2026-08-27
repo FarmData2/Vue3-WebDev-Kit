@@ -63,11 +63,18 @@
         "chat.checkpoints.showFileChanges": true,
         "files.autoSave": "afterDelay",
         "files.autoSaveDelay": 60000,
+        "editor.inlineSuggest.enabled": false,
         "github.copilot.enable": {
-          "*": false
+          "*": true,
+          "html": true,
+          "javascript": true,
+          "vue": true,
+          "css": true,
+          "json": true,
+          "jsonc": true
         },
+        "github.copilot.nextEditSuggestions.enabled": false,
         "chat.disableAIFeatures": true,
-        "github.copilot.editor.enableAutoCompletions": false,
         "terminal.integrated.defaultProfile.linux": "bash",
         "extensions.ignoreRecommendations": true,
         "extensions.autoUpdate": false

@@ -12,10 +12,10 @@
 
 ## Setting up Inline Completions
 
-1. Click the "Copilot" icon (<img align="top" width="21" height="21" alt="Image" src="images/copilot-icon.png" />) in the lower right of the Codespace.
-2. Open the "Inline Suggestions" section.
-3. Check each of the "Ghost Text Suggestions..." boxes.
-4. Choose the "Low" setting for "Eagerness."
+1. Click the "Settings" icon (<img align="top" width="21" height="21" alt="Image" src="images/vscode-settings-icon.png" />) in the lower left of the Codespace.
+2. Search for "Inline Suggest Enabled."
+3. Check the box to enable suggestions.
+4. Close the "Settings" dialog.
 5. Click the "Settings" icon (<img align="top" width="21" height="21" alt="Image" src="images/vscode-settings-icon.png" />) in the lower left of the Codespace.
 6. Choose "Keyboard Shortcuts."
 7. Search for "Trigger Inline Suggestion."

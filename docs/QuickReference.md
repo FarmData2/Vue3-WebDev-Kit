@@ -45,7 +45,7 @@ The following are the main activities that you will need to do when working on t
 | `Tab`         | `Tab`        | Accept inline suggestion      |
 | `Alt + ]`     | &#8997;`+ ]` | Next inline suggestion        |
 | `Alt + [`     | &#8997;`+ [` | Previous inline suggestion    |
-| `Alt + /`     | &#8997;`+ \` | Open Copilot Suggestions pane |
+| `Alt + /`     | &#8997;`+ /` | Open Copilot Suggestions pane |
 
 ### Browser
 
@@ -75,6 +75,6 @@ The following are the main activities that you will need to do when working on t
 ## Miscellaneous
 
 - [Copilot Configuration](CopilotConfig.md)
-  - [Enabling Copilot](CopilotConfig#enabling-copilot)
+  - [Enabling Copilot](CopilotConfig.md#enabling-copilot)
   - [Setting up Inline Completions](CopilotConfig.md#setting-up-inline-completions)
   - [Using OpenRouter's Free Model Router](CopilotConfig.md#using-openrouters-free-model-router)
