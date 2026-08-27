@@ -32,8 +32,10 @@
       "protocol": "http",
       "onAutoForward": "silent"
     },
-    "*": {
-      "onAutoForward": "ignore"
+    "8100": {
+      "label": "JsonAPI",
+      "protocol": "http",
+      "onAutoForward": "silent"
     }
   },
   "otherPortsAttributes": {
@@ -47,14 +49,35 @@
         "dbaeumer.vscode-eslint",
         "yzhang.markdown-all-in-one",
         "crimson206.vscode-command-server",
-        "vue.volar"
+        "vue.volar",
+        "husamettinulutas.openrouter-copilot-model-manager"
       ],
       "settings": {
         "editor.formatOnSave": true,
         "editor.defaultFormatter": "esbenp.prettier-vscode",
         "eslint.validate": ["javascript", "vue", "html", "markdown"],
-        "remote.autoForwardPorts": false,
-        "remote.autoForwardPortsSource": "output"
+        "remote.autoForwardPorts": true,
+        "remote.autoForwardPortsSource": "process",
+        "telemetry.editStats.enabled": false,
+        "telemetry.feedback.enabled": false,
+        "chat.checkpoints.showFileChanges": true,
+        "files.autoSave": "afterDelay",
+        "files.autoSaveDelay": 60000,
+        "editor.inlineSuggest.enabled": false,
+        "github.copilot.enable": {
+          "*": true,
+          "html": true,
+          "javascript": true,
+          "vue": true,
+          "css": true,
+          "json": true,
+          "jsonc": true
+        },
+        "github.copilot.nextEditSuggestions.enabled": true,
+        "chat.disableAIFeatures": true,
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "extensions.ignoreRecommendations": true,
+        "extensions.autoUpdate": false
       }
     }
   },

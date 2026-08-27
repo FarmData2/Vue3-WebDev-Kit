@@ -45,7 +45,7 @@ The following are the main activities that you will need to do when working on t
 | `Tab`         | `Tab`        | Accept inline suggestion      |
 | `Alt + ]`     | &#8997;`+ ]` | Next inline suggestion        |
 | `Alt + [`     | &#8997;`+ [` | Previous inline suggestion    |
-| `Alt + /`     | &#8997;`+ \` | Open Copilot Suggestions pane |
+| `Alt + /`     | &#8997;`+ /` | Open Copilot Suggestions pane |
 
 ### Browser
 
@@ -71,3 +71,10 @@ The following are the main activities that you will need to do when working on t
 | `git commit -m "..." \`<br>`  --trailer "..."`                        | Commit with an [attribution trailer](./AttributionTrailers.md). |
 | `git commit --allow-empty \`<br>`  -m "..." \`<br>`  --trailer "..."` | Add a missing [attribution trailer](./AttributionTrailers.md).  |
 | `git push origin <branch_name>`                                       | Push the branch named `<branch_name>` to your GitHub space.     |
+
+## Miscellaneous
+
+- [Copilot Configuration](CopilotConfig.md)
+  - [Enabling Copilot](CopilotConfig.md#enabling-copilot)
+  - [Setting up Copilot Completions](CopilotConfig.md#setting-up-completions)
+  - [Using OpenRouter's Free Model Router](CopilotConfig.md#using-openrouters-free-model-router)
