@@ -5,10 +5,12 @@ setsid --fork python3 \
   > /dev/null 2>&1
 
 # Run the JSON server.
-setsid --fork npx json-server \
-  --watch web-projects/backend/db.json \
-  --port 8100 \
-  > /dev/null 2>&1
+if [ -f web-projects/backend/db.json ]; then
+  setsid --fork npx json-server \
+    --watch web-projects/backend/db.json \
+    --port 8100 \
+    > /dev/null 2>&1
+fi
 
 # Set the upstream remote to the same as the origin remote if it is not already set
 if ! git remote | grep -q "^upstream$"; then
