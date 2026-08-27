@@ -10,7 +10,7 @@
 6. Uncheck the "Chat: Disable AI Features" box
 7. Close the "Settings" dialog.
 
-## Setting up Inline Completions
+## Setting up Completions
 
 1. Click the "Settings" icon (<img align="top" width="21" height="21" alt="Image" src="images/vscode-settings-icon.png" />) in the lower left of the Codespace.
 2. Search for "Inline Suggest Enabled."

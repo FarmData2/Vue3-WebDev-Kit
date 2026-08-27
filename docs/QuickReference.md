@@ -76,5 +76,5 @@ The following are the main activities that you will need to do when working on t
 
 - [Copilot Configuration](CopilotConfig.md)
   - [Enabling Copilot](CopilotConfig.md#enabling-copilot)
-  - [Setting up Inline Completions](CopilotConfig.md#setting-up-inline-completions)
+  - [Setting up Copilot Completions](CopilotConfig.md#setting-up-completions)
   - [Using OpenRouter's Free Model Router](CopilotConfig.md#using-openrouters-free-model-router)
