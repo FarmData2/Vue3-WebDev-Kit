@@ -1,10 +1,20 @@
 # Copilot Configuration
 
-## Copilot Inline Completions
+## Enabling Copilot Chat
+
+1. Click the "Settings" icon (<img align="top" width="21" height="21" alt="Image" src="images/vscode-settings-icon.png" />) in the lower left of the Codespace.
+2. Choose "Settings."
+3. Search for "Copilot."
+4. Open "Miscellaneous"
+5. Click "Workspace" at the top of the "Settings" dialog.
+6. Uncheck the "Chat: Disable AI Features" box
+7. Close the "Settings" dialog.
+
+## Setting up Copilot Inline Completions
 
 Use the following steps to enable and configure Copilot inline completions.
 
-1. Click the "Copilot" icon (<img align="top" width="21" height="21" alt="Image" src="images/co-pilot-icon.png" />) in the lower right of the Codespace.
+1. Click the "Copilot" icon (<img align="top" width="21" height="21" alt="Image" src="images/copilot-icon.png" />) in the lower right of the Codespace.
 2. Open the "Inline Suggestions" section.
 3. Click "Ghost Text Suggestions."
 4. Choose the "Low" setting for "Eagerness."
@@ -16,5 +26,26 @@ Use the following steps to enable and configure Copilot inline completions.
 10. Search for "Open Completions Panel."
 11. Click the "+" to the left of the "GitHub Copilot: Open Completions Panel."
 12. Type "Alt + /" (windows) or "Option + \" (mac) and then Enter.
+
+## Using OpenRouter's Free Model Routing
+
+Use the following steps to configure OpenRouter's free model router for use in Copilot.
+
+1. Visit [OpenRouter](https://openrouter.ai/) and "Sign Up" for an account.
+2. Purchase $10.00 in credits.
+   - This is a one time fee and gives you unlimited use of OpenRouter's free model router.
+   - Without this you will have a very limited amount of free router use.
+3. Create an [OpenRouter API Key](https://openrouter.ai/workspaces/default/keys) with a $0.00 limit.
+   - Do not leave the limit blank, that is unlimited, not $0.00.
+4. Click the
+5. Select "Command Palette."
+6. Search for and select "OpenRouter: Set API Key."
+7. Past your OpenRouter API Key.
+8. Search for and select "OpenRouter: Browser Models."
+9. Search for "Free Models Router."
+10. Click "+ Select."
+11. Click "Apply to Copilot."
+12. Choose "Free Models Router" in the "Copilot Model Picker" (<img align="top" height="21" alt="Image" src="images/copilot-model-picker.png" />) at the bottom of the Chat window.
+    - If you do not see the "Free Models Router" look under the "> Other Models" section.
 
 ## More to come...
