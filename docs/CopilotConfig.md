@@ -14,16 +14,17 @@
 
 1. Click the "Settings" icon (<img align="top" width="21" height="21" alt="Image" src="images/vscode-settings-icon.png" />) in the lower left of the Codespace.
 2. Search for "Inline Suggest Enabled."
-3. Check the box to enable suggestions.
-4. Close the "Settings" dialog.
-5. Click the "Settings" icon (<img align="top" width="21" height="21" alt="Image" src="images/vscode-settings-icon.png" />) in the lower left of the Codespace.
-6. Choose "Keyboard Shortcuts."
-7. Search for "Trigger Inline Suggestion."
-8. Click the "+" to the left of the "Trigger Inline Suggestion."
-9. Type "Alt + \" (windows) or "Option + \" (mac) and then "Enter".
-10. Search for "Open Completions Panel."
-11. Click the "+" to the left of the "GitHub Copilot: Open Completions Panel."
-12. Type "Alt + /" (windows) or "Option + /" (mac) and then "Enter".
+3. Click "Remote" at the top of the "Settings" dialog.
+4. Check the box to enable suggestions.
+5. Close the "Settings" dialog.
+6. Click the "Settings" icon (<img align="top" width="21" height="21" alt="Image" src="images/vscode-settings-icon.png" />) in the lower left of the Codespace.
+7. Choose "Keyboard Shortcuts."
+8. Search for "Trigger Inline Suggestion."
+9. Click the "+" to the left of the "Trigger Inline Suggestion."
+10. Type "Alt + \" (windows) or "Option + \" (mac) and then "Enter".
+11. Search for "Open Completions Panel."
+12. Click the "+" to the left of the "GitHub Copilot: Open Completions Panel."
+13. Type "Alt + /" (windows) or "Option + /" (mac) and then "Enter".
 
 ## Using OpenRouter's Free Model Router
 
