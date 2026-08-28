@@ -47,8 +47,9 @@
       <template v-if="showFeedback">
         <p v-if="correct" class="correct">You got it!</p>
         <p v-else class="incorrect">Sorry, please try again.</p>
-        <button v-on:click="reset()">Reset</button>
       </template>
+
+      <button v-on:click="reset()">Reset</button>
     </div>
   </body>
 </html>
