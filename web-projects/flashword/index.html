@@ -43,7 +43,13 @@
     <div id="app" v-cloak>
       What is the English translation of the word <strong>{{ wordA }}</strong>?
 
-      <input type="text" v-model="answer" placeholder="Enter translation" />
+      <label for="translation-input">Translation:</label>
+      <input
+        type="text"
+        id="translation-input"
+        v-model="answer"
+        placeholder="Enter translation"
+      />
 
       <p v-show="answer != ''">You answered: {{ answer }}</p>
 

@@ -31,6 +31,11 @@ const Flashword = {
       this.answer = '';
       this.showFeedback = false;
       this.correct = null;
+
+      // Reset to a new random word
+      const randomIndex = Math.floor(Math.random() * this.words.length);
+      this.wordA = this.words[randomIndex].wordA;
+      this.wordB = this.words[randomIndex].wordB;
     },
   },
 };
