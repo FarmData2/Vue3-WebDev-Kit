@@ -37,7 +37,7 @@ The following are the main activities that you will need to do when working on t
 | `Ctrl + /`             | &#8984;`+ /`          | Toggle comment             |
 | `Ctrl + b`             | &#8984;`+ b`          | Toggle EXPLORER side bar   |
 
-### Copilot
+### GitHub Copilot
 
 | Windows/Linux | Mac          | Action                        |
 | ------------- | ------------ | ----------------------------- |
@@ -74,8 +74,12 @@ The following are the main activities that you will need to do when working on t
 
 ## Miscellaneous
 
+### GitHub Copilot
+
 - [Copilot Configuration](CopilotConfig.md)
   - [Enabling Copilot](CopilotConfig.md#enabling-copilot)
   - [Setting up Copilot Completions](CopilotConfig.md#setting-up-completions)
   - [Disabling Ghost Text Completions](CopilotConfig.md#disabling-ghost-text-completions)
   - [Using OpenRouter's Free Model Router](CopilotConfig.md#using-openrouters-free-model-router)
+- [Copilot Usage](https://github.com/settings/billing/ai_usage)
+- [Copilot Models and Pricing for GitHub](https://docs.github.com/en/copilot/reference/copilot-billing/models-and-pricing)
