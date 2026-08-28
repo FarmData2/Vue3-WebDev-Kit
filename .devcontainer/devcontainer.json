@@ -14,6 +14,9 @@
     "PATH": "${containerEnv:PATH}:/workspaces/Vue3-WebDev-Kit/bin"
   },
   "portsAttributes": {
+    "3000": {
+      "onAutoForward": "ignore"
+    },
     "8000": {
       "label": "http",
       "protocol": "http",
@@ -21,6 +24,16 @@
     },
     "6901": {
       "label": "noVNC",
+      "protocol": "http",
+      "onAutoForward": "silent"
+    },
+    "5173-5180": {
+      "label": "Vite",
+      "protocol": "http",
+      "onAutoForward": "silent"
+    },
+    "8100": {
+      "label": "JsonAPI",
       "protocol": "http",
       "onAutoForward": "silent"
     }
@@ -35,12 +48,37 @@
         "esbenp.prettier-vscode",
         "dbaeumer.vscode-eslint",
         "yzhang.markdown-all-in-one",
-        "crimson206.vscode-command-server"
+        "crimson206.vscode-command-server",
+        "vue.volar",
+        "husamettinulutas.openrouter-copilot-model-manager"
       ],
       "settings": {
         "editor.formatOnSave": true,
         "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "eslint.validate": ["javascript", "vue", "html", "markdown"]
+        "eslint.validate": ["javascript", "vue", "html", "markdown"],
+        "remote.autoForwardPorts": true,
+        "remote.autoForwardPortsSource": "process",
+        "telemetry.editStats.enabled": false,
+        "telemetry.feedback.enabled": false,
+        "chat.checkpoints.showFileChanges": true,
+        "files.autoSave": "afterDelay",
+        "files.autoSaveDelay": 60000,
+        "editor.inlineSuggest.enabled": false,
+        "github.copilot.enable": {
+          "*": true,
+          "html": true,
+          "javascript": true,
+          "vue": true,
+          "css": true,
+          "json": true,
+          "jsonc": true,
+          "markdown": true
+        },
+        "github.copilot.nextEditSuggestions.enabled": true,
+        "chat.disableAIFeatures": true,
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "extensions.ignoreRecommendations": true,
+        "extensions.autoUpdate": false
       }
     }
   },

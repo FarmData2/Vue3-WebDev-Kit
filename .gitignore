@@ -11,7 +11,7 @@ lerna-debug.log*
 **/processed-chat.txt
 
 node_modules
-flashword/dist
+**/dist
 dist-ssr
 *.local
 
