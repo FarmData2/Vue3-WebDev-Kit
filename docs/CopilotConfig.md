@@ -26,6 +26,14 @@
 12. Click the "+" to the left of the "GitHub Copilot: Open Completions Panel."
 13. Type "Alt + /" (windows) or "Option + /" (mac) and then "Enter".
 
+## Disabling Ghost Text Completions
+
+1. Click the "Copilot" icon (<img align="top" width="21" height="21" alt="Image" src="images/copilot-icon.png" />) in the lower right of the Codespace.
+2. Click "Snooze" to temporarily disable ghost text completions.
+3. Uncheck the "Ghost text suggestions" box to disable ghost text completions.
+4. Uncheck the "Next edit suggestions" box to disable next edit suggestions.
+5. Reenable ghost text completions, when you want to use them again, by re-checking the boxes.
+
 ## Using OpenRouter's Free Model Router
 
 1. Visit [OpenRouter](https://openrouter.ai/) and "Sign Up" for an account.
