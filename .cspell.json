@@ -23,6 +23,7 @@
     "eslint",
     "flashword",
     "husky",
+    "keyup",
     "linkcheck",
     "lintstaged",
     "njsproj",
