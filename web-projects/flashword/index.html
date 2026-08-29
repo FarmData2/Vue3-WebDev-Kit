@@ -47,7 +47,6 @@
         v-model="answer"
         v-on:keyup.enter="checkAnswer()"
         v-bind:style="{'background-color' : inputBackgroundColor}"
-        v-bind:class="{error : hasError}"
       />
 
       <input type="checkbox" id="showHint" v-model="showHint" />
