@@ -7,6 +7,8 @@ const Flashword = {
       correct: null,
       showFeedback: false,
       hasError: false,
+      correctAnswers: 0,
+      totalAnswers: 0,
 
       // Array of objects example
       words: [
@@ -28,6 +30,16 @@ const Flashword = {
     inputCSSClass() {
       return this.hasError ? 'error' : 'no-error';
     },
+    correctPercentage() {
+      if (this.totalAnswers === 0) {
+        return 0;
+      }
+
+      return (this.correctAnswers / this.totalAnswers) * 100;
+    },
+    earnedBadge() {
+      return this.correctPercentage >= 80;
+    },
   },
   methods: {
     checkAnswer() {
@@ -37,15 +49,12 @@ const Flashword = {
       }
 
       this.hasError = false;
-
       this.correct = this.wordB == this.answer;
 
+      this.totalAnswers++;
+
       if (this.correct) {
-        this.image = 'correct';
-        this.imageAlt = 'Green check mark.';
-      } else {
-        this.image = 'incorrect';
-        this.imageAlt = 'Red X.';
+        this.correctAnswers++;
       }
 
       this.showFeedback = true;

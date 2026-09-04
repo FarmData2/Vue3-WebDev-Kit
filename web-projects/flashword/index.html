@@ -70,6 +70,14 @@
       </p>
 
       <button v-on:click="reset()" v-bind:disabled="answer == ''">Reset</button>
+
+      <div v-show="earnedBadge">
+        <p>Badge earned!</p>
+        <img
+          src="images/badge.png"
+          alt="Badge earned for answering at least 80 percent correctly"
+        />
+      </div>
     </div>
   </body>
 </html>
