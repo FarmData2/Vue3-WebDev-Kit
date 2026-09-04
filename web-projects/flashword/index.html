@@ -57,7 +57,7 @@
         id="translation-input"
         v-model="answer"
         placeholder="Enter translation"
-        v-bind:style="{'background-color' : inputBackgroundColor}"
+        v-bind:class="inputCSSClass"
       />
 
       <p v-show="answer != ''">You answered: {{ answer }}</p>
