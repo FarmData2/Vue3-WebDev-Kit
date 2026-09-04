@@ -18,6 +18,8 @@ const Flashword = {
       ],
     };
   },
+  watch: {},
+  computed: {},
   methods: {
     checkAnswer() {
       if (this.answer == '') {
