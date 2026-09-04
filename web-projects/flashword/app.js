@@ -17,7 +17,13 @@ const Flashword = {
       ],
     };
   },
-  watch: {},
+  watch: {
+    answer(newAnswer) {
+      if (newAnswer !== '') {
+        this.hasError = false;
+      }
+    },
+  },
   computed: {
     inputCSSClass() {
       return this.hasError ? 'error' : 'no-error';
