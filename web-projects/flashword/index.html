@@ -61,7 +61,7 @@
         Sorry, please try again.
       </p>
 
-      <button v-on:click="reset()">Reset</button>
+      <button v-on:click="reset()" v-bind:disabled="answer == ''">Reset</button>
     </div>
   </body>
 </html>
