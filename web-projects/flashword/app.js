@@ -19,7 +19,11 @@ const Flashword = {
     };
   },
   watch: {},
-  computed: {},
+  computed: {
+    inputCSSClass() {
+      return this.hasError ? 'error' : 'no-error';
+    },
+  },
   methods: {
     checkAnswer() {
       if (this.answer == '') {
