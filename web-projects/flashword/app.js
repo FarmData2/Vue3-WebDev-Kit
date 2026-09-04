@@ -33,14 +33,6 @@ const Flashword = {
 
       this.correct = this.wordB == this.answer;
 
-      if (this.correct) {
-        this.image = 'correct';
-        this.imageAlt = 'Green check mark.';
-      } else {
-        this.image = 'incorrect';
-        this.imageAlt = 'Red X.';
-      }
-
       this.showFeedback = true;
     },
     reset() {
