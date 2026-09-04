@@ -24,10 +24,10 @@ description: Review Criteria for Extension 03 - Vue2
 - A `watch` on `answer` clears the error styling on the `text` input when the user starts typing an answer.
 - The flashword app contains a badge feature that displays the image of a badge when the percent of a user's answers that are correct is at least 80 percent.
 - At least one of the commits in the pull request contains an `Assisted-by:` trailer acknowledging the use of an AI model or tool as required by the workflow.
-- The pull request has at least one comment containing a log of the author's interaction with GitHub Copilot as required by the workflow.
+- The pull request has at least one comment containing a log of the author's interaction with GitHub Copilot as required by the workflow. This comment can be identified because it contains a top level heading of "Copilot Chat Log" and a hash hidden in an HTML comment.
 
 ## AI Reflection
 
-- The pull request has a comment that responds to each of the questions posed under the heading "AI Reflection" in the issue associated with the pull request. The response to each question must not simply restate or rephrase the question.
+- The pull request has a comment that responds to each of the questions posed under the heading "AI Reflection" in the issue associated with the pull request. Responses that simply restate or rephrase the question should not be counted.
 
 - If you applied this criteria, skip all other path specific instructions.
