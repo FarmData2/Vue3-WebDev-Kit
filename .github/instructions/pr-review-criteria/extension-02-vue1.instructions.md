@@ -27,6 +27,6 @@ description: Review Criteria for Extension 02 - Vue1
 
 ## AI Reflection
 
-- The pull request has a comment that addressed each of the questions posed under the heading "AI Reflection" in the issue associated with the pull request.
+- The pull request has a comment that responds to each of the questions posed under the heading "AI Reflection" in the issue associated with the pull request. Responses must contain more than a restatement of the question in order to satisfy this criteria.
 
 - If you applied this criteria, skip all other path specific instructions.
