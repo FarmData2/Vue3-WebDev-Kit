@@ -6,22 +6,8 @@ const Flashword = {
       answer: '',
       correct: null,
       showFeedback: false,
-      image: null,
-      imageAlt: null,
       hasError: false,
       inputBackgroundColor: 'white',
-      showHint: false,
-      level: 'easy',
-      sentence: '',
-      lastName: '',
-      firstName: '',
-      firstNameAndLastName: '',
-
-      // Array example
-      spanishWords: ['hola', 'adios', 'uno', 'dos'],
-
-      // Object example
-      word: { a: 'hola', b: 'hello' },
 
       // Array of objects example
       words: [
@@ -30,56 +16,47 @@ const Flashword = {
         { wordA: 'uno', wordB: 'one' },
         { wordA: 'dos', wordB: 'two' },
       ],
-    }
+    };
   },
-  computed: {
-    fullName() {
-      return this.firstName + ' ' + this.lastName
-    },
-    shortSpanishWords() {
-      return this.spanishWords.filter((word) => word.length <= 3)
-    },
-  },
-  watch: {
-    firstName() {
-      this.firstNameAndLastName = this.firstName + ' ' + this.lastName
-    },
-    lastName() {
-      this.firstNameAndLastName = this.firstName + ' ' + this.lastName
-    },
-  },
+  watch: {},
+  computed: {},
   methods: {
-    getFullName() {
-      return this.firstName + ' ' + this.lastName
-    },
     checkAnswer() {
       if (this.answer == '') {
-        this.hasError = true
-        this.inputBackgroundColor = 'lightpink'
-        return
+        this.hasError = true;
+        this.inputBackgroundColor = 'lightpink';
+        return;
       }
 
-      this.hasError = false
-      this.inputBackgroundColor = 'white'
+      this.hasError = false;
+      this.inputBackgroundColor = 'white';
 
-      this.correct = this.wordB == this.answer
+      this.correct = this.wordB == this.answer;
 
       if (this.correct) {
-        this.image = 'correct'
-        this.imageAlt = 'Green check mark.'
+        this.image = 'correct';
+        this.imageAlt = 'Green check mark.';
       } else {
-        this.image = 'incorrect'
-        this.imageAlt = 'Red X.'
+        this.image = 'incorrect';
+        this.imageAlt = 'Red X.';
       }
 
-      this.showFeedback = true
+      this.showFeedback = true;
     },
     reset() {
-      this.answer = ''
-      this.showFeedback = false
+      this.answer = '';
+      this.showFeedback = false;
+      this.correct = null;
+      this.inputBackgroundColor = 'white';
+      this.hasError = false;
+
+      // Reset to a new random word
+      const randomIndex = Math.floor(Math.random() * this.words.length);
+      this.wordA = this.words[randomIndex].wordA;
+      this.wordB = this.words[randomIndex].wordB;
     },
   },
-}
+};
 
 // eslint-disable-next-line no-unused-vars, no-undef
-const app = Vue.createApp(Flashword).mount('#app')
+const app = Vue.createApp(Flashword).mount('#app');
