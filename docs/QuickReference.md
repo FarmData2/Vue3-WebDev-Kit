@@ -39,13 +39,15 @@ The following are the main activities that you will need to do when working on t
 
 ### GitHub Copilot
 
-| Windows/Linux | Mac          | Action                        |
-| ------------- | ------------ | ----------------------------- |
-| `Alt + .`     | &#8997;`+ .` | Trigger inline suggestion     |
-| `Tab`         | `Tab`        | Accept inline suggestion      |
-| `Alt + ]`     | &#8997;`+ ]` | Next inline suggestion        |
-| `Alt + [`     | &#8997;`+ [` | Previous inline suggestion    |
-| `Alt + /`     | &#8997;`+ /` | Open Copilot Suggestions pane |
+| Windows/Linux    | Mac                   | Action                        |
+| ---------------- | --------------------- | ----------------------------- |
+| `Ctrl + Alt + I` | `Shift +`&#8984;`+ I` | Open Copilot chat             |
+| `Ctrl + .`       | &#8984;`+ .`          | Choose Copilot agent          |
+| `Alt + .`        | &#8997;`+ .`          | Trigger inline suggestion     |
+| `Tab`            | `Tab`                 | Accept inline suggestion      |
+| `Alt + ]`        | &#8997;`+ ]`          | Next inline suggestion        |
+| `Alt + [`        | &#8997;`+ [`          | Previous inline suggestion    |
+| `Alt + /`        | &#8997;`+ /`          | Open Copilot Suggestions pane |
 
 ### Browser
 
