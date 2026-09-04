@@ -28,6 +28,6 @@ description: Review Criteria for Extension 03 - Vue2
 
 ## AI Reflection
 
-- The pull request has a comment that addressed each of the questions posed under the heading "AI Reflection" in the issue associated with the pull request.
+- The pull request has a comment that answers each of the questions posed under the heading "AI Reflection" in the issue associated with the pull request.
 
 - If you applied this criteria, skip all other path specific instructions.
