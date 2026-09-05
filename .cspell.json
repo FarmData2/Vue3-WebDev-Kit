@@ -9,9 +9,10 @@
   ],
   "ignorePaths": [
     "node_modules",
-    "flashword/dist",
+    "**/dist",
     "*.lock",
-    "package-lock.json"
+    "package-lock.json",
+    "devcontainer.json"
   ],
   "words": [
     "alisson",
@@ -23,7 +24,11 @@
     "eslint",
     "flashword",
     "husky",
+<<<<<<< HEAD
     "lightpink",
+=======
+    "keyup",
+>>>>>>> main
     "linkcheck",
     "lintstaged",
     "njsproj",

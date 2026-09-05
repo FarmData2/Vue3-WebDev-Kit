@@ -62,12 +62,12 @@ Use the following steps to start working on a new tutorial.
 
    Running the commands below in the terminal in your codespace is one way to create and switch to a new feature branch.
    <br><br>
-   **Note that you will want to change the branch name from `tutorial-01-html-css` when working on later tutorials.**
+   **Note that you will want to change the branch name from `t01-html-css-js` when working on later tutorials.**
 
    ```bash
    git switch main
-   git branch tutorial-01-html-css
-   git switch tutorial-01-html-css
+   git branch t01-html-css-js
+   git switch t01-html-css-js
    ```
 
    </details>
@@ -84,7 +84,7 @@ Use the following steps to start working on a new tutorial.
 
    ```bash
    git commit --allow-empty -m "Tutorial 01 - HTML/CSS"
-   git push origin tutorial-01-html-css
+   git push origin t01-html-css-js
    ```
 
    Now [create a pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request#creating-the-pull-request) for the `tutorial-01` branch.
@@ -194,7 +194,7 @@ Use the following steps when working through a tutorial.
    Running the commands below in the terminal are one way to do this.
 
    ```bash
-   git push origin tutorial-01-html-css
+   git push origin t01-html-css-js
    ```
 
    Pushing your feature branch to GitHub **automatically updates your pull request for the branch.**
@@ -231,7 +231,8 @@ Use the following steps when working through a tutorial.
    4. Pick the model to be used from the popup in the bottom left of the "Add a comment" box.
    5. Click the "Start new session" button.
    6. Copilot will to respond in a comment on your pull request.
-   &nbsp;
+      &nbsp;
+
    </details>
 
 <p/>
@@ -246,6 +247,7 @@ Use the following steps when working through a tutorial.
    - posting a comment responding to the review if you think it got something wrong.
    - posting a comment indicating that you are content with your code as stands.
    - some combination of the above.
+
    </details>
 
 <p/>
@@ -308,12 +310,12 @@ Starting an extension is very similar to starting a tutorial.
 
    Running the commands below in the terminal in your codespace is one way to create and switch to a new feature branch.
    <br><br>
-   **Note that you will want to change the branch names from `tutorial-01-html-css` and `extension-01-html-css` when working on later extensions.**
+   **Note that you will want to change the branch names from `t01-html-css-js` and `ex01-html-css` when working on later extensions.**
 
    ```bash
-   git switch tutorial-01-html-css
-   git branch extension-01-html-css
-   git switch extension-01-html-css
+   git switch t01-html-css-js
+   git branch ex01-html-css
+   git switch ex-01-html-css
    ```
 
    </details>
@@ -352,6 +354,7 @@ Working on the extension tasks is very similar to working on the tutorial tasks.
    2. Click "OK" or press the Enter/Return key to accept the default path for the chat log. It doesn't matter where this log is stored, it will be deleted after it is posted to your pull request.
       ![The chat log path dialog with the "OK" button.](./docs/images/chat-log-path.png)
    3. Review the output in the terminal and visit you PR on GitHub to ensure that your chat log has been posted to a comment.
+
    </details>
 
 <p/>
