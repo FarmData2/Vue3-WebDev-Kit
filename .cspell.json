@@ -2,7 +2,7 @@
   "version": "0.2",
   "language": "en",
   "files": [
-    "**/*.{js,vue,md,html,css,bash}",
+    "**/*.{js,vue,md,html,css,bash,svg}",
     ".github/**/*.md",
     ".github/skills/**/*.bash",
     ".devcontainer/**/*.bash"
@@ -12,7 +12,9 @@
     "**/dist",
     "*.lock",
     "package-lock.json",
-    "devcontainer.json"
+    "devcontainer.json",
+    "web-projects/flashword-vite/public",
+    "web-projects/flashword-vite/src/assets"
   ],
   "words": [
     "alisson",
