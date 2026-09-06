@@ -50,4 +50,14 @@ export default [
       ...css.configs.recommended.rules,
     },
   },
+
+  // Configuration for the flashword-vite project
+  {
+    files: ['web-projects/flashword-vite/**/*.vue'],
+    rules: {
+      'vue/require-v-for-key': 'off',
+      'vue/html-self-closing': 'off',
+      'vue/max-attributes-per-line': 'off',
+    },
+  },
 ];
