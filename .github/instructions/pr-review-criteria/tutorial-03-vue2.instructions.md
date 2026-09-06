@@ -4,7 +4,7 @@ description: Review Criteria for Tutorial 03 - Vue 2
 ---
 
 - Read the pull request body.
-- If the "Type of Work" is Tutorial and the "Topic" is "01 - HTML/CSS/JS" then apply the criterion below for this review. Otherwise do not apply this criteria in your review.
+- If the "Type of Work" is Tutorial and the "Topic" is "03 - Vue2" then apply the criterion below for this review. Otherwise do not apply this criteria in your review.
 - Review web-projects/flashword/index.html and web-projects/flashword/app.js checking for the content in the following sections:
 
 ## Workflow
