@@ -59,7 +59,7 @@ export default {
     <h1>FlashWord</h1>
 
     <p v-if="completed" id="completed">
-      Good work, you have completed all the words!
+      Great work, you have completed all the words!
     </p>
     <p v-else id="correctCount">
       You have answered {{ correctCount }} out of {{ wordCount }}
