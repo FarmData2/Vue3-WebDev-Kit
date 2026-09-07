@@ -23,7 +23,8 @@ description: Review Criteria for Tutorial 04 - Vue 3
 ## Installing Vite
 
 - The `web-projects/flashword-vite` directory exists.
--
+- The `web-projects/flashword-vite` directory contains `package.json` file with dependencies of Vue and Vite.
+- The `web-projects/flashword-vite` directory contains a `node_modules` directory with installed dependencies.git
 
 ## Working with Vite and Vue
 
