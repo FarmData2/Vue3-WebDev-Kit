@@ -2,7 +2,7 @@
   "version": "0.2",
   "language": "en",
   "files": [
-    "**/*.{js,vue,md,html,css,bash}",
+    "**/*.{js,vue,md,html,css,bash,svg}",
     ".github/**/*.md",
     ".github/skills/**/*.bash",
     ".devcontainer/**/*.bash"
@@ -11,7 +11,10 @@
     "node_modules",
     "**/dist",
     "*.lock",
-    "package-lock.json"
+    "package-lock.json",
+    "devcontainer.json",
+    "web-projects/flashword-vite/public",
+    "web-projects/flashword-vite/src/assets"
   ],
   "words": [
     "alisson",
@@ -22,6 +25,7 @@
     "eslint",
     "flashword",
     "husky",
+    "keyup",
     "linkcheck",
     "lintstaged",
     "njsproj",

@@ -18,7 +18,7 @@ fi
 # Display a message if the chat log is empty.
 if grep -q '"requests": \[\]$' "$CHAT_LOGS"; then
   echo "You seem to have exported an empty chat log."
-  echo "Be sure to have a chat open when you use the /log-prompts skill."
+  echo "Be sure to have a chat open when you use the log-chat.bash script."
   exit 1
 fi
 

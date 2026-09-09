@@ -4,7 +4,7 @@ description: Review Criteria for Extension 01 - HTML/CSS/JS
 ---
 
 - Read the pull request body.
-- If the "Type of Work" is Extension and the "Topic" is "HTML/CSS/JS" then apply the criterion below for this review. Otherwise do not apply this criteria in your review.
+- If the "Type of Work" is Extension and the "Topic" is "01 - HTML/CSS/JS" then apply the criterion below for this review. Otherwise do not apply this criteria in your review.
 - Review web-projects/first-website/index.html and web-projects/first-website/styles/style.css files checking for the content in the following sections:
 
 ## Workflow
@@ -32,4 +32,5 @@ description: Review Criteria for Extension 01 - HTML/CSS/JS
 - Odd rows of the table are styled by a different rule with an class selector.
 - A `<span>` element is styled using class selector that was also used for a table row.
 - At least one cell in the table is styled using an id selector.
+
 - If you applied this criteria, skip all other path specific instructions.

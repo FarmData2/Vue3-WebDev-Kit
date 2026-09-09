@@ -37,15 +37,17 @@ The following are the main activities that you will need to do when working on t
 | `Ctrl + /`             | &#8984;`+ /`          | Toggle comment             |
 | `Ctrl + b`             | &#8984;`+ b`          | Toggle EXPLORER side bar   |
 
-### Copilot
+### GitHub Copilot
 
-| Windows/Linux | Mac          | Action                        |
-| ------------- | ------------ | ----------------------------- |
-| `Alt + .`     | &#8997;`+ .` | Trigger inline suggestion     |
-| `Tab`         | `Tab`        | Accept inline suggestion      |
-| `Alt + ]`     | &#8997;`+ ]` | Next inline suggestion        |
-| `Alt + [`     | &#8997;`+ [` | Previous inline suggestion    |
-| `Alt + /`     | &#8997;`+ \` | Open Copilot Suggestions pane |
+| Windows/Linux    | Mac                   | Action                        |
+| ---------------- | --------------------- | ----------------------------- |
+| `Ctrl + Alt + I` | `Shift +`&#8984;`+ I` | Open Copilot chat             |
+| `Ctrl + .`       | &#8984;`+ .`          | Choose Copilot agent          |
+| `Alt + .`        | &#8997;`+ .`          | Trigger inline suggestion     |
+| `Tab`            | `Tab`                 | Accept inline suggestion      |
+| `Alt + ]`        | &#8997;`+ ]`          | Next inline suggestion        |
+| `Alt + [`        | &#8997;`+ [`          | Previous inline suggestion    |
+| `Alt + /`        | &#8997;`+ /`          | Open Copilot Suggestions pane |
 
 ### Browser
 
@@ -71,3 +73,15 @@ The following are the main activities that you will need to do when working on t
 | `git commit -m "..." \`<br>`  --trailer "..."`                        | Commit with an [attribution trailer](./AttributionTrailers.md). |
 | `git commit --allow-empty \`<br>`  -m "..." \`<br>`  --trailer "..."` | Add a missing [attribution trailer](./AttributionTrailers.md).  |
 | `git push origin <branch_name>`                                       | Push the branch named `<branch_name>` to your GitHub space.     |
+
+## Miscellaneous
+
+### GitHub Copilot
+
+- [Copilot Configuration](CopilotConfig.md)
+  - [Enabling Copilot](CopilotConfig.md#enabling-copilot)
+  - [Setting up Copilot Completions](CopilotConfig.md#setting-up-completions)
+  - [Disabling Ghost Text Completions](CopilotConfig.md#disabling-ghost-text-completions)
+  - [Using OpenRouter's Free Model Router](CopilotConfig.md#using-openrouters-free-model-router)
+- [Copilot Usage](https://github.com/settings/billing/ai_usage)
+- [Copilot Models and Pricing for GitHub](https://docs.github.com/en/copilot/reference/copilot-billing/models-and-pricing)
