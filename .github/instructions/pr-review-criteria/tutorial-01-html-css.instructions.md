@@ -22,6 +22,10 @@ description: 'Review criteria for Tutorial 01 - HTML/CSS/JS'
 - The pull request contains at least three commits.
 - The commit messages briefly describe the changes made in the commit.
 
+## Planning a Website
+
+- The pull request contains a comment that describes the purpose of the website including a color, an image and a font.
+
 ## Basic HTML Structure
 
 The `index.html` file contains the following elements:

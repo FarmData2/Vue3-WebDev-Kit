@@ -17,3 +17,4 @@ model: GPT-5.6 Luna (copilot)
 - Make the columns the same width in all of the tables so that they align properly.
 - Use the characters ✅ for "Status" if the requirement is met and ❌ if the requirement is not met.
 - Write the table of results into a comment on the pull request.
+- Do not add any additional information or a summary to the comment.
