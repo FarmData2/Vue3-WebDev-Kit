@@ -1,4 +1,3 @@
 ## Pull request review
 
-- Use the code-review agent for all pull request reviews.
-- The agent should use the head branch in the PR as the active branch for the review and the target branch in the PR as the main branch.
+- When a pull request review is requested always use the agent in `.github/agents/code-review.agent.md`.
