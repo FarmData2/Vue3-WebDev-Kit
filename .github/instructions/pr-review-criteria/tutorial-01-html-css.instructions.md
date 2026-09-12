@@ -15,10 +15,16 @@ description: 'Review criteria for Tutorial 01 - HTML/CSS/JS'
 ## Project Structure
 
 - There is a directory named `first-website` within the `web-projects` directory.
-- The `first-website` directory contains an html file (named `index.html)`
-- The `first-website` directory contains a subdirectory (named `styles`) containing a css style sheet (named `style.css`).
-- The `first-website` directory contains a subdirectory (named `images`) containing at least ond image file.
-- The `first-website` directory contains a subdirectory (named `scripts`) which contains a file with Javascript code (named  `main.js`).
+- The `first-website` directory contains an html file.
+  - The html file is named `index.html`.
+- The `first-website` directory contains a subdirectory with a file that contains some css styles.
+  - The subdirectory is named `styles`.
+  - The style sheet is named `style.css`.
+- The `first-website` directory contains a subdirectory containing at least one image file.
+  - the subdirectory is named `images`.
+- The `first-website` directory contains a subdirectory with a file that contains some Javascript code.
+  - The subdirectory is named `scripts`.
+  - The Javascript file is named `main.js`.
 
 ## Planning a Website
 
@@ -28,27 +34,27 @@ description: 'Review criteria for Tutorial 01 - HTML/CSS/JS'
 
 The `index.html` file contains the following elements:
 
-- a descriptive title in the head.
-- the styles/style.css file is linked in the head.
-- `index.html` loads the `scripts/main.js` file in a `<script>` tag in the `<head>`.
+- the `<head>` contains a descriptive `<title>`.
+- the `<head>` contains a `<link>` element that links in a css style sheet.
+- the head contains a `<script>` element that loads a javascript file.
 - the head links to a font from Google Fonts.
-
-- an h1 element with the same or very similar title.
-- an img element that displays an image and has descriptive alt text.
-- one or more p elements below the image.
-- an unordered list or ordered list element with at least 3 list items.
-- at least one link element.
+- the `<body>` contains an `<h1>` element with content similar to the `<title>`.
+- the `<body>` contains at least one `<img>` element that displays an image and has descriptive `alt` text.
+- the `<body>` contains one or more `<p>` elements.
+- the `<body>` contains a `<ul>` or `<ol>` element with at least 3 list items.
+- the `<body>` contains at least one link in an `<a href>` element.
 
 ## CSS Styling
 
-The `styles/style.css` file contains type selectors for `<h1>`, `<p>`, `<li>`, `<body>`, `<img>` and `<html>` elements.
+The style sheet linked in the `<head>` contains type selectors for `<h1>`, `<p>`, `<li>`, `<body>`, `<img>` and `<html>` elements.
 
 ## JavaScript Functionality
 
-The `main.js` file contains:
+The included JavaScript file:
 
 - assigns a click event listener to the image that toggles the displayed image between two images.
-- assigns a click event listener to the button calls the `setUsername` function.
+- assigns a click event listener to the button calls a function that sets the username.
+  - the function is named `setUsername`.
 - contains code that runs on page load that checks if a username is stored in local storage and displays it in the `<h1>` element if it exists.
 
 - If you applied this criteria, skip all other path specific instructions.
