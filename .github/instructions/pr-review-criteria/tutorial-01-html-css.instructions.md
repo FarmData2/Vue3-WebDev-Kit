@@ -29,7 +29,7 @@ description: 'Review criteria for Tutorial 01 - HTML/CSS/JS'
 
 ## Planning a Website
 
-- The pull request contains a comment that describes the purpose of the website including some details about things like the background color, an image, and a font.
+- The pull request contains a comment that should contain the the purpose of the website and should include some details about things like the background color, an image, and a font.
 
 ## Basic HTML Structure
 
