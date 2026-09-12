@@ -29,7 +29,7 @@ description: 'Review criteria for Tutorial 01 - HTML/CSS/JS'
 
 ## Planning a Website
 
-- The pull request contains a comment that describes the purpose of the website including a color, an image or a link to an image, and a font.
+- The pull request contains a comment that describes the purpose of the website including some details about things like the background color, an image, and a font.
 
 ## Basic HTML Structure
 
@@ -42,7 +42,7 @@ The `index.html` file contains the following elements:
 - the `<body>` contains an `<h1>` element with content similar to the `<title>`.
 - the `<body>` contains at least one `<img>` element that displays an image and has descriptive `alt` text.
 - the `<body>` contains one or more `<p>` elements.
-- the `<body>` contains a `<ul>` or `<ol>` element with at least 3 list items.
+- the `<body>` contains a `<ul>` or `<ol>` element preferably with at least 3 list items.
 - the `<body>` contains at least one link in an `<a href>` element.
 
 ## CSS Styling
