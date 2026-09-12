@@ -14,15 +14,16 @@ description: 'Review criteria for Tutorial 01 - HTML/CSS/JS'
 
 ## Project Structure
 
+- There is a top level directory named `web-projects`.
 - There is a directory named `first-website` within the `web-projects` directory.
-- The `first-website` directory contains an html file.
+- There is an html file.
   - The html file is named `index.html`.
-- The `first-website` directory contains a subdirectory with a file that contains some css styles.
+- There is a subdirectory that contains a subdirectory with a file that contains some css styles.
   - The subdirectory is named `styles`.
   - The style sheet is named `style.css`.
-- The `first-website` directory contains a subdirectory containing at least one image file.
+- There is a subdirectory containing at least one image file.
   - the subdirectory is named `images`.
-- The `first-website` directory contains a subdirectory with a file that contains some Javascript code.
+- There is a subdirectory with a file that contains some Javascript code.
   - The subdirectory is named `scripts`.
   - The Javascript file is named `main.js`.
 
@@ -55,6 +56,6 @@ The included JavaScript file:
 - assigns a click event listener to the image that toggles the displayed image between two images.
 - assigns a click event listener to the button calls a function that sets the username.
   - the function is named `setUsername`.
-- contains code that runs on page load that checks if a username is stored in local storage and displays it in the `<h1>` element if it exists.
+- contains code that runs on page load that checks if a username is stored in local storage and displays it in the `<h1>` element if it exists. Ignore the potential issue with the `async` loading of the script.
 
 - If you applied this criteria, skip all other path specific instructions.
