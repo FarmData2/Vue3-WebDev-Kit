@@ -1,6 +1,6 @@
 ---
 name: code-review
-description: Reviews student pull requests against assignment criteria.
+description: Reviews changes in the current branch against assignment criteria.
 tools: [read/readFile, vscodeGeneral/usages, GitHub.vscode-pull-request-github/issue_fetch, GitHub.vscode-pull-request-github/labels_fetch, GitHub.vscode-pull-request-github/doSearch, GitHub.vscode-pull-request-github/activePullRequest, search]
 model: GPT-5.6 Luna (copilot)
 ---
