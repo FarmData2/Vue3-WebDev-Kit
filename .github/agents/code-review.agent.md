@@ -1,5 +1,5 @@
 ---
-name: check-assignment
+name: code-review
 description: "Use when asked to review this branch against the assignment criteria in an open origin pull request."
 tools: [read, search, execute, GitHub.vscode-pull-request-github/issue_fetch, GitHub.vscode-pull-request-github/labels_fetch, GitHub.vscode-pull-request-github/doSearch, GitHub.vscode-pull-request-github/activePullRequest]
 model: GPT-5.6 Luna (copilot)
