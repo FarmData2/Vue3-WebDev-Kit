@@ -11,10 +11,12 @@ model: GPT-5.6 Luna (copilot)
 - If no "Type of Work" or "Topic" is checked in the task list or more than one "Type of Work" or more than one "Topic" is checked, leave a comment on the pull request asking the author to check exactly one "Type of Work" and exactly one "Topic" and do not perform the review.
 - Use the custom instructions file in the `.github/instructions/pr-review-criteria` directory that matches the "Type of Work" and "Topic" as the instructions for the review.
 - Use only the criteria in the custom instructions when performing the review. Do not use any other criteria.
-- Allow for typos and small differences when evaluating if variable, attribute, or function names meet the criteria.
+- Criteria for specific expected names for directories, files, variables, properties, functions, etc are included in parentheses in the criteria statement.
 - Generate the results of the review using one table for each level 2 heading in the custom instructions.
 - Prefix each table with the level 2 heading text from the custom instructions.
 - Make the columns the same width in all of the tables so that they align properly.
-- Use the characters ✅ for "Status" if the requirement is met and ❌ if the requirement is not met.
+- Use the character ✅ for "Status" if the requirement is fully met including the expected name given in parentheses.
+- Use the character ⚠️ for "Status" if the requirement is met but the name differs from the expected name given in parentheses.
+- Use the character ❌ for "Status" if the requirement is not met.
 - Write the table of results into a comment on the pull request.
 - Do not add any additional information or a summary to the comment.
