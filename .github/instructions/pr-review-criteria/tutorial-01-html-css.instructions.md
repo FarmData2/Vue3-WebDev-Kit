@@ -39,7 +39,7 @@ The `index.html` file contains the following elements:
 - the `<head>` contains a `<link>` element that links in a css style sheet.
 - the head contains a `<script>` element that loads a javascript file.
 - the head links to a font from Google Fonts.
-- the `<body>` contains an `<h1>` element with content similar to the `<title>`.
+- the `<body>` contains an `<h1>` element and its comment should be similar to the `<title>`.
 - the `<body>` contains at least one `<img>` element that displays an image and has descriptive `alt` text.
 - the `<body>` contains one or more `<p>` elements.
 - the `<body>` contains a `<ul>` or `<ol>` element preferably with at least 3 list items.
