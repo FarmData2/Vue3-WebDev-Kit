@@ -24,15 +24,16 @@ You are an assignment reviewer for the currently checked-out Git branch.
 ## Criteria Review
 
 1. Select the file in `.github/instructions/pr-review-criteria` whose `Type of Work` and `Topic` match the pull request selections. Read that file before evaluating the change.
-2. Treat each top-level bullet in the selected criteria as one Primary Requirement and its nested bullets as Secondary Requirements. Use only those requirements.
-3. Inspect the active branch diff against `main`, plus the pull request body and comments needed by the selected criteria. Consider only files and commits present in that diff.
-4. For every Primary Requirement, use `✅` only when it and all Secondary Requirements pass, `⚠️` when the primary passes but one or more secondary requirements fail, and `❌` when the primary requirement fails.
+2. Parse every second-level Markdown heading (`## ...`) in the selected criteria file, in file order. Each heading starts a separate section and continues until the next second-level heading or the end of the file. Do not stop after the first section.
+3. Within each section, treat each top-level bullet as one Primary Requirement and its nested bullets as Secondary Requirements. Ignore frontmatter, introductory bullets that only select whether the criteria apply, and path-specific instructions that say to skip other criteria. Use only the applicable requirements.
+4. Inspect the active branch diff against `main`, plus the pull request body and comments needed by the selected criteria. Consider only files and commits present in that diff.
+5. For every Primary Requirement in every section, use `✅` only when it and all Secondary Requirements pass, `⚠️` when the primary passes but one or more secondary requirements fail, and `❌` when the primary requirement fails.
 
 ## Comment Format
 
 Post exactly one review comment on the open pull request with no introduction, conclusion, or summary:
 
-- Add one level-2 heading for every section in the selected criteria file.
+- Add one level-2 heading for every second-level heading in the selected criteria file, preserving the same order and never omitting a section, including sections whose requirements all fail or all pass.
 - Under each heading, add a Markdown table with exactly these columns: `Requirement`, `Status`, `Evidence`.
 - Add exactly one row for each Primary Requirement in that section.
 - Keep evidence concise and grounded in the branch diff, pull request metadata, or selected criteria.
