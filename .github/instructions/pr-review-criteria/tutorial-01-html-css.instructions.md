@@ -55,7 +55,6 @@ The included JavaScript file:
 
 - assigns a click event listener to the image that toggles the displayed image between two images.
 - assigns a click event listener to the button calls a function that sets the username.
-  - the function is named `setUsername`.
-- contains code that runs on page load that checks if a username is stored in local storage and displays it in the `<h1>` element if it exists. Ignore the potential issue with the `async` loading of the script.
+- contains code that runs on page load that checks if a username is stored in local storage and displays it in the `<h1>` element if it exists. Do not mention the potential issue with the `async` loading of the script.
 
 - If you applied this criteria, skip all other path specific instructions.
