@@ -49,6 +49,13 @@ export default {
     checkAnswer(word) {
       word.correct = word.word_b == word.answer;
     },
+    resetGame() {
+      this.words.forEach((word) => {
+        word.answer = '';
+        word.correct = false;
+        word.showHint = false;
+      });
+    },
   },
 };
 </script>
@@ -86,6 +93,8 @@ export default {
         </div>
       </div>
     </div>
+
+    <button type="button" v-on:click="resetGame">Reset game</button>
   </div>
 </template>
 
