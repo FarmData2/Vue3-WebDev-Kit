@@ -10,6 +10,7 @@ export default {
           showHint: false,
           answer: '',
           correct: false,
+          checked: false,
         },
         {
           word_a: 'uno',
@@ -18,6 +19,7 @@ export default {
           showHint: false,
           answer: '',
           correct: false,
+          checked: false,
         },
         {
           word_a: 'gris',
@@ -26,6 +28,7 @@ export default {
           showHint: false,
           answer: '',
           correct: false,
+          checked: false,
         },
       ],
     };
@@ -47,6 +50,7 @@ export default {
   watch: {},
   methods: {
     checkAnswer(word) {
+      word.checked = true;
       word.correct = word.word_b == word.answer;
     },
     resetGame() {
@@ -54,6 +58,7 @@ export default {
         word.answer = '';
         word.correct = false;
         word.showHint = false;
+        word.checked = false;
       });
     },
   },
@@ -75,7 +80,10 @@ export default {
       <div
         class="card"
         v-for="word in shuffledWords"
-        v-bind:class="{ correct: word.correct }"
+        v-bind:class="{
+          correct: word.correct,
+          incorrect: !word.correct && word.checked,
+        }"
       >
         <p class="word">{{ word.word_a }}</p>
         <input
@@ -149,6 +157,11 @@ input[type='text'] {
 .correct {
   color: #0f5132;
   background-color: #d1e7dd;
+}
+
+.incorrect {
+  color: #842029;
+  background-color: #f8d7da;
 }
 
 #correctCount {
