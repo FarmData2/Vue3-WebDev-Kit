@@ -79,7 +79,7 @@ export default {
         />
         <p v-else class="correctAnswer">{{ word.answer }}</p>
 
-        <div>
+        <div v-show="!word.correct">
           <label for="showHint">Hint? </label>
           <input type="checkbox" id="showHint" v-model="word.showHint" />
           <span v-show="word.showHint"> {{ word.hint }}</span>
