@@ -39,6 +39,7 @@ description: Review Criteria for Extension 01 - HTML/CSS/JS
 - Odd rows of the table are styled by a different rule with an class selector.
 - A `<span>` element is styled using class selector.
   - The class selector used should be one that was also used for a table row.
-- At least one cell in the table is styled using an id selector.
+- At least one element is styled using an id selector.
+  - The element styled using an id selector should be a table cell.
 
 - If you applied this criteria, skip all other path specific instructions.
