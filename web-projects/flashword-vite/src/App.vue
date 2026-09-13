@@ -7,6 +7,7 @@ export default {
           word_a: 'hola',
           word_b: 'hello',
           hint: 'greeting',
+          showHint: false,
           answer: '',
           correct: false,
         },
@@ -14,6 +15,7 @@ export default {
           word_a: 'uno',
           word_b: 'one',
           hint: 'number',
+          showHint: false,
           answer: '',
           correct: false,
         },
@@ -21,6 +23,7 @@ export default {
           word_a: 'gris',
           word_b: 'grey',
           hint: 'color',
+          showHint: false,
           answer: '',
           correct: false,
         },
@@ -79,6 +82,12 @@ export default {
           v-on:keyup.enter="checkAnswer(word)"
         />
         <p v-else class="correctAnswer">{{ word.answer }}</p>
+
+        <div>
+          <label for="showHint">Hint? </label>
+          <input type="checkbox" id="showHint" v-model="word.showHint" />
+          <span v-show="word.showHint"> {{ word.hint }}</span>
+        </div>
       </div>
     </div>
   </div>
