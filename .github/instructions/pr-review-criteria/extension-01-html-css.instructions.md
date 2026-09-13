@@ -33,7 +33,7 @@ description: Review Criteria for Extension 01 - HTML/CSS/JS
 
 ## CSS Styling
 
-- The `<table>` element has a border styling.
+- The `<table>`, `<th>` and `<td>` elements have a border styling applied to them.
 - The `<th>` elements are styled by a rule with a type selector.
 - Even rows of the table are styled by a rule with class selector.
 - Odd rows of the table are styled by a different rule with an class selector.
