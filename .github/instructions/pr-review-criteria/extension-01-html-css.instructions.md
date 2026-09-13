@@ -14,14 +14,21 @@ description: Review Criteria for Extension 01 - HTML/CSS/JS
 
 ## HTML Form Elements
 
-- An `input` element of type `text` for a nickname with length between 5 and 10 characters.
-- An `input` element of type `date` for an assignment due date with a minimum date of the first of the current month and a maximum date of the last day of the current month and a default value of a valid date within that range.
-- A `select` element with at least 3 options.
+- An `input` element of type `text` for a nickname.
+  - The length of the input should be between 5 and 10 characters inclusive.
+- An `input` element of type `date` for an assignment due date.
+  - The minimum date should be the first of the current month.
+  - The maximum date should be last day of the current month.
+  - The default date should be a valid date within that range.
+- A `select` element.
+  - The `select` element should have at least 3 options.
 - One of the following elements: `<meter>`, `<progress>`, or `<textarea>`.
 
 ## HTML Tables
 
-- A `<table>` element with at least 4 rows and 3 columns.
+- A `<table>` element.
+  - The `<table>` should have at least 4 rows.
+  - The `<table>` should have at least 3 columns.
 - A `<th>` element for each column in the first row of the table.
 
 ## CSS Styling
@@ -30,7 +37,8 @@ description: Review Criteria for Extension 01 - HTML/CSS/JS
 - The `<th>` elements are styled by a rule with a type selector.
 - Even rows of the table are styled by a rule with class selector.
 - Odd rows of the table are styled by a different rule with an class selector.
-- A `<span>` element is styled using class selector that was also used for a table row.
+- A `<span>` element is styled using class selector.
+  - The class selector used should be one that was also used for a table row.
 - At least one cell in the table is styled using an id selector.
 
 - If you applied this criteria, skip all other path specific instructions.
