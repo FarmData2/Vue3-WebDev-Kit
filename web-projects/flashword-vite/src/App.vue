@@ -28,7 +28,6 @@ export default {
           correct: false,
         },
       ],
-      correctCount: 0,
     };
   },
   computed: {
@@ -41,15 +40,14 @@ export default {
     completed() {
       return this.correctCount === this.wordCount;
     },
+    correctCount() {
+      return this.words.filter((word) => word.correct).length;
+    },
   },
   watch: {},
   methods: {
     checkAnswer(word) {
       word.correct = word.word_b == word.answer;
-
-      if (word.correct) {
-        this.correctCount++;
-      }
     },
   },
 };
