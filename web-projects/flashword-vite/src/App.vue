@@ -1,5 +1,10 @@
 <script>
+import WordCard from './components/WordCard.vue';
+
 export default {
+  components: {
+    WordCard,
+  },
   data() {
     return {
       words: [
@@ -43,12 +48,8 @@ export default {
     },
   },
   methods: {
-    checkAnswer(word) {
-      word.correct = word.word_b == word.answer;
-
-      if (word.correct) {
-        this.correctCount++;
-      }
+    incrementCorrectCount() {
+      this.correctCount++;
     },
   },
 };
@@ -66,20 +67,13 @@ export default {
     </p>
 
     <div id="cards">
-      <div
-        class="card"
+      <WordCard
         v-for="word in shuffledWords"
-        v-bind:class="{ correct: word.correct }"
+        v-bind:key="word.word_a"
+        v-bind:word="word"
+        v-on:incrementCorrectCount="incrementCorrectCount"
       >
-        <p class="word">{{ word.word_a }}</p>
-        <input
-          type="text"
-          v-if="!word.correct"
-          v-model="word.answer"
-          v-on:keyup.enter="checkAnswer(word)"
-        />
-        <p v-else class="correctAnswer">{{ word.answer }}</p>
-      </div>
+      </WordCard>
     </div>
   </div>
 </template>
@@ -103,38 +97,6 @@ export default {
   display: grid;
   grid-template-columns: 300px 300px 300px;
   grid-gap: 30px;
-}
-
-.card {
-  background-color: #e8f0ff;
-  border-radius: 5px;
-  padding: 10px 0;
-  font-size: 25px;
-}
-
-input[type='text'] {
-  border: 0;
-  font-size: 25px;
-  border-radius: 5px;
-  margin-top: 5px;
-  text-align: center;
-  padding: 5px;
-}
-
-.word {
-  font-weight: bold;
-  padding: 0;
-  margin: 0;
-}
-
-.correctAnswer {
-  padding: 0;
-  margin: 0;
-}
-
-.correct {
-  color: #0f5132;
-  background-color: #d1e7dd;
 }
 
 #correctCount {
