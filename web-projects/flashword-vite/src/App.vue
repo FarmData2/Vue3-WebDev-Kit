@@ -62,7 +62,7 @@ export default {
     <p v-if="completed" id="completed">
       Great work, you have completed all the words!
     </p>
-    <p v-else id="correctCount">
+    <p v-else data-cy="correctCount" id="correctCount">
       You have answered {{ correctCount }} out of {{ wordCount }}
     </p>
 

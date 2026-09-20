@@ -6,6 +6,9 @@ describe('FlashWord Tests', () => {
     cy.get('[data-cy="app-header"]').should('contain', 'FlashWord');
 
     // Get the <p> element and check its contents.
-    cy.get('p').should('contain', 'You have answered 0 out of 3');
+    cy.get('[data-cy="correctCount"]').should(
+      'contain',
+      'You have answered 0 out of 3'
+    );
   });
 });
