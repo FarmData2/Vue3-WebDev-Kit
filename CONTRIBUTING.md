@@ -219,40 +219,7 @@ Use the following steps when working through a tutorial.
 
 <p/>
 
-2. <a id="request-pr-review"></a>
-   <details>
-   <summary>Request a pull request review from Copilot.</summary>
-
-   Use the following steps to request a pull request review from Copilot. \*\*NOTE: Do not use the "Request" link in the "Reviewers" section at the top right of your pull request. [It will not work correctly](https://github.com/orgs/community/discussions/178108).
-
-   1. Go to your pull request on GitHub.
-   2. Scroll to the bottom to find the "Add a comment" box.
-   3. Enter "@copilot review this pull request."
-   4. Pick the model to be used from the popup in the bottom left of the "Add a comment" box.
-   5. Click the "Start new session" button.
-   6. Copilot will to respond in a comment on your pull request.
-      &nbsp;
-
-   </details>
-
-<p/>
-
-3. <a id="respond-to-pr-review"></a>
-   <details>
-   <summary>Respond to Copilot's review.</summary>
-
-   You might respond by:
-   - marking your pull request as ready for review if the review indicates that everything is correct.
-   - making changes to address the review, adding them to your pull request and requesting another review.
-   - posting a comment responding to the review if you think it got something wrong.
-   - posting a comment indicating that you are content with your code as stands.
-   - some combination of the above.
-
-   </details>
-
-<p/>
-
-4. <a id="mark-pull-request-ready"></a>
+2. <a id="mark-pull-request-ready"></a>
    <details>
    <summary>Mark your pull request as "Ready for Review."</summary>
 
@@ -266,11 +233,62 @@ Use the following steps when working through a tutorial.
 
 When you want to pause your work you should:
 
-1. &#9655; [Stage and commit](#stage-and-commit) any changes to your feature branch.
+1. <a id="stage-and-commit"></a>
+   <details>
+   <summary>Stage and commit the changes to your feature branch regularly.</summary>
+
+   You should stage and commit the changes at each logical breaking point in the tutorial (e.g. after adding a new UI element, or after implementing a piece of functionality). You should have multiple commits for each tutorial.
+
+   Running the commands below in the terminal are one way to stage and commit your changes.
+
+   ```bash
+   git status
+   git stage .
+   git commit -m "descriptive commit message"
+   git status
+   ```
+
+   If you had a co-author or used AI in creating the content of the commit you will need to [add appropriate attribution commit trailers](./docs/AttributionTrailers.md), for example:
+
+   ```bash
+   git status
+   git stage .
+   git commit -m "-m "descriptive commit message" \
+       --trailer "Assisted-by: GPT-3.3-Codex"
+   git status
+   ```
+
+   </details>
 
 <p/>
 
-2. &#9655; [Push your feature branch](#push-feature-branch) to your fork (i.e. your origin).
+2. <a id="ensure-commit-was-successful"></a>
+   <details>
+   <summary>Ensure that the commit was successful.</summary>
+
+   When making a commit, a number of checks are performed on the changes being committed. These checks ensure that the changes are properly formatted, use good style, and do not contain broken links or spelling errors.
+   <br><br>
+   **If any of the checks fail the commit will not be made.**
+   <br><br>
+   If the commit is not made, error information will be displayed in the terminal. Read the error messages that are displayed and try your commit again as described in step b.
+
+   </details>
+
+<p/>
+
+3. <a id="push-feature-branch"></a>
+   <details>
+   <summary>Push your feature branch to your fork (i.e. your origin).</summary>
+
+   Running the commands below in the terminal are one way to do this.
+
+   ```bash
+   git push origin t01-html-css-js
+   ```
+
+   Pushing your feature branch to GitHub **automatically updates your pull request for the branch.**
+
+   </details>
 
 <p/>
 
@@ -285,21 +303,61 @@ When you want to pause your work you should:
 
 When you want to restart your work you should:
 
-1. &#9655; [Log into your GitHub account](#log-into-github-account), if you are not already logged in.
+1. <a id="log-into-github-account"></a>
+   <details>
+   <summary>Log into your GitHub account.</summary>
+
+   This link will take you to the [GitHub login page](https://github.com/login), if you are not already logged in. If you are logged in it will take you to your personal GitHub page.
+
+   </details>
 
 <p/>
 
-2. &#9655; [Open your codespace](#open-your-codespace).
+2. <a id="open-your-codespace"></a>
+   <details>
+   <summary>Open your codespace.</summary>
+
+   This link will take you to a page where you can [open your codespace](https://docs.github.com/en/codespaces/developing-in-a-codespace/opening-an-existing-codespace#opening-an-existing-codespace-from-the-your-codespaces-page), if it is not already open.
+
+   When the codespace is ready the following message will appear in the terminal:
+
+   ```bash
+   *****************************************
+   The Vue3 WebDev Kit is now ready for use.
+   *****************************************
+   ```
+
+   </details>
 
 ### Starting an Extension
 
 Starting an extension is very similar to starting a tutorial.
 
-1. &#9655; [Log into your GitHub account](#log-into-github-account).
+1. <a id="log-into-github-account"></a>
+   <details>
+   <summary>Log into your GitHub account.</summary>
+
+   This link will take you to the [GitHub login page](https://github.com/login), if you are not already logged in. If you are logged in it will take you to your personal GitHub page.
+
+   </details>
 
 <p/>
 
-2. &#9655; [Open your codespace](#open-your-codespace).
+2. <a id="open-your-codespace"></a>
+   <details>
+   <summary>Open your codespace.</summary>
+
+   This link will take you to a page where you can [open your codespace](https://docs.github.com/en/codespaces/developing-in-a-codespace/opening-an-existing-codespace#opening-an-existing-codespace-from-the-your-codespaces-page), if it is not already open.
+
+   When the codespace is ready the following message will appear in the terminal:
+
+   ```bash
+   *****************************************
+   The Vue3 WebDev Kit is now ready for use.
+   *****************************************
+   ```
+
+   </details>
 
 <p/>
 
@@ -322,7 +380,27 @@ Starting an extension is very similar to starting a tutorial.
 
 <p/>
 
-4. &#9655; [Make a pull request](#make-a-pull-request) for your feature branch.
+4. <a id="make-a-pull-request"></a>
+   <details>
+   <summary>Make a pull request for your feature branch.</summary>
+
+   Even though you haven't done any work this is the right time to create the pull request that you'll use to turn in your work. Creating a pull request early lets the instructor know you are working and gives you a place to ask questions about your work.
+   <br><br>
+   Running the commands below in the terminal in your codespace creates an empty commit so that you can create your pull request.
+
+   ```bash
+   git commit --allow-empty -m "Tutorial 01 - HTML/CSS"
+   git push origin t01-html-css-js
+   ```
+
+   Now [create a pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request#creating-the-pull-request) for the `tutorial-01` branch.
+   - **Be sure to check off the box for the topic that you are working on in this pull request.**
+
+   Note that several things will happen automatically to your new pull request. Each of these things models something that often happens in open source projects.
+   1. A _label_ will be added to your pull request that categorizes the types of changes that you are proposing. In the case of this kit, those labels indicate the tutorials and extensions that you are working on.
+   2. Your pull request will be automatically converted to a _draft pull request_. This status indicates to your instructor that you are still working. Later you'll mark your pull request as "ready for review" to turn in your work.
+
+   </details>
 
 ### Working on Extension Tasks
 
@@ -332,15 +410,72 @@ Working on the extension tasks is very similar to working on the tutorial tasks.
 
 <p/>
 
-2. &#9655; [View your work in the browser](#view-work-in-browser).
+2. <a id="view-work-in-browser"></a>
+   <details>
+   <summary>View your work in the browser.</summary>
+
+   When you have created an HTML page or a Vue app you can use the following steps to open it the browser.
+
+   1. Click "PORTS" tab in in the bottom center of the VS Code window, just below the editor you have been using to modify the code.
+
+      ![The "PORTS" tab is just below the editor window.](./docs/images/ports-tab.png)
+
+   2. Point at the link in the second column titled "Forwarded Address".
+
+   3. Click on the small _globe icon_ that appears.
+
+      ![The globe icon used to open the page in the browser.](./docs/images/open-http-in-browser.png)
+
+   4. Click the new tab named "Directory listing for /" that opened in your browser.
+
+   5. Navigate to the page that you want to view in the directory structure (e.g. for tutorial 01 click `web-projects` and then `first-website`).
+
+   6. Use the reload button in the browser to update your page when you have made changes.
+
+   </details>
 
 <p/>
 
-3. &#9655; [Stage and commit your changes](#stage-and-commit) at least once for each task.
+3. <a id="stage-and-commit"></a>
+   <details>
+   <summary>Stage and commit the changes to your feature branch regularly.</summary>
+
+   You should stage and commit the changes at each logical breaking point in the tutorial (e.g. after adding a new UI element, or after implementing a piece of functionality). You should have multiple commits for each tutorial.
+
+   Running the commands below in the terminal are one way to stage and commit your changes.
+
+   ```bash
+   git status
+   git stage .
+   git commit -m "descriptive commit message"
+   git status
+   ```
+
+   If you had a co-author or used AI in creating the content of the commit you will need to [add appropriate attribution commit trailers](./docs/AttributionTrailers.md), for example:
+
+   ```bash
+   git status
+   git stage .
+   git commit -m "-m "descriptive commit message" \
+       --trailer "Assisted-by: GPT-3.3-Codex"
+   git status
+   ```
+
+   </details>
 
 <p/>
 
-4. &#9655; [Ensure that the commit was successful](#ensure-commit-was-successful).
+4. <a id="ensure-commit-was-successful"></a>
+   <details>
+   <summary>Ensure that the commit was successful.</summary>
+
+   When making a commit, a number of checks are performed on the changes being committed. These checks ensure that the changes are properly formatted, use good style, and do not contain broken links or spelling errors.
+   <br><br>
+   **If any of the checks fail the commit will not be made.**
+   <br><br>
+   If the commit is not made, error information will be displayed in the terminal. Read the error messages that are displayed and try your commit again as described in step b.
+
+   </details>
 
 <p/>
 
@@ -359,20 +494,40 @@ Working on the extension tasks is very similar to working on the tutorial tasks.
 
 <p/>
 
-6. &#9655; [Push your feature branch](#push-feature-branch) to GitHub.
+6. <a id="push-feature-branch"></a>
+   <details>
+   <summary>Push your feature branch to your fork (i.e. your origin).</summary>
+
+   Running the commands below in the terminal are one way to do this.
+
+   ```bash
+   git push origin t01-html-css-js
+   ```
+
+   Pushing your feature branch to GitHub **automatically updates your pull request for the branch.**
+
+   </details>
+
+<p/>
 
 ### Completing an Extension
 
-1. &#9655; [Verify the changes in your pull request](#check-pull-request-changes).
+1. <a id="check-pull-request-changes"></a>
+   <details>
+   <summary>Verify that your pull request contains the desired changes.</summary>
+
+   Visit this page for instructions on how to [view the changes in your pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-comparing-branches-in-pull-requests).
+
+   </details>
 
 <p/>
 
-2. &#9655; [Request a Copilot Review of your Pull Request](#request-pr-review)
+2. <a id="mark-pull-request-ready"></a>
+   <details>
+   <summary>Mark your pull request as "Ready for Review."</summary>
 
-<p/>
+   Because you made a pull request for your feature branch already, all that is necessary to submit your work is to mark your pull request as ready for review.
 
-3. &#9655; [Address the comments in Copilot's pull request review](#respond-to-pr-review).
+   Visit this page for instructions on how to [mark a pull request as ready for review](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/changing-the-stage-of-a-pull-request#marking-a-pull-request-as-ready-for-review).
 
-<p/>
-
-4. &#9655; [Mark your pull request as ready for review](#mark-pull-request-ready).
+   </details>
