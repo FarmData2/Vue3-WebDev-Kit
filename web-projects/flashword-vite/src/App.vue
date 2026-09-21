@@ -62,13 +62,14 @@ export default {
     <p v-if="completed" id="completed">
       Great work, you have completed all the words!
     </p>
-    <p v-else data-cy="correctCount" id="correctCount">
+    <p v-else data-cy="correct-count" id="correctCount">
       You have answered {{ correctCount }} out of {{ wordCount }}
     </p>
 
     <div id="cards">
       <WordCard
         v-for="word in shuffledWords"
+        v-bind:data-cy="word.word_a + '-card'"
         v-bind:key="word.word_a"
         v-bind:word="word"
         v-on:incrementCorrectCount="incrementCorrectCount"

@@ -28,9 +28,10 @@ export default {
 
 <template>
   <div class="card" v-bind:class="{ correct: correct }">
-    <p class="word">{{ word.word_a }}</p>
+    <p data-cy="word" class="word">{{ word.word_a }}</p>
     <input
       type="text"
+      data-cy="translation"
       v-if="!correct"
       v-model="answer"
       v-on:keyup.enter="checkAnswer()"
