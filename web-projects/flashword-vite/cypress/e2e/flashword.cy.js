@@ -17,8 +17,8 @@ describe('FlashWord Tests', () => {
 
     // Check that each of the word card's is displayed.
     cy.get('[data-cy="hola-card"]').should('be.visible');
-    // check that hola-card does not have a style attribute
-    cy.get('[data-cy="hola-card"]').should('not.have.css', 'style');
+    // check that hola-card does not have the css class correct.
+    cy.get('[data-cy="hola-card"]').should('not.have.class', 'correct');
     // Check that the hola-card is displaying the correct word.
     cy.get('[data-cy="hola-card"]')
       .find('[data-cy="word"]')
@@ -31,7 +31,7 @@ describe('FlashWord Tests', () => {
       .should('have.value', '');
 
     cy.get('[data-cy="uno-card"]').should('be.visible');
-    cy.get('[data-cy="uno-card"]').should('not.have.css', 'style');
+    cy.get('[data-cy="uno-card"]').should('not.have.class', 'correct');
     cy.get('[data-cy="uno-card"]')
       .find('[data-cy="word"]')
       .should('be.visible')
@@ -42,7 +42,7 @@ describe('FlashWord Tests', () => {
       .should('have.value', '');
 
     cy.get('[data-cy="gris-card"]').should('be.visible');
-    cy.get('[data-cy="gris-card"]').should('not.have.css', 'style');
+    cy.get('[data-cy="gris-card"]').should('not.have.class', 'correct');
     cy.get('[data-cy="gris-card"]')
       .find('[data-cy="word"]')
       .should('be.visible')
