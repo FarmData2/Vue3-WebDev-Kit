@@ -13,7 +13,7 @@ The following are the main activities that you will need to do when working on t
   - [Starting an Extension](../CONTRIBUTING.md#starting-an-extension)
   - [Working on Extension Tasks](../CONTRIBUTING.md#working-on-extension-tasks)
     - [Including AI Attributions](./AttributionTrailers.md)
-    - [Logging Copilot Chats](../CONTRIBUTING.md#log-copilot-chat)
+    <!-- - [Logging Copilot Chats](../CONTRIBUTING.md#log-copilot-chat) -->
   - [Completing an Extension](../CONTRIBUTING.md#completing-an-extension)
 - Stopping and Restarting
   - [Pausing your Work](../CONTRIBUTING.md#pausing-your-work)
@@ -82,6 +82,14 @@ The following are the main activities that you will need to do when working on t
 | `cd web-projects/flashword-vite`<br>`npx cypress open` | Launch the Cypress test runner.  |
 
 ## Miscellaneous
+
+### Cypress
+
+- [Cypress Reference](CypressReference.md)
+- [Official Cypress Documentation](https://docs.cypress.io/)
+  - [Assertions](https://docs.cypress.io/app/references/assertions)
+  - [Actionability](https://docs.cypress.io/app/core-concepts/interacting-with-elements#Actionability)
+  - [Commands](https://docs.cypress.io/api/commands)
 
 ### GitHub Copilot
 
