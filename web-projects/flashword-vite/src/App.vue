@@ -59,7 +59,7 @@ export default {
   <div id="app" v-cloak>
     <h2 data-cy="app-header">FlashWord</h2>
 
-    <p v-if="completed" id="completed">
+    <p v-if="completed" data-cy="completed" id="completed">
       Great work, you have completed all the words!
     </p>
     <p v-else data-cy="correct-count" id="correctCount">

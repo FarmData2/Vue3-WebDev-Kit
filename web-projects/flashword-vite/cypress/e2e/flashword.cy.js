@@ -10,6 +10,8 @@ describe('FlashWord Tests', () => {
       'contain',
       'You have answered 0 out of 3'
     );
+
+    cy.get('[data-cy="completed"]').should('not.exist');
   });
 
   it('Check word cards', () => {
