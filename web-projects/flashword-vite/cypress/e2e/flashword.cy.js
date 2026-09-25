@@ -6,10 +6,8 @@ describe('FlashWord Tests', () => {
     cy.get('[data-cy="app-header"]').should('contain', 'FlashWord');
 
     // Get the correct-count element and check its contents.
-    cy.get('[data-cy="correct-count"]').should(
-      'contain',
-      'You have answered 0 out of 3'
-    );
+    cy.get('[data-cy="num-correct"]').should('have.text', '0');
+    cy.get('[data-cy="total-words"]').should('have.text', '3');
 
     cy.get('[data-cy="completed"]').should('not.exist');
   });
