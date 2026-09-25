@@ -54,4 +54,16 @@ describe('FlashWord Tests', () => {
       .should('be.visible')
       .should('have.value', '');
   });
+
+  it('Type in hola-word input', () => {
+    cy.visit('http://localhost:5173/');
+
+    cy.get('[data-cy="hola-card"]')
+      .find('[data-cy="translation"]')
+      .type('hello');
+
+    cy.get('[data-cy="hola-card"]')
+      .find('[data-cy="translation"]')
+      .should('have.value', 'hello');
+  });
 });
