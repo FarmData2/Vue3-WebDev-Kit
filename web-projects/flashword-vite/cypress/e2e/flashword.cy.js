@@ -97,6 +97,7 @@ describe('FlashWord Tests', () => {
     cy.get('[data-cy="uno-card"]').should('have.class', 'correct');
     cy.get('[data-cy="gris-card"]').should('have.class', 'correct');
 
+    cy.get('[data-cy="correct-count"]').should('not.exist');
     cy.get('[data-cy="completed"]')
       .should('be.visible')
       .and('contain.text', 'Great work, you have completed all the words!');
