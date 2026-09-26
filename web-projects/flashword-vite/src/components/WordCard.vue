@@ -36,7 +36,7 @@ export default {
       v-model="answer"
       v-on:keyup.enter="checkAnswer()"
     />
-    <p v-else class="correctAnswer">{{ answer }}</p>
+    <p v-else data-cy="correct-answer" class="correctAnswer">{{ answer }}</p>
   </div>
 </template>
 

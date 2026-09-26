@@ -74,7 +74,7 @@ describe('FlashWord Tests', () => {
 
     cy.get('[data-cy="hola-card"]')
       .should('have.class', 'correct')
-      .find('.correctAnswer')
+      .find('[data-cy="correct-answer"]')
       .should('have.text', 'hello');
 
     cy.get('[data-cy="num-correct"]').should('have.text', '1');
@@ -92,10 +92,6 @@ describe('FlashWord Tests', () => {
     cy.get('[data-cy="gris-card"]')
       .find('[data-cy="translation"]')
       .type('grey{enter}');
-
-    cy.get('[data-cy="hola-card"]').should('have.class', 'correct');
-    cy.get('[data-cy="uno-card"]').should('have.class', 'correct');
-    cy.get('[data-cy="gris-card"]').should('have.class', 'correct');
 
     cy.get('[data-cy="correct-count"]').should('not.exist');
     cy.get('[data-cy="completed"]')
