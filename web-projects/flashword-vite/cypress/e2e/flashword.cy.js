@@ -101,4 +101,22 @@ describe('FlashWord Tests', () => {
       .should('be.visible')
       .and('contain.text', 'Great work, you have completed all the words!');
   });
+
+  it('Resets the game', () => {
+    cy.visit('http://localhost:5173/');
+
+    cy.get('[data-cy="hola-card"]')
+      .find('[data-cy="translation"]')
+      .type('hello{enter}');
+    cy.get('[data-cy="num-correct"]').should('have.text', '1');
+
+    cy.get('[data-cy="reset"]').click();
+
+    cy.get('[data-cy="num-correct"]').should('have.text', '0');
+    cy.get('[data-cy="completed"]').should('not.exist');
+    cy.get('[data-cy="hola-card"]')
+      .should('not.have.class', 'correct')
+      .find('[data-cy="translation"]')
+      .should('have.value', '');
+  });
 });
