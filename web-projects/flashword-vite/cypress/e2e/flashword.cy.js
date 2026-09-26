@@ -65,7 +65,7 @@ describe('FlashWord Tests', () => {
       .should('have.value', 'hello');
   });
 
-  it('Sets hola card style for a correct translation', () => {
+  it('Checks correct translation of hola', () => {
     cy.visit('http://localhost:5173/');
 
     cy.get('[data-cy="hola-card"]')
@@ -78,5 +78,27 @@ describe('FlashWord Tests', () => {
       .should('have.text', 'hello');
 
     cy.get('[data-cy="num-correct"]').should('have.text', '1');
+  });
+
+  it('Completes the game', () => {
+    cy.visit('http://localhost:5173/');
+
+    cy.get('[data-cy="hola-card"]')
+      .find('[data-cy="translation"]')
+      .type('hello{enter}');
+    cy.get('[data-cy="uno-card"]')
+      .find('[data-cy="translation"]')
+      .type('one{enter}');
+    cy.get('[data-cy="gris-card"]')
+      .find('[data-cy="translation"]')
+      .type('grey{enter}');
+
+    cy.get('[data-cy="hola-card"]').should('have.class', 'correct');
+    cy.get('[data-cy="uno-card"]').should('have.class', 'correct');
+    cy.get('[data-cy="gris-card"]').should('have.class', 'correct');
+
+    cy.get('[data-cy="completed"]')
+      .should('be.visible')
+      .and('contain.text', 'Great work, you have completed all the words!');
   });
 });
