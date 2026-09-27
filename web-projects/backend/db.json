@@ -1,0 +1,33 @@
+{
+  "words": [
+    {
+      "word_a": "hola",
+      "word_b": "hello",
+      "hint": "greeting"
+    },
+    {
+      "word_a": "uno",
+      "word_b": "one",
+      "hint": "number"
+    },
+    {
+      "word_a": "gris",
+      "word_b": "grey",
+      "hint": "color"
+    }
+  ],
+  "times": [
+    {
+      "name": "Susan",
+      "time": 35
+    },
+    {
+      "name": "Carolina",
+      "time": 42
+    },
+    {
+      "name": "Nam",
+      "time": 28
+    }
+  ]
+}
