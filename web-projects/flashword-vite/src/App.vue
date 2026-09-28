@@ -52,6 +52,9 @@ export default {
       this.resetKey++;
     },
   },
+  created() {
+    console.log('Flashword created');
+  },
 };
 </script>
 
