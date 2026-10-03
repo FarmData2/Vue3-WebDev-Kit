@@ -38,10 +38,14 @@ export default {
   },
   async created() {
     let response = await fetch('/api/words');
-    console.log(response);
-    let json = await response.json();
-    console.log(json);
-    this.words = json;
+    if (response.ok) {
+      console.log(response);
+      let json = await response.json();
+      console.log(json);
+      this.words = json;
+    } else {
+      console.error('Error: Unable to fetch words. Status: ' + response.status);
+    }
   },
 };
 </script>
