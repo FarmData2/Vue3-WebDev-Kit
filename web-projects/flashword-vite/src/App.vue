@@ -39,14 +39,10 @@ export default {
   async created() {
     try {
       let response = await fetch('/api/words');
-      if (response.ok) {
-        console.log(response);
-        let json = await response.json();
-        console.log(json);
-        this.words = json;
-      } else {
+      if (!response.ok) {
         throw new Error('Server response not ok. Status: ' + response.status);
       }
+      this.words = await response.json();
     } catch (error) {
       console.error('Error: Unable to fetch words. ', error);
     }
