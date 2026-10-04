@@ -27,6 +27,21 @@ describe('FlashWord Tests', () => {
     cy.get('[data-cy="game-content"]').should('not.exist');
   });
 
+  it('Displays an error and hides the game when parsing words fails', () => {
+    cy.intercept('GET', '/api/words', {
+      statusCode: 200,
+      body: '{ invalid json',
+    }).as('getWords');
+
+    cy.visit('http://localhost:5173/');
+    cy.wait('@getWords');
+
+    cy.get('[data-cy="api-error-message"]')
+      .should('be.visible')
+      .and('contain.text', 'Something went wrong. Please try again later.');
+    cy.get('[data-cy="game-content"]').should('not.exist');
+  });
+
   it('Check word cards', () => {
     cy.visit('http://localhost:5173/');
 
