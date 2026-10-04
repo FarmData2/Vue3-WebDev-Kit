@@ -1,4 +1,16 @@
 describe('FlashWord Tests', () => {
+  const completeGame = () => {
+    cy.get('[data-cy="hola-card"]')
+      .find('[data-cy="translation"]')
+      .type('hello{enter}');
+    cy.get('[data-cy="uno-card"]')
+      .find('[data-cy="translation"]')
+      .type('one{enter}');
+    cy.get('[data-cy="gris-card"]')
+      .find('[data-cy="translation"]')
+      .type('grey{enter}');
+  };
+
   it('Check initial page state', () => {
     cy.visit('http://localhost:5173/');
 
@@ -159,5 +171,67 @@ describe('FlashWord Tests', () => {
       .should('not.have.class', 'correct')
       .find('[data-cy="translation"]')
       .should('have.value', '');
+  });
+
+  it('Displays the ten fastest leaderboard scores', () => {
+    const scores = Array.from({ length: 11 }, (_, index) => ({
+      id: index + 1,
+      name: `Player ${index + 1}`,
+      time: 11 - index,
+    }));
+    cy.intercept('GET', '/api/times', { body: scores }).as('getTimes');
+
+    cy.visit('http://localhost:5173/');
+    cy.wait('@getTimes');
+
+    cy.get('[data-cy="leaderboard-row"]').should('have.length', 10);
+    cy.get('[data-cy="leaderboard-row"]')
+      .first()
+      .should('contain.text', 'Player 11')
+      .and('contain.text', '1 seconds');
+  });
+
+  it('Submits one completed-game score and refreshes the leaderboard', () => {
+    let timesRequestCount = 0;
+    cy.intercept('GET', '/api/times', (request) => {
+      timesRequestCount++;
+      request.reply({
+        body: timesRequestCount === 1 ? [] : [{ id: 1, name: 'Ada', time: 0 }],
+      });
+    }).as('getTimes');
+    cy.intercept('POST', '/api/times', (request) => {
+      expect(request.body).to.have.property('name', 'Ada');
+      expect(request.body.time).to.be.a('number');
+      request.reply({ statusCode: 201, body: request.body });
+    }).as('submitScore');
+
+    cy.visit('http://localhost:5173/');
+    cy.wait('@getTimes');
+    completeGame();
+
+    cy.get('[data-cy="elapsed-time"]')
+      .invoke('text')
+      .should('match', /Your time: \d+ seconds/);
+    cy.get('[data-cy="player-name"]').type('  Ada  ');
+    cy.get('[data-cy="submit-score"]').click();
+    cy.wait('@submitScore');
+    cy.get('[data-cy="score-submitted"]').should('be.visible');
+    cy.get('[data-cy="submit-score"]').should('not.exist');
+    cy.get('[data-cy="leaderboard-row"]').should('contain.text', 'Ada');
+  });
+
+  it('Keeps the game available when leaderboard loading fails', () => {
+    cy.intercept('GET', '/api/times', {
+      statusCode: 500,
+      body: 'Internal Server Error',
+    }).as('getTimes');
+
+    cy.visit('http://localhost:5173/');
+    cy.wait('@getTimes');
+
+    cy.get('[data-cy="game-content"]').should('be.visible');
+    cy.get('[data-cy="leaderboard-error"]')
+      .should('be.visible')
+      .and('contain.text', 'Leaderboard is unavailable right now.');
   });
 });
