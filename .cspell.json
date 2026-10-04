@@ -14,7 +14,8 @@
     "package-lock.json",
     "devcontainer.json",
     "web-projects/flashword-vite/public",
-    "web-projects/flashword-vite/src/assets"
+    "web-projects/flashword-vite/src/assets",
+    "web-projects/backend"
   ],
   "words": [
     "alisson",
