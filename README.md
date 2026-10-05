@@ -13,7 +13,7 @@ While completing the Vue3-WebDev-Kit your work will be similar to working in an 
 
 ## Getting Started
 
-** This is a work in progress. Full instructions for using this kit will be created and published here when it is ready for use.**
+**This is a work in progress. Full instructions for using this kit will be created and published here when it is ready for use.**
 
 <!--
 To get started with the Vue3-WebDev-Kit:
