@@ -13,6 +13,9 @@ While completing the Vue3-WebDev-Kit your work will be similar to working in an 
 
 ## Getting Started
 
+** This is a work in progress. Full instructions for using this kit will be created and published here when it is ready for use.**
+
+<!--
 To get started with the Vue3-WebDev-Kit:
 
 1. Find and read the `INSTALL.md` file and follow the instructions there to setup the development environment (i.e. the GitHub Codespace) that you will use to complete your work.
@@ -23,7 +26,7 @@ To get started with the Vue3-WebDev-Kit:
 3. Find and bookmark the following files for easy access:
    - `CONTRIBUTING.md`
    - `docs/QuickReference.md`
-
+-->
 ---
 
 ![Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png 'Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License') All textual materials used in this repository including tickets in the Issue Tracker are licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
